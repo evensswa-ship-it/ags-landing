@@ -214,6 +214,32 @@ export const offer = {
   ],
 }
 
+export const dataPrivacy = {
+  eyebrow: 'Données & Confidentialité',
+  title: 'Vos opérations, vos données. Leur confidentialité est notre point de départ.',
+  intro:
+    "Les agents IA et automatisations qu'on construit accèdent parfois à des données professionnelles sensibles. Mails, dossiers clients, documents internes. Ce constat guide l'architecture de chaque projet.",
+  items: [
+    {
+      title: 'Réflexion par projet',
+      text: "Avant de déployer quoi que ce soit, on cartographie les données impliquées : ce qui transite, où ça va et pourquoi. L'architecture mise en place dépend de la réalité du client, pas d'un template qu'on applique partout.",
+    },
+    {
+      title: 'Confidentialité des flux',
+      text: "On limite l'exposition des données à ce qui est strictement nécessaire. Les flux sont identifiés, les accès maîtrisés et les traitements documentés dès la phase de conception.",
+    },
+    {
+      title: 'Approche RGPD',
+      text: "On aborde le RGPD comme un enjeu métier, pas comme une case à cocher. Dès le cadrage, on identifie avec vous les données traitées, les flux concernés et les mesures adaptées à votre situation.",
+    },
+    {
+      title: 'Transparence sur la stack',
+      text: "On travaille aujourd'hui avec Vercel, Supabase, OVH, OpenAI et Anthropic. Des partenaires reconnus. Notre objectif une fois les cas d'usage validés terrain : migrer vers une infrastructure et des modèles d'IA pleinement européens.",
+    },
+  ],
+  note: "On ne prétend pas à une infrastructure 100 % internalisée. On construit avec des partenaires fiables et on trace une trajectoire vers les standards européens.",
+}
+
 export const contact = {
   title: 'Parlez-nous de votre organisation et de vos enjeux actuels.',
   reassurance: 'Approche confidentielle • Réponse humaine • Sans engagement',
@@ -232,6 +258,7 @@ export const footer = {
     { label: 'Systèmes IA', href: '#cockpit' },
     { label: 'Notre approche', href: '#philosophie' },
     { label: 'Offre', href: '#offre' },
+    { label: 'Données & IA', href: '#donnees' },
     { label: 'Contact', href: '#contact' },
   ],
   links: [
