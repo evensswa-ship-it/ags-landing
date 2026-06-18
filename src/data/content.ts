@@ -1,4 +1,4 @@
-export const nav = {
+﻿export const nav = {
   logoAlt: 'AGS & Co.',
   logoSrc: '/agslogo (2).png',
   links: [
@@ -11,9 +11,12 @@ export const nav = {
 
 export const hero = {
   eyebrow: 'Cabinet IA opérationnel · France',
-  h1: 'Des agents IA spécialisés conçus pour assister vos opérations métier.',
+  h1: 'Gagnez du temps sur les tâches qui freinent vos opérations chaque jour.',
   subtitle:
-    'AGS & Co conçoit des systèmes intelligents permettant de structurer l’information, automatiser certaines tâches et réduire les frictions opérationnelles.',
+    'Nous identifions les frictions qui coûtent du temps à vos équipes et déployons des assistants opérationnels sur mesure pour les résoudre.',
+  stat: 'Nos clients peuvent récupérer en moyenne 2h30 par semaine.',
+  secondaryCta: 'Voir comment ça fonctionne',
+  secondaryCtaHref: '#cockpit',
   primaryCta: 'Réserver un appel découverte',
   primaryCtaHref: nav.ctaHref,
   proof: 'Audit stratégique • Analyse terrain • Recommandations exploitables',
@@ -83,20 +86,20 @@ export const cockpit = {
   subtitle: '',
   promises: [
     {
-      title: 'Agents IA internes',
-      text: 'Des agents spécialisés intégrés à vos opérations.',
+      title: 'Relances sans oubli',
+      text: 'Vos suivis et dossiers en cours sont tracés automatiquement. Plus rien ne passe à travers les mailles.',
     },
     {
-      title: 'Copilotes métier',
-      text: 'Une assistance intelligente pour certaines tâches métier.',
+      title: 'Zéro ressaisie',
+      text: 'Mails, comptes-rendus et rapports. Chaque tâche répétitive sans valeur ajoutée est traitée automatiquement.',
     },
     {
-      title: 'Automatisation opérationnelle',
-      text: 'Réduction des tâches répétitives et amélioration des flux.',
+      title: 'Visibilité immédiate',
+      text: 'Priorités, dossiers et flux centralisés. Vous savez exactement où en est chaque sujet en cours.',
     },
     {
-      title: 'Workflows intelligents',
-      text: 'Des systèmes conçus pour fluidifier la circulation d’information.',
+      title: 'Outils connectés',
+      text: 'Vos logiciels existants reliés entre eux. L’information circule sans ressaisie ni friction.',
     },
   ],
 }
@@ -295,4 +298,119 @@ export const legal = {
       text: 'Aucun cookie de tracking n’est utilisé sur ce site.',
     },
   ],
+}
+
+export const faq = {
+  eyebrow: 'Questions fréquentes',
+  title: 'Ce que nos clients nous demandent avant de commencer.',
+  items: [
+    {
+      question: "Concrètement, c'est quoi un assistant opérationnel ?",
+      answer: "Un système automatisé connecté à vos outils existants. Il trie les mails entrants, relance un client, génère un compte-rendu ou synthétise un dossier. Pas un chatbot générique : un assistant construit pour votre métier et votre organisation spécifique.",
+    },
+    {
+      question: 'Faut-il changer nos logiciels ou notre organisation ?',
+      answer: "Non. On se connecte à ce que vous utilisez déjà : messagerie, CRM, outils métier. L'assistant s'intègre à votre environnement sans migration ni rupture dans vos habitudes de travail.",
+    },
+    {
+      question: 'Quel est le ROI et en combien de temps ?',
+      answer: "L'audit opérationnel prend 5 à 10 jours ouvrés. Le déploiement d'un premier assistant, 2 à 4 semaines. Nos clients peuvent récupérer en moyenne 2h30 par semaine sur les tâches répétitives, soit environ 3 000 € de valeur temps par an pour un profil à 50 000 €/an, hors gains en réactivité et charge mentale.",
+    },
+    {
+      question: "Quelle est la différence avec les outils d'automatisation ?",
+      answer: "Un outil d'automatisation classique connecte des applications selon des règles fixes : si A alors B. Un assistant AGS intègre votre logique métier. Il sait qu'un dossier sinistre prioritaire ne se traite pas comme un mail commercial, que certaines relances doivent attendre, que vos comptes-rendus suivent votre format interne. Nous configurons les exceptions, les cas particuliers, et nous ajustons l'outil dans la durée.",
+    },
+    {
+      question: 'Est-ce que mes données sont protégées ?',
+      answer: "Chaque projet fait l’objet d’une cartographie des données impliquées. Nous travaillons avec des partenaires reconnus (Vercel, Supabase, OpenAI, Anthropic) et documentons chaque flux. Notre approche RGPD est détaillée dans la section Données & Confidentialité.",
+    },
+  ],
+}
+
+export const sectorPages = {
+  assurance: {
+    meta: {
+      title: "AGS & Co. – IA opérationnelle pour courtiers et agents généraux",
+      description: "Automatisez la gestion administrative en assurance : visites de risque, notes de présentation, relances clients. Moins de charge, plus de temps pour développer votre portefeuille.",
+    },
+    eyebrow: "Assurance",
+    h1: "Moins de charge administrative pour les courtiers et agents généraux.",
+    subtitle: "Visites de risque, notes de présentation, relances clients. Nous automatisons les tâches qui vous éloignent de votre cœur de métier.",
+    painPoints: [
+      { title: "Visites de risque chronophages", text: "La rédaction des rapports prend autant de temps que la visite elle-même." },
+      { title: "Notes de présentation à refaire", text: "Chaque dossier nécessite une synthèse manuelle pour le client ou la compagnie." },
+      { title: "Relances oubliées", text: "Les suivis de renouvellement et les rappels de pièces passent à travers les mailles." },
+      { title: "Prospection ralentie", text: "Le temps administratif empiète sur la prospection et le développement du portefeuille." },
+    ],
+    cta: "Réserver un audit gratuit",
+    ctaHref: "https://calendly.com/evens-agsandco/30min",
+  },
+  cgp: {
+    meta: {
+      title: "AGS & Co. – IA opérationnelle pour Conseillers en Gestion de Patrimoine",
+      description: "Préparez vos rendez-vous patrimoniaux, automatisez les synthèses et le reporting. AGS & Co. libère les CGP des tâches répétitives pour se concentrer sur leurs clients.",
+    },
+    eyebrow: "CGP",
+    h1: "Vos rendez-vous mieux préparés. Vos clients mieux suivis.",
+    subtitle: "Préparation RDV, synthèses patrimoniales, reporting. Nous structurons l'information pour que vous passiez plus de temps à conseiller, moins à rédiger.",
+    painPoints: [
+      { title: "Préparation des rendez-vous", text: "Rassembler les éléments patrimoniaux avant chaque entretien prend un temps considérable." },
+      { title: "Synthèses patrimoniales", text: "La rédaction des synthèses après chaque rendez-vous mobilise des heures sans valeur conseil." },
+      { title: "Reporting clients", text: "Les rapports périodiques sont chronophages et souvent repoussés au détriment de la relation client." },
+      { title: "Suivi des alertes", text: "Les événements déclencheurs (revalorisations, échéances, alertes marchés) sont difficiles à suivre manuellement." },
+    ],
+    cta: "Réserver un audit gratuit",
+    ctaHref: "https://calendly.com/evens-agsandco/30min",
+  },
+  "expertise-comptable": {
+    meta: {
+      title: "AGS & Co. – IA opérationnelle pour cabinets d'expertise comptable",
+      description: "Automatisez les relances clients, le suivi documentaire et les flux mails en cabinet comptable. Moins de ressaisie, dossiers qui avancent, collaborateurs libérés.",
+    },
+    eyebrow: "Expertise comptable",
+    h1: "Moins de relances, moins de ressaisie. Vos dossiers avancent.",
+    subtitle: "Flux mails, suivi documentaire, relances clients. Nous réduisons la friction administrative pour que vos collaborateurs se concentrent sur l'analyse et le conseil.",
+    painPoints: [
+      { title: "Relances de pièces", text: "Chasser les documents manquants auprès des clients est une tâche chronophage et répétitive." },
+      { title: "Flux mails entrants", text: "Le volume de mails reçus par dossier mobilise un temps significatif pour le tri et le routage." },
+      { title: "Ressaisie entre outils", text: "Les mêmes informations transitent entre plusieurs logiciels sans automatisation." },
+      { title: "Suivi des dossiers en cours", text: "La visibilité sur l'état d'avancement des dossiers est difficile à maintenir sans outil dédié." },
+    ],
+    cta: "Réserver un audit gratuit",
+    ctaHref: "https://calendly.com/evens-agsandco/30min",
+  },
+  pme: {
+    meta: {
+      title: "AGS & Co. – IA opérationnelle pour PME",
+      description: "Coordination interne, suivi de projets, onboarding. AGS & Co. libère vos équipes PME des tâches répétitives pour se concentrer sur la croissance.",
+    },
+    eyebrow: "PME",
+    h1: "Votre équipe se concentre sur la croissance, pas sur l'administratif.",
+    subtitle: "Coordination interne, suivi de projets, onboarding collaborateurs. Nous automatisons les tâches sans valeur ajoutée pour que votre équipe avance sur l'essentiel.",
+    painPoints: [
+      { title: "Coordination interne", text: "Les informations circulent mal entre les équipes, générant des doublons et des oublis." },
+      { title: "Suivi des projets", text: "L'état d'avancement des projets est difficile à suivre sans ressaisie constante." },
+      { title: "Onboarding collaborateurs", text: "Chaque nouvel arrivant mobilise du temps encadrant pour des tâches répétitives et documentables." },
+      { title: "Reporting et comptes-rendus", text: "Les réunions génèrent des comptes-rendus chronophages qui retardent l'action." },
+    ],
+    cta: "Réserver un audit gratuit",
+    ctaHref: "https://calendly.com/evens-agsandco/30min",
+  },
+  btp: {
+    meta: {
+      title: "AGS & Co. – IA opérationnelle pour le BTP",
+      description: "Rapports de chantier, suivi sous-traitants, appels d'offres. AGS & Co. automatise la gestion administrative du BTP pour piloter vos chantiers efficacement.",
+    },
+    eyebrow: "BTP",
+    h1: "Moins de paperasse chantier. Plus de temps pour piloter.",
+    subtitle: "Rapports de chantier, suivi sous-traitants, coordination terrain et bureau. Nous réduisons la charge documentaire pour que vous restiez concentré sur l'avancement.",
+    painPoints: [
+      { title: "Rapports de chantier", text: "La rédaction des comptes-rendus de chantier mobilise des heures sur le terrain et au bureau." },
+      { title: "Suivi sous-traitants", text: "Centraliser les avancements, les retards et les documents sous-traitants est une tâche manuelle chronophage." },
+      { title: "Appels d'offres et devis", text: "La constitution des dossiers d'appel d'offres et la rédaction des devis sont répétitives." },
+      { title: "Coordination terrain / bureau", text: "Les remontées terrain se perdent dans des échanges mail ou téléphoniques non structurés." },
+    ],
+    cta: "Réserver un audit gratuit",
+    ctaHref: "https://calendly.com/evens-agsandco/30min",
+  },
 }

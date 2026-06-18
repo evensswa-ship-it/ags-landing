@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import Image from 'next/image'
 import { useState } from 'react'
@@ -15,10 +15,10 @@ export default function Nav() {
           <Image
             src={nav.logoSrc}
             alt={nav.logoAlt}
-            width={150}
-            height={150}
+            width={92}
+            height={55}
             priority
-            className="h-[150px] w-[150px] object-contain"
+            className="h-[55px] w-auto object-contain"
           />
         </a>
 

@@ -1,7 +1,7 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from '@vercel/speed-insights/next'
-import { Inter, Montserrat } from 'next/font/google'
+import { Inter, Montserrat, Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
 
 const inter = Inter({
@@ -16,10 +16,40 @@ const montserrat = Montserrat({
   variable: '--font-montserrat',
 })
 
+const geist = Geist({
+  subsets: ['latin'],
+  variable: '--font-geist',
+})
+
+const geistMono = Geist_Mono({
+  subsets: ['latin'],
+  variable: '--font-geist-mono',
+})
+
 export const metadata: Metadata = {
-  title: 'AGS & Co. | Assistants opérationnels intelligents',
+  title: 'AGS & Co. – Automatisation opérationnelle pour dirigeants et cabinets',
   description:
-    'AGS & Co. conçoit des assistants opérationnels sur mesure pour réduire la charge mentale, structurer les flux et rendre du temps aux équipes.',
+    "AGS & Co. conçoit des assistants IA opérationnels pour PME, courtiers et cabinets. Moins de tâches répétitives, plus de temps sur l'essentiel. Audit gratuit de 60 min.",
+  icons: {
+    icon: '/logo-transparent.png',
+    apple: '/logo-transparent.png',
+  },
+}
+
+const orgSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'AGS & Co.',
+  url: 'https://agsandco.fr',
+  email: 'contact@agsandco.fr',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '59 rue de Ponthieu, Bureau 326',
+    addressLocality: 'Paris',
+    postalCode: '75008',
+    addressCountry: 'FR',
+  },
+  description: 'Cabinet IA opérationnel spécialisé en automatisation pour PME, courtiers et cabinets.',
 }
 
 export default function RootLayout({
@@ -28,7 +58,13 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="fr" className={`${inter.variable} ${montserrat.variable}`}>
+    <html lang="fr" className={`${inter.variable} ${montserrat.variable} ${geist.variable} ${geistMono.variable}`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
+        />
+      </head>
       <body>
         {children}
         <Analytics />
