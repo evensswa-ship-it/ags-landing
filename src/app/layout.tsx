@@ -31,8 +31,8 @@ export const metadata: Metadata = {
   description:
     "AGS & Co. conçoit des assistants IA opérationnels pour PME, courtiers et cabinets. Moins de tâches répétitives, plus de temps sur l'essentiel. Audit gratuit de 60 min.",
   icons: {
-    icon: '/logo-transparent.png',
-    apple: '/logo-transparent.png',
+    icon: '/logo.png',
+    apple: '/logo.png',
   },
 }
 
