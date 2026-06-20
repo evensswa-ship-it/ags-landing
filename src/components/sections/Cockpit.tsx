@@ -1,8 +1,9 @@
-'use client'
+﻿'use client'
 
 import { motion } from 'framer-motion'
 import { cockpit } from '@/data/content'
 import SectionLabel from '@/components/ui/SectionLabel'
+// import DemoCTA from '@/components/sections/DemoCTA'
 
 const icons = [
   'M12 3v3M12 18v3M4.5 7.5l2.1 2.1M17.4 14.4l2.1 2.1M3 12h3M18 12h3M4.5 16.5l2.1-2.1M17.4 9.6l2.1-2.1M9 9h6v6H9z',
@@ -61,6 +62,7 @@ export default function Cockpit() {
             </motion.article>
           ))}
         </motion.div>
+        {/* <DemoCTA /> */}
       </div>
     </section>
   )

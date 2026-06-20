@@ -3,6 +3,9 @@
   logoSrc: '/agslogo (2).png',
   links: [
     { label: 'Systèmes IA', href: '#cockpit' },
+    { label: 'Le fondateur', href: '#fondateur' },
+    { label: 'Notre approche', href: '#philosophie' },
+    { label: 'FAQ', href: '#faq' },
     { label: 'Contact', href: '#contact' },
   ],
   cta: 'Réserver un appel découverte',
@@ -14,7 +17,7 @@ export const hero = {
   h1: 'Gagnez du temps sur les tâches qui freinent vos opérations chaque jour.',
   subtitle:
     'Nous identifions les frictions qui coûtent du temps à vos équipes et déployons des assistants opérationnels sur mesure pour les résoudre.',
-  stat: 'Nos clients peuvent récupérer en moyenne 2h30 par semaine.',
+  stat: 'Gain de temps estimé en moyenne, par semaine ~5h',
   secondaryCta: 'Voir comment ça fonctionne',
   secondaryCtaHref: '#cockpit',
   primaryCta: 'Réserver un appel découverte',
@@ -132,8 +135,23 @@ export const sectors = {
 }
 
 export const philosophy = {
-  eyebrow: 'Notre approche',
-  title: 'Un échange offert de 60 min pour identifier ce qui ralentit réellement votre organisation.',
+  eyebrow: 'Notre promesse',
+  title: "Terrain d'abord, technologie ensuite.",
+  subtitle: "Avant de déployer quoi que ce soit, on comprend votre organisation réelle. Vos frictions, vos exceptions, vos priorités. L'outil vient après. Toujours.",
+  pillars: [
+    {
+      title: 'Méthode avant outil',
+      text: "On cartographie les frictions qui coûtent vraiment du temps avant de recommander une solution. L'assistant vient en dernier.",
+    },
+    {
+      title: 'Adapté à votre réalité',
+      text: "On construit pour votre métier, vos cas particuliers, votre environnement, pas pour un usage standard prêt à l'emploi.",
+    },
+    {
+      title: 'ROI suivi dans la durée',
+      text: "Chaque mission démarre avec un objectif chiffré. On ajuste l'outil dans le temps pour que les gains durent.",
+    },
+  ],
   cta: 'Réserver un appel découverte',
   ctaHref: nav.ctaHref,
 }
@@ -170,11 +188,10 @@ export const offer = {
       badge: 'Étude stratégique',
       includes: [
         'Audit opérationnel',
-        'Analyse workflows',
         'Cartographie frictions',
-        'Quick wins',
         'Recommandations',
-        'Proposition cockpit',
+        'Une automatisation',
+        "Audit en 5 axes : Communication · Relances · Productivité · Pilotage · Conformité",
       ],
       outcomeLabel: 'Livrable',
       outcome: 'Bilan complet stratégique et opérationnel.',
@@ -183,7 +200,7 @@ export const offer = {
       number: '03',
       label: 'AGS COCKPIT',
       title: 'Votre assistant opérationnel',
-      price: 'À partir de 3 500€ HT',
+      price: 'Devis sur mesure',
       badge: 'Agent IA',
       includes: [
         'Setup cockpit',
@@ -240,7 +257,7 @@ export const dataPrivacy = {
       text: "On travaille aujourd'hui avec Vercel, Supabase, OVH, OpenAI et Anthropic. Des partenaires reconnus. Notre objectif une fois les cas d'usage validés terrain : migrer vers une infrastructure et des modèles d'IA pleinement européens.",
     },
   ],
-  note: "On ne prétend pas à une infrastructure 100 % internalisée. On construit avec des partenaires fiables et on trace une trajectoire vers les standards européens.",
+  note: "On ne prétend pas à une infrastructure 100 % internalisée. On construit avec des partenaires fiables et on trace une trajectoire vers les standards européens.",
 }
 
 export const contact = {
@@ -251,6 +268,29 @@ export const contact = {
     "Vos données sont utilisées uniquement pour traiter votre demande. Conformément au RGPD, vous disposez d'un droit d'accès et de suppression : contact@agsandco.fr",
   sectors: ['Assurance', 'Expertise comptable', 'CGP', 'PME', 'Communication', 'Autre'],
   cta: 'Être recontacté',
+  fields: {
+    firstName: 'Prénom',
+    email: 'Email professionnel',
+    sector: "Secteur d'activité",
+    message: "Parlez-nous de votre activité",
+  },
+  subject: 'Prise de contact — AGS & Co.',
+  success: 'Message envoyé. On vous répond sous 24h.',
+  error: "Une erreur est survenue. Réessayez ou écrivez-nous à contact@agsandco.fr.",
+}
+
+export const demo = {
+  title: 'Voir le Cockpit en action',
+  subtitle: 'Laissez-nous vos coordonnées, on revient vers vous sous 24h pour organiser une démonstration.',
+  fields: {
+    firstName: 'Prénom',
+    email: 'Email professionnel',
+    message: 'Votre contexte (optionnel)',
+  },
+  cta: 'Demander une démo',
+  success: 'Demande envoyée. On vous contacte sous 24h.',
+  error: "Une erreur est survenue. Réessayez ou écrivez-nous à contact@agsandco.fr.",
+  subject: 'Demande de démo Cockpit — AGS & Co.',
 }
 
 export const footer = {
@@ -314,7 +354,7 @@ export const faq = {
     },
     {
       question: 'Quel est le ROI et en combien de temps ?',
-      answer: "L'audit opérationnel prend 5 à 10 jours ouvrés. Le déploiement d'un premier assistant, 2 à 4 semaines. Nos clients peuvent récupérer en moyenne 2h30 par semaine sur les tâches répétitives, soit environ 3 000 € de valeur temps par an pour un profil à 50 000 €/an, hors gains en réactivité et charge mentale.",
+      answer: "L'audit opérationnel prend 5 à 10 jours ouvrés. Le déploiement d'un premier assistant, 2 à 4 semaines. Nos clients gagnent en moyenne 5h par semaine sur les tâches répétitives.",
     },
     {
       question: "Quelle est la différence avec les outils d'automatisation ?",
@@ -322,7 +362,7 @@ export const faq = {
     },
     {
       question: 'Est-ce que mes données sont protégées ?',
-      answer: "Chaque projet fait l’objet d’une cartographie des données impliquées. Nous travaillons avec des partenaires reconnus (Vercel, Supabase, OpenAI, Anthropic) et documentons chaque flux. Notre approche RGPD est détaillée dans la section Données & Confidentialité.",
+      answer: "Chaque projet fait l'objet d'une cartographie des données impliquées. Nous travaillons avec des partenaires reconnus (Vercel, Supabase, OpenAI, Anthropic) et documentons chaque flux. Notre approche RGPD est détaillée dans la section Données & Confidentialité.",
     },
   ],
 }
@@ -413,4 +453,22 @@ export const sectorPages = {
     cta: "Réserver un audit gratuit",
     ctaHref: "https://calendly.com/evens-agsandco/30min",
   },
+}
+
+export const founder = {
+  eyebrow: 'Le fondateur',
+  name: 'Evens Augustin',
+  role: 'Fondateur, AGS & Co.',
+  photo: '/founder.jpg',
+  photoAlt: "Evens Augustin, fondateur d'AGS & Co.",
+  bio: "Avant de fonder AGS & Co., Evens a piloté des projets métier dans des environnements exigeants : migration cloud chez Fekra Global Services et coordination de projet chez Linkt, startup dans les télécoms basé à Mont-Saint-Aignan. Il travaille depuis deux ans en prestation dans un environnement exigeant chez un acteur majeur de l'assurance en Normandie, au contact des réalités terrain d'une grande organisation normande. Ce parcours l'a conduit à une conviction : les frictions opérationnelles coûtent cher, et elles se résolvent avec méthode, pas avec de la technologie pour la technologie.",
+  highlights: [
+    { label: 'Insitoo freelances', detail: 'Prestataire indépendant · 2 ans' },
+    { label: 'Fekra Global Services', detail: 'Project manager · Migration cloud' },
+    { label: 'Linkt', detail: 'Startup télécommunication · Coordination de projets FTTH - FTTO - Cisco' },
+  ],
+}
+
+export const cockpitTeaser = {
+  label: 'Notre outil de gestion des flux externes et internes en action !',
 }

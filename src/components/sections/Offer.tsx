@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { motion } from 'framer-motion'
 import { offer } from '@/data/content'
@@ -49,7 +49,7 @@ export default function Offer() {
               key={item.number}
               variants={{ hidden: { opacity: 0, y: 18 }, visible: { opacity: 1, y: 0 } }}
               transition={{ duration: 0.5 }}
-              className="flex min-h-[390px] rounded-[8px] border border-[#1A2E55] bg-[#050E22] p-6"
+              className="flex min-h-[390px] rounded-[8px] border border-[#1A2E55] bg-[#050E22] p-6 transition-all duration-300 hover:border-[#1660EC]/40 hover:shadow-[0_0_32px_rgba(22,96,236,0.12)]"
             >
               <div className="grid w-full gap-6 xl:grid-cols-[0.82fr_1.18fr]">
                 <div className="flex flex-col">

@@ -1,4 +1,4 @@
-﻿import Nav from '@/components/sections/Nav'
+import Nav from '@/components/sections/Nav'
 import Hero from '@/components/sections/Hero'
 import Cockpit from '@/components/sections/Cockpit'
 import Philosophy from '@/components/sections/Philosophy'
@@ -8,6 +8,7 @@ import FAQ from '@/components/sections/FAQ'
 import DataPrivacy from '@/components/sections/DataPrivacy'
 import Contact from '@/components/sections/Contact'
 import Footer from '@/components/sections/Footer'
+import Founder from '@/components/sections/Founder'
 import { faq } from '@/data/content'
 
 const faqSchema = {
@@ -23,6 +24,10 @@ const faqSchema = {
   })),
 }
 
+const Separator = () => (
+  <div className="h-px bg-gradient-to-r from-transparent via-[#1A2E55]/60 to-transparent" />
+)
+
 export default function Home() {
   return (
     <>
@@ -36,8 +41,13 @@ export default function Home() {
         <Cockpit />
         <CockpitTeaser />
         {/* TODO: Social proof — ajouter bloc temoignages/chiffres clients ici */}
+        <Separator />
+        <Founder />
+        <Separator />
         <Philosophy />
+        <Separator />
         <Offer />
+        <Separator />
         <FAQ />
         <DataPrivacy />
         <Contact />

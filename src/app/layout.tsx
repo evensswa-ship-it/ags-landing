@@ -1,7 +1,9 @@
-﻿import type { Metadata } from 'next'
+import type { Metadata } from 'next'
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Inter, Montserrat, Geist, Geist_Mono } from 'next/font/google'
+import { GoogleAnalytics } from '@/components/GoogleAnalytics'
+import { MicrosoftClarity } from '@/components/MicrosoftClarity'
 import './globals.css'
 
 const inter = Inter({
@@ -52,6 +54,9 @@ const orgSchema = {
   description: 'Cabinet IA opérationnel spécialisé en automatisation pour PME, courtiers et cabinets.',
 }
 
+const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID
+const CLARITY_ID = process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -69,6 +74,8 @@ export default function RootLayout({
         {children}
         <Analytics />
         <SpeedInsights />
+        {GA_ID && <GoogleAnalytics gaId={GA_ID} />}
+        {CLARITY_ID && <MicrosoftClarity clarityId={CLARITY_ID} />}
       </body>
     </html>
   )
