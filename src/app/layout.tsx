@@ -31,7 +31,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://agsandco.fr'),
-  title: "AGS & Co. – Cabinet d'optimisation des opérations métier",
+  title: "AGS & Co. | Cabinet d'optimisation des opérations métier",
   description:
     "AGS & Co. identifie vos frictions opérationnelles et déploie des copilotes métier sur mesure pour PME et ETI. Audit gratuit 60 min, sans engagement. Paris.",
   keywords: ['optimisation opérations', 'copilotes métier', 'automatisation', 'PME ETI', 'audit opérationnel', 'Paris'],
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     locale: 'fr_FR',
     url: 'https://agsandco.fr',
     siteName: 'AGS & Co.',
-    title: "AGS & Co. – Cabinet d'optimisation des opérations métier",
+    title: "AGS & Co. | Cabinet d'optimisation des opérations métier",
     description:
       "Identifiez vos frictions opérationnelles et déployez des copilotes métier sur mesure. Audit gratuit 60 min, sans engagement.",
     images: [{ url: '/logo.png', width: 400, height: 400, alt: 'AGS & Co.' }],
