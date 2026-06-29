@@ -30,17 +30,20 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://agsandco.fr'),
+  metadataBase: new URL('https://www.agsandco.fr'),
   title: "AGS & Co. | Cabinet d'optimisation des opérations métier",
   description:
     "AGS & Co. identifie vos frictions opérationnelles et déploie des copilotes métier sur mesure pour PME et ETI. Audit gratuit 60 min, sans engagement. Paris.",
   keywords: ['optimisation opérations', 'copilotes métier', 'automatisation', 'PME ETI', 'audit opérationnel', 'Paris'],
-  authors: [{ name: 'Evens Augustin', url: 'https://agsandco.fr' }],
+  authors: [{ name: 'Evens Augustin', url: 'https://www.agsandco.fr' }],
   robots: { index: true, follow: true },
+  verification: {
+    google: 'xHZl6-yn5BBwQAYaLuoMN-TlhrWJx2fK8Yxn9ktorQU',
+  },
   openGraph: {
     type: 'website',
     locale: 'fr_FR',
-    url: 'https://agsandco.fr',
+    url: 'https://www.agsandco.fr',
     siteName: 'AGS & Co.',
     title: "AGS & Co. | Cabinet d'optimisation des opérations métier",
     description:
@@ -57,9 +60,9 @@ const siteSchemas = [
   {
     '@context': 'https://schema.org',
     '@type': ['ProfessionalService', 'Organization'],
-    '@id': 'https://agsandco.fr/#organization',
+    '@id': 'https://www.agsandco.fr/#organization',
     name: 'AGS & Co.',
-    url: 'https://agsandco.fr',
+    url: 'https://www.agsandco.fr',
     email: 'contact@agsandco.fr',
     address: {
       '@type': 'PostalAddress',
@@ -77,8 +80,8 @@ const siteSchemas = [
     '@type': 'Person',
     name: 'Evens Augustin',
     jobTitle: "Fondateur & Dirigeant",
-    url: 'https://agsandco.fr/#fondateur',
-    worksFor: { '@id': 'https://agsandco.fr/#organization' },
+    url: 'https://www.agsandco.fr/#fondateur',
+    worksFor: { '@id': 'https://www.agsandco.fr/#organization' },
   },
 ]
 
