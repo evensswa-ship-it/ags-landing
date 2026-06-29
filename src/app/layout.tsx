@@ -53,21 +53,34 @@ export const metadata: Metadata = {
   },
 }
 
-const orgSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: 'AGS & Co.',
-  url: 'https://agsandco.fr',
-  email: 'contact@agsandco.fr',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: '59 rue de Ponthieu, Bureau 326',
-    addressLocality: 'Paris',
-    postalCode: '75008',
-    addressCountry: 'FR',
+const siteSchemas = [
+  {
+    '@context': 'https://schema.org',
+    '@type': ['ProfessionalService', 'Organization'],
+    '@id': 'https://agsandco.fr/#organization',
+    name: 'AGS & Co.',
+    url: 'https://agsandco.fr',
+    email: 'contact@agsandco.fr',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '59 rue de Ponthieu, Bureau 326',
+      addressLocality: 'Paris',
+      postalCode: '75008',
+      addressCountry: 'FR',
+    },
+    areaServed: 'FR',
+    serviceType: "Optimisation des opérations métier",
+    description: "Cabinet d'optimisation des opérations métier, spécialisé dans les copilotes sur mesure pour PME, ETI et organisations.",
   },
-  description: "Cabinet d'optimisation des opérations métier, spécialisé dans les copilotes sur mesure pour PME, ETI et organisations.",
-}
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Evens Augustin',
+    jobTitle: "Fondateur & Dirigeant",
+    url: 'https://agsandco.fr/#fondateur',
+    worksFor: { '@id': 'https://agsandco.fr/#organization' },
+  },
+]
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID
 const CLARITY_ID = process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID
@@ -83,7 +96,7 @@ export default function RootLayout({
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(siteSchemas) }}
         />
       </head>
       <body>
