@@ -47,13 +47,6 @@ export const metadata: Metadata = {
       "Identifiez vos frictions opérationnelles et déployez des copilotes métier sur mesure. Audit gratuit 60 min, sans engagement.",
     images: [{ url: '/logo.png', width: 400, height: 400, alt: 'AGS & Co.' }],
   },
-  twitter: {
-    card: 'summary',
-    title: "AGS & Co. – Cabinet d'optimisation des opérations métier",
-    description:
-      "Identifiez vos frictions opérationnelles et déployez des copilotes métier sur mesure. Audit gratuit 60 min, sans engagement.",
-    images: ['/logo.png'],
-  },
   icons: {
     icon: '/logo.png',
     apple: '/logo.png',
