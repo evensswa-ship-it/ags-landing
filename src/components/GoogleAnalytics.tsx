@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import Script from 'next/script'
 import { usePathname } from 'next/navigation'
@@ -14,7 +14,6 @@ declare global {
 export function GoogleAnalytics({ gaId }: { gaId: string }) {
   const pathname = usePathname()
 
-  // Fires gtag('config') on each client-side navigation — tracks page views in SPA mode
   useEffect(() => {
     if (typeof window.gtag === 'function') {
       window.gtag('config', gaId, { page_path: pathname })
@@ -23,6 +22,17 @@ export function GoogleAnalytics({ gaId }: { gaId: string }) {
 
   return (
     <>
+      <Script id="gcm-default" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('consent', 'default', {
+            analytics_storage: 'denied',
+            ad_storage: 'denied',
+            wait_for_update: 500,
+          });
+        `}
+      </Script>
       <Script
         strategy="afterInteractive"
         src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}

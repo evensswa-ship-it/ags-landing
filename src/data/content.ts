@@ -1,58 +1,39 @@
-﻿export const nav = {
+export const nav = {
   logoAlt: 'AGS & Co.',
   logoSrc: '/agslogo (2).png',
   links: [
-    { label: 'Systèmes IA', href: '#cockpit' },
-    { label: 'Le fondateur', href: '#fondateur' },
-    { label: 'Notre approche', href: '#philosophie' },
-    { label: 'FAQ', href: '#faq' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Notre méthode', href: '/#philosophie' },
+    { label: 'Nos offres', href: '/#offre' },
+    { label: 'Formation', href: '/formation' },
+    { label: 'FAQ', href: '/#faq' },
+    { label: 'Contact', href: '/#contact' },
   ],
-  cta: 'Réserver un appel découverte',
+  cta: 'Réserver un audit gratuit',
   ctaHref: 'https://calendly.com/evens-agsandco/30min',
 }
 
 export const hero = {
-  eyebrow: 'Cabinet IA opérationnel · France',
-  h1: 'Gagnez du temps sur les tâches qui freinent vos opérations chaque jour.',
+  eyebrow: "Cabinet d'optimisation des opérations métier",
+  h1: "Identifiez vos frictions. Déployez des systèmes qui travaillent à votre place.",
   subtitle:
-    'Nous identifions les frictions qui coûtent du temps à vos équipes et déployons des assistants opérationnels sur mesure pour les résoudre.',
-  stat: 'Gain de temps estimé en moyenne, par semaine ~5h',
-  secondaryCta: 'Voir comment ça fonctionne',
-  secondaryCtaHref: '#cockpit',
-  primaryCta: 'Réserver un appel découverte',
+    "Nous accompagnons les PME, ETI et organisations à cartographier leurs opérations, concevoir des copilotes métier sur mesure, et les déployer durablement — avec formation et suivi continu.",
+  primaryCta: 'Réserver un audit gratuit',
   primaryCtaHref: nav.ctaHref,
-  proof: 'Audit stratégique • Analyse terrain • Recommandations exploitables',
+  secondaryCta: 'Voir notre méthode',
+  secondaryCtaHref: '/#philosophie',
+  proof: 'Audit gratuit · Sans engagement · 60 minutes',
 }
 
 export const problem = {
   title: "La vraie surcharge n'est pas visible sur un organigramme.",
   subtitle: 'Elle se cache dans les petites frictions du quotidien.',
   items: [
-    {
-      title: 'Trop de mails',
-      text: 'Chaque matin, une pile de messages sans hiérarchie ni priorité.',
-    },
-    {
-      title: 'Relances oubliées',
-      text: 'Des suivis importants qui passent à travers les mailles.',
-    },
-    {
-      title: 'Outils dispersés',
-      text: 'Les infos sont partout. Nulle part au bon endroit.',
-    },
-    {
-      title: 'Charge mentale',
-      text: "Tout est dans la tête. Rien n'est structuré.",
-    },
-    {
-      title: 'Temps perdu en ressaisie',
-      text: 'Les mêmes informations ressaisies dans trois outils.',
-    },
-    {
-      title: 'Manque de visibilité',
-      text: "Impossible de savoir où en sont les dossiers en cours.",
-    },
+    { title: 'Trop de mails', text: 'Chaque matin, une pile de messages sans hiérarchie ni priorité.' },
+    { title: 'Relances oubliées', text: 'Des suivis importants qui passent à travers les mailles.' },
+    { title: 'Outils dispersés', text: 'Les infos sont partout. Nulle part au bon endroit.' },
+    { title: 'Charge mentale', text: "Tout est dans la tête. Rien n'est structuré." },
+    { title: 'Temps perdu en ressaisie', text: 'Les mêmes informations ressaisies dans trois outils.' },
+    { title: 'Manque de visibilité', text: "Impossible de savoir où en sont les dossiers en cours." },
   ],
 }
 
@@ -60,32 +41,16 @@ export const howItWorks = {
   eyebrow: 'Notre approche',
   title: "On ne vend pas de l'IA. On identifie vos frictions.",
   steps: [
-    {
-      number: '01',
-      title: 'On écoute',
-      text: 'Un diagnostic de 60 min pour comprendre votre organisation réelle, pas une démo générique.',
-    },
-    {
-      number: '02',
-      title: 'On identifie',
-      text: 'Cartographie précise des frictions qui coûtent le plus de temps.',
-    },
-    {
-      number: '03',
-      title: 'On construit',
-      text: 'Un assistant opérationnel branché sur vos outils, calqué sur votre métier.',
-    },
-    {
-      number: '04',
-      title: 'On suit',
-      text: "Maintenance mensuelle avec suivi du ROI. L'outil évolue avec vous.",
-    },
+    { number: '01', title: 'On écoute', text: 'Un diagnostic de 60 min pour comprendre votre organisation réelle, pas une démo générique.' },
+    { number: '02', title: 'On identifie', text: 'Cartographie précise des frictions qui coûtent le plus de temps.' },
+    { number: '03', title: 'On construit', text: 'Un assistant opérationnel branché sur vos outils, calqué sur votre métier.' },
+    { number: '04', title: 'On suit', text: "Maintenance mensuelle avec suivi du ROI. L'outil évolue avec vous." },
   ],
 }
 
 export const cockpit = {
   eyebrow: 'Ce que nous concevons',
-  title: 'Des systèmes IA pensés pour le terrain.',
+  title: 'Des copilotes métier conçus pour le terrain.',
   subtitle: '',
   promises: [
     {
@@ -94,7 +59,7 @@ export const cockpit = {
     },
     {
       title: 'Zéro ressaisie',
-      text: 'Mails, comptes-rendus et rapports. Chaque tâche répétitive sans valeur ajoutée est traitée automatiquement.',
+      text: "Mails, comptes-rendus et rapports. Chaque tâche répétitive sans valeur ajoutée est traitée automatiquement.",
     },
     {
       title: 'Visibilité immédiate',
@@ -102,7 +67,7 @@ export const cockpit = {
     },
     {
       title: 'Outils connectés',
-      text: 'Vos logiciels existants reliés entre eux. L’information circule sans ressaisie ni friction.',
+      text: "Vos logiciels existants reliés entre eux. L'information circule sans ressaisie ni friction.",
     },
   ],
 }
@@ -111,158 +76,185 @@ export const sectors = {
   eyebrow: 'Secteurs accompagnés',
   title: 'Des assistants conçus pour votre métier.',
   items: [
-    {
-      name: 'Assurance',
-      description: 'Visite de risque, notes de présentation, prospection.',
-    },
-    {
-      name: 'Expertise comptable',
-      description: 'Flux mails, suivi documentaire, relances clients.',
-    },
-    {
-      name: 'CGP',
-      description: 'Préparation RDV, synthèse patrimoniale, reporting.',
-    },
-    {
-      name: 'PME',
-      description: 'Coordination interne, suivi projets, onboarding.',
-    },
-    {
-      name: 'Communication',
-      description: 'Briefs, reporting clients, organisation de production.',
-    },
+    { name: 'Assurance', description: 'Visite de risque, notes de présentation, prospection.' },
+    { name: 'Expertise comptable', description: 'Flux mails, suivi documentaire, relances clients.' },
+    { name: 'CGP', description: 'Préparation RDV, synthèse patrimoniale, reporting.' },
+    { name: 'PME', description: 'Coordination interne, suivi projets, onboarding.' },
+    { name: 'Communication', description: 'Briefs, reporting clients, organisation de production.' },
   ],
 }
 
 export const philosophy = {
-  eyebrow: 'Notre promesse',
-  title: "Terrain d'abord, technologie ensuite.",
-  subtitle: "Avant de déployer quoi que ce soit, on comprend votre organisation réelle. Vos frictions, vos exceptions, vos priorités. L'outil vient après. Toujours.",
+  eyebrow: 'Notre approche',
+  title: 'Méthode avant outil',
+  subtitle: "L'IA n'est pas une finalité. C'est un levier. Avant de déployer quoi que ce soit, nous comprenons votre organisation, vos contraintes et vos objectifs réels.",
   pillars: [
     {
-      title: 'Méthode avant outil',
-      text: "On cartographie les frictions qui coûtent vraiment du temps avant de recommander une solution. L'assistant vient en dernier.",
+      title: 'Comprendre avant de construire',
+      text: "Chaque mission commence par un audit opérationnel. Nous cartographions vos flux, vos outils existants et vos frictions réelles avant de proposer la moindre solution.",
     },
     {
-      title: 'Adapté à votre réalité',
-      text: "On construit pour votre métier, vos cas particuliers, votre environnement, pas pour un usage standard prêt à l'emploi.",
+      title: 'Adapté à votre réalité métier',
+      text: "Pas de solution générique. Chaque copilote est conçu pour votre secteur, vos équipes et vos processus. Ce qui fonctionne chez un CGP ne fonctionnera pas mécaniquement chez un expert-comptable.",
     },
     {
-      title: 'ROI suivi dans la durée',
-      text: "Chaque mission démarre avec un objectif chiffré. On ajuste l'outil dans le temps pour que les gains durent.",
+      title: 'Présent après le déploiement',
+      text: "Nous ne livrons pas et ne disparaissons pas. Formation des équipes, suivi des usages, ajustements continus : nous restons mobilisables tout au long de la vie du système.",
     },
   ],
-  cta: 'Réserver un appel découverte',
+  cta: 'Réserver un audit opérationnel',
   ctaHref: nav.ctaHref,
 }
 
 export const offer = {
-  eyebrow: "L'offre",
-  title: 'Quatre offres pour passer du besoin au cockpit opérationnel.',
-  notes: [
-    'Les évolutions spécifiques, nouvelles fonctionnalités ou intégrations complémentaires font l’objet d’un accompagnement séparé.',
-    'Support et SAV par email pendant les jours ouvrés.',
-    'Délai moyen de prise en charge : 48h ouvrées.',
-  ],
+  eyebrow: 'Nos offres',
+  title: 'De la compréhension au déploiement.',
+  subtitle: "Chaque mission commence par un audit. Le déploiement ne démarre qu'une fois le premier résultat validé sur le terrain.",
   items: [
     {
       number: '01',
-      label: 'AGS DISCOVERY',
-      title: 'Échange découverte',
-      price: 'Offert',
-      badge: '60 min',
+      label: 'AUDIT',
+      title: 'Audit',
+      subtitle: 'Comprendre vos opérations et valider une première piste',
+      badge: 'Forfait',
+      duration: '2 à 4 semaines',
+      href: '/offres/audit',
       includes: [
-        'Échange découverte',
-        'Compréhension organisation',
-        'Identification premières frictions',
-        'Premières pistes d’optimisation',
+        'Cartographie de vos opérations',
+        'Identification des frictions prioritaires',
+        'Conception du premier POC',
+        'Tests terrain avec vos équipes',
+        'Rapport de validation',
       ],
-      outcomeLabel: 'Objectif',
-      outcome: 'Comprendre votre fonctionnement et identifier les premières pistes d’amélioration.',
+      outcomeLabel: 'En résumé',
+      outcome: "On ne déploie rien sans comprendre comment vous travaillez.",
     },
     {
       number: '02',
-      label: 'AGS AUDIT',
-      title: 'Audit opérationnel',
-      price: '2 000€ HT',
-      badge: 'Étude stratégique',
+      label: 'DÉPLOIEMENT',
+      title: 'Déploiement',
+      subtitle: 'Mettre en production, intégrer aux outils, former les équipes',
+      badge: 'Projet',
+      duration: '3 à 6 semaines',
+      href: '/offres/deploiement',
       includes: [
-        'Audit opérationnel',
-        'Cartographie frictions',
-        'Recommandations',
-        'Une automatisation',
-        "Audit en 5 axes : Communication · Relances · Productivité · Pilotage · Conformité",
+        'Revue technique et sécurité',
+        'Intégration aux outils existants',
+        'Déploiement progressif',
+        'Formation des utilisateurs',
+        'Suivi des 30 premiers jours',
       ],
-      outcomeLabel: 'Livrable',
-      outcome: 'Bilan complet stratégique et opérationnel.',
+      outcomeLabel: 'En résumé',
+      outcome: "Le POC est validé. On passe à l'échelle avec les bonnes intégrations.",
     },
     {
       number: '03',
-      label: 'AGS COCKPIT',
-      title: 'Votre assistant opérationnel',
-      price: 'Devis sur mesure',
-      badge: 'Agent IA',
+      label: 'ACCOMPAGNEMENT',
+      title: 'Accompagnement',
+      subtitle: 'Suivi tous les 2 mois, évolutions continues, support dédié',
+      badge: 'Abonnement',
+      duration: 'Tous les 2 mois',
+      href: '/offres/accompagnement',
       includes: [
-        'Setup cockpit',
-        'Connexion outils',
-        'Configuration IA',
-        'Personnalisation',
-        'Onboarding',
-        'Dashboard',
-        'Logique métier initiale',
+        'Point de suivi bimestriel',
+        "Analyse des métriques d'usage",
+        'Résolution des frictions',
+        'Évolutions fonctionnelles incluses',
+        'Support dédié par email',
       ],
-      outcomeLabel: 'Objectif',
-      outcome: 'Déployer un assistant opérationnel adapté à votre organisation.',
-    },
-    {
-      number: '04',
-      label: 'AGS CLOUD',
-      title: 'Plateforme AGS Cloud',
-      price: '350€/mois HT',
-      badge: 'Mensuel',
-      includes: [
-        'Accès à AGS Cockpit',
-        'Hébergement cloud',
-        'Maintenance corrective',
-        'SAV technique',
-        'Surveillance connecteurs',
-        'Mises à jour techniques mineures',
-      ],
-      outcomeLabel: 'Support',
-      outcome: 'Maintenir un cockpit stable, accessible et opérationnel au quotidien.',
+      outcomeLabel: 'En résumé',
+      outcome: "Vos besoins évoluent. Vos copilotes aussi.",
     },
   ],
 }
 
-export const dataPrivacy = {
-  eyebrow: 'Données & Confidentialité',
-  title: 'Vos opérations, vos données. Leur confidentialité est notre point de départ.',
-  intro:
-    "Les agents IA et automatisations qu'on construit accèdent parfois à des données professionnelles sensibles. Mails, dossiers clients, documents internes. Ce constat guide l'architecture de chaque projet.",
-  items: [
+export const processJourney = {
+  eyebrow: 'Notre parcours client',
+  title: 'Comprendre, construire, évoluer.',
+  phases: [
     {
-      title: 'Réflexion par projet',
-      text: "Avant de déployer quoi que ce soit, on cartographie les données impliquées : ce qui transite, où ça va et pourquoi. L'architecture mise en place dépend de la réalité du client, pas d'un template qu'on applique partout.",
+      num: '01',
+      title: 'Comprendre',
+      subtitle: 'Audit opérationnel',
+      bullets: [
+        'Cartographie des flux et outils existants',
+        'Identification des frictions prioritaires',
+        'Conception et test du premier copilote',
+      ],
     },
     {
-      title: 'Confidentialité des flux',
-      text: "On limite l'exposition des données à ce qui est strictement nécessaire. Les flux sont identifiés, les accès maîtrisés et les traitements documentés dès la phase de conception.",
+      num: '02',
+      title: 'Construire',
+      subtitle: 'Déploiement & intégration',
+      bullets: [
+        'Mise en production et intégration outils',
+        'Déploiement progressif par équipe',
+        'Formation adaptée à chaque profil',
+      ],
     },
     {
-      title: 'Approche RGPD',
-      text: "On aborde le RGPD comme un enjeu métier, pas comme une case à cocher. Dès le cadrage, on identifie avec vous les données traitées, les flux concernés et les mesures adaptées à votre situation.",
-    },
-    {
-      title: 'Transparence sur la stack',
-      text: "On travaille aujourd'hui avec Vercel, Supabase, OVH, OpenAI et Anthropic. Des partenaires reconnus. Notre objectif une fois les cas d'usage validés terrain : migrer vers une infrastructure et des modèles d'IA pleinement européens.",
+      num: '03',
+      title: 'Évoluer',
+      subtitle: 'Suivi continu',
+      bullets: [
+        'Suivi bimestriel des usages et des gains',
+        'Résolution des frictions et évolutions',
+        'Amélioration continue du copilote',
+      ],
     },
   ],
-  note: "On ne prétend pas à une infrastructure 100 % internalisée. On construit avec des partenaires fiables et on trace une trajectoire vers les standards européens.",
+}
+
+export const formationTeaser = {
+  eyebrow: 'Formation',
+  title: "L'adoption, c'est aussi notre responsabilité",
+  subtitle: "Un outil bien déployé mais mal compris ne sert à rien. Après chaque déploiement, AGS accompagne vos équipes pour comprendre le fonctionnement des assistants, sécuriser les bonnes pratiques et mesurer les premiers gains.",
+  points: [
+    "Comprendre le fonctionnement des assistants déployés",
+    "Adopter les nouveaux usages au quotidien",
+    "Identifier les situations où l'outil ne doit pas être utilisé",
+    "Mesurer les gains et ajuster les comportements",
+  ],
+  cta: 'En savoir plus sur notre approche formation',
+  ctaHref: '/formation',
+}
+
+export const accompagnementTeaser = {
+  eyebrow: 'Accompagnement continu',
+  title: 'Les assistants évoluent. Votre organisation aussi.',
+  subtitle: "Vos opérations changent. Les usages évoluent. Nous faisons évoluer les copilotes en continu — sans que vous ayez à relancer un nouveau projet à chaque évolution.",
+  points: [
+    'Suivi bimestriel des performances',
+    'Mises à jour fonctionnelles incluses',
+    'Résolution des frictions opérationnelles',
+    'Points réguliers avec votre équipe',
+  ],
+  cta: "Comprendre notre modèle d'accompagnement",
+  ctaHref: '/accompagnement',
+}
+
+export const transparency = {
+  eyebrow: 'Notre stack technique',
+  title: 'Nous assumons nos choix technologiques',
+  intro: "Nous n'utilisons pas de formule vague. Voici exactement ce que nous utilisons et comment nous gérons vos données.",
+  providers: [
+    { name: 'Vercel', role: 'Hébergement frontend, CDN mondial, déploiements automatisés' },
+    { name: 'Supabase', role: 'Base de données et authentification (AWS EU, Francfort)' },
+    { name: 'OpenAI', role: 'Modèles de langage pour les assistants génériques' },
+    { name: 'Anthropic', role: 'Modèles Claude pour les tâches de raisonnement complexes' },
+  ],
+  principles: [
+    "Minimisation des données : nous ne collectons que ce qui est strictement nécessaire",
+    "Documentation : chaque flux de données est cartographié dans notre DPA",
+    "Amélioration continue : nous évaluons régulièrement des alternatives européennes",
+    "Pas de revente : vos données ne sont jamais transmises à des tiers à des fins commerciales",
+  ],
+  note: "Nous ne prétendons pas être souverains à 100 %. Nous le serons davantage à mesure que les alternatives européennes mûriront.",
 }
 
 export const contact = {
   title: 'Parlez-nous de votre organisation et de vos enjeux actuels.',
-  reassurance: 'Approche confidentielle • Réponse humaine • Sans engagement',
+  reassurance: 'Approche confidentielle · Réponse humaine · Sans engagement',
   formspreeEndpoint: 'https://formspree.io/f/mdajrjnp',
   rgpd:
     "Vos données sont utilisées uniquement pour traiter votre demande. Conformément au RGPD, vous disposez d'un droit d'accès et de suppression : contact@agsandco.fr",
@@ -294,15 +286,21 @@ export const demo = {
 }
 
 export const footer = {
-  tagline: 'Ne remplace pas le décideur, l’augmente.',
+  tagline: "Cabinet d'optimisation des opérations métier.",
   email: 'contact@agsandco.fr',
   sectionLinks: [
-    { label: 'Accueil', href: '#hero' },
-    { label: 'Systèmes IA', href: '#cockpit' },
-    { label: 'Notre approche', href: '#philosophie' },
-    { label: 'Offre', href: '#offre' },
-    { label: 'Données & IA', href: '#donnees' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Accueil', href: '/' },
+    { label: 'Notre méthode', href: '/#philosophie' },
+    { label: 'Nos offres', href: '/#offre' },
+    { label: 'Formation', href: '/formation' },
+    { label: 'Accompagnement', href: '/accompagnement' },
+    { label: 'Contact', href: '/#contact' },
+  ],
+  legalLinks: [
+    { label: 'Mentions légales', href: '/legal/mentions-legales' },
+    { label: 'Confidentialité', href: '/legal/confidentialite' },
+    { label: 'Données & RGPD', href: '/legal/rgpd' },
+    { label: 'Cookies', href: '/legal/cookies' },
   ],
   links: [
     { label: 'LinkedIn', href: 'https://www.linkedin.com/company/agsandco/?viewAsMember=true' },
@@ -321,21 +319,21 @@ export const legal = {
   ],
   hosting: [
     { label: 'Hébergeur', value: 'Vercel Inc.' },
-    { label: 'Adresse', value: '340 S Lemon Ave #4133, Walnut, CA 91789, États-Unis' },
+    { label: 'Adresse', value: '340 Pine Street Suite 701, San Francisco, CA 94104, États-Unis' },
     { label: 'Site', value: 'vercel.com' },
   ],
   sections: [
     {
       title: 'Propriété intellectuelle',
-      text: 'Les contenus, textes, images et éléments graphiques présents sur ce site sont la propriété d’AGS & Co. Toute reproduction non autorisée est interdite.',
+      text: "Les contenus présents sur ce site sont la propriété exclusive d'AGS & Co. Toute reproduction sans autorisation est interdite.",
     },
     {
       title: 'Données personnelles',
-      text: 'Les données transmises via le formulaire sont utilisées uniquement pour traiter votre demande de contact. Elles sont conservées pour une durée maximale de 3 ans. Conformément au RGPD, vous disposez d’un droit d’accès, de rectification et de suppression en écrivant à contact@agsandco.fr. Vous pouvez également saisir la CNIL.',
+      text: "Les données transmises via le formulaire sont utilisées uniquement pour traiter votre demande. Durée maximale : 3 ans. Droits RGPD : contact@agsandco.fr.",
     },
     {
       title: 'Cookies',
-      text: 'Aucun cookie de tracking n’est utilisé sur ce site.',
+      text: "Nous utilisons Google Analytics (avec votre consentement) et Axeptio pour la gestion des préférences cookies.",
     },
   ],
 }
@@ -354,15 +352,15 @@ export const faq = {
     },
     {
       question: 'Quel est le ROI et en combien de temps ?',
-      answer: "L'audit opérationnel prend 5 à 10 jours ouvrés. Le déploiement d'un premier assistant, 2 à 4 semaines. Nos clients gagnent en moyenne 5h par semaine sur les tâches répétitives.",
+      answer: "L'audit opérationnel prend 2 à 4 semaines. Le déploiement, 3 à 6 semaines supplémentaires. Nos clients gagnent en moyenne 2h30 par semaine sur les tâches répétitives, soit environ 3 000 € de valeur temps par an pour un profil à 50 000 €/an.",
     },
     {
       question: "Quelle est la différence avec les outils d'automatisation ?",
-      answer: "Un outil d'automatisation classique connecte des applications selon des règles fixes : si A alors B. Un assistant AGS intègre votre logique métier. Il sait qu'un dossier sinistre prioritaire ne se traite pas comme un mail commercial, que certaines relances doivent attendre, que vos comptes-rendus suivent votre format interne. Nous configurons les exceptions, les cas particuliers, et nous ajustons l'outil dans la durée.",
+      answer: "Un outil d'automatisation classique connecte des applications selon des règles fixes : si A alors B. Un copilote AGS intègre votre logique métier. Il sait qu'un dossier sinistre prioritaire ne se traite pas comme un mail commercial, que certaines relances doivent attendre, que vos comptes-rendus suivent votre format interne. Nous configurons les exceptions, les cas particuliers, et nous ajustons l'outil dans la durée.",
     },
     {
       question: 'Est-ce que mes données sont protégées ?',
-      answer: "Chaque projet fait l'objet d'une cartographie des données impliquées. Nous travaillons avec des partenaires reconnus (Vercel, Supabase, OpenAI, Anthropic) et documentons chaque flux. Notre approche RGPD est détaillée dans la section Données & Confidentialité.",
+      answer: "Chaque projet fait l'objet d'une cartographie des données impliquées. Nous travaillons avec des partenaires reconnus (Vercel, Supabase, OpenAI, Anthropic) et documentons chaque flux. Consultez notre politique de confidentialité pour le détail complet.",
     },
   ],
 }
@@ -461,7 +459,7 @@ export const founder = {
   role: 'Fondateur, AGS & Co.',
   photo: '/founder.jpg',
   photoAlt: "Evens Augustin, fondateur d'AGS & Co.",
-  bio: "Avant de fonder AGS & Co., Evens a piloté des projets métier dans des environnements exigeants : migration cloud chez Fekra Global Services et coordination de projet chez Linkt, startup dans les télécoms basé à Mont-Saint-Aignan. Il travaille depuis deux ans en prestation dans un environnement exigeant chez un acteur majeur de l'assurance en Normandie, au contact des réalités terrain d'une grande organisation normande. Ce parcours l'a conduit à une conviction : les frictions opérationnelles coûtent cher, et elles se résolvent avec méthode, pas avec de la technologie pour la technologie.",
+  bio: "Avant de fonder AGS & Co., Evens a piloté des projets métier dans des environnements exigeants : migration cloud chez Fekra Global Services et coordination de projet chez Linkt, startup dans les télécoms basée à Mont-Saint-Aignan. Il travaille depuis deux ans en prestation chez un acteur majeur de l'assurance en Normandie, au contact des réalités terrain d'une grande organisation. Ce parcours l'a conduit à une conviction : les frictions opérationnelles coûtent cher, et elles se résolvent avec méthode, pas avec de la technologie pour la technologie.",
   highlights: [
     { label: 'Insitoo freelances', detail: 'Prestataire indépendant · 2 ans' },
     { label: 'Fekra Global Services', detail: 'Project manager · Migration cloud' },

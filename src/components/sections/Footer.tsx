@@ -1,9 +1,8 @@
-'use client'
+﻿'use client'
 
+import Link from 'next/link'
 import Image from 'next/image'
-import { useState } from 'react'
 import { footer, nav } from '@/data/content'
-import LegalMentions from '@/components/sections/LegalMentions'
 
 function LinkedInIcon() {
   return (
@@ -14,47 +13,41 @@ function LinkedInIcon() {
 }
 
 export default function Footer() {
-  const [legalOpen, setLegalOpen] = useState(false)
-
   return (
     <footer className="bg-[#010310] px-5 py-14 sm:px-8">
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-col gap-10 border-t border-[#1A2E55] pt-10 lg:flex-row lg:items-start lg:justify-between">
           <div className="max-w-sm">
-            <Image
-              src={nav.logoSrc}
-              alt={nav.logoAlt}
-              width={150}
-              height={150}
-              className="h-auto w-[150px] object-contain opacity-90"
-            />
+            <Link href="/">
+              <Image
+                src={nav.logoSrc}
+                alt={nav.logoAlt}
+                width={150}
+                height={150}
+                className="h-auto w-[150px] object-contain opacity-90"
+              />
+            </Link>
             <p className="mt-4 text-sm italic text-[#8899BB]">{footer.tagline}</p>
           </div>
 
-          <div className="grid gap-8 text-sm text-[#8899BB] sm:grid-cols-2 lg:justify-items-end lg:text-right">
+          <div className="grid gap-8 text-sm text-[#8899BB] sm:grid-cols-3 lg:justify-items-end lg:text-right">
             <nav className="grid gap-4">
               {footer.sectionLinks.map((link) => (
-                <a key={link.href} href={link.href} className="transition hover:text-white">
+                <Link key={link.href} href={link.href} className="transition hover:text-white">
                   {link.label}
-                </a>
+                </Link>
               ))}
             </nav>
 
             <nav className="grid gap-4">
-              <button
-                type="button"
-                onClick={() => setLegalOpen(true)}
-                className="text-left transition hover:text-white lg:text-right"
-              >
-                Mentions légales
-              </button>
-              <button
-                type="button"
-                onClick={() => setLegalOpen(true)}
-                className="text-left transition hover:text-white lg:text-right"
-              >
-                Politique de confidentialité
-              </button>
+              {footer.legalLinks.map((link) => (
+                <Link key={link.href} href={link.href} className="transition hover:text-white">
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+
+            <nav className="grid gap-4">
               {footer.links.map((link) => (
                 <a
                   key={link.label}
@@ -77,8 +70,6 @@ export default function Footer() {
           © 2026 AGS & Co.
         </div>
       </div>
-
-      <LegalMentions open={legalOpen} onClose={() => setLegalOpen(false)} />
     </footer>
   )
 }

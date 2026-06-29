@@ -1,5 +1,6 @@
 ﻿'use client'
 
+import Link from 'next/link'
 import Image from 'next/image'
 import { useState } from 'react'
 import { nav } from '@/data/content'
@@ -11,7 +12,7 @@ export default function Nav() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-[#1A2E55] bg-[#010310]/[0.92] backdrop-blur-xl">
       <div className="mx-auto flex h-[100px] max-w-7xl items-center justify-between px-5 sm:px-8">
-        <a href="#hero" aria-label="Retour en haut" className="flex items-center">
+        <Link href="/" aria-label="Retour en haut" className="flex items-center">
           <Image
             src={nav.logoSrc}
             alt={nav.logoAlt}
@@ -20,17 +21,17 @@ export default function Nav() {
             priority
             className="h-[55px] w-auto object-contain"
           />
-        </a>
+        </Link>
 
         <nav className="hidden items-center gap-8 lg:flex">
           {nav.links.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               className="font-[var(--font-montserrat)] text-xs font-medium text-[#8899BB] transition hover:text-white"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
           <Button
             as="a"
@@ -73,14 +74,14 @@ export default function Nav() {
         <div className="border-t border-[#1A2E55] bg-[#010310] px-5 py-6 lg:hidden">
           <nav className="mx-auto flex max-w-7xl flex-col gap-5">
             {nav.links.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
                 className="text-sm font-medium text-[#8899BB]"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
             <Button
               as="a"

@@ -1,14 +1,14 @@
 import Nav from '@/components/sections/Nav'
 import Hero from '@/components/sections/Hero'
-import Cockpit from '@/components/sections/Cockpit'
+import ProcessJourney from '@/components/sections/ProcessJourney'
+import Founder from '@/components/sections/Founder'
 import Philosophy from '@/components/sections/Philosophy'
-import CockpitTeaser from '@/components/sections/CockpitTeaser'
 import Offer from '@/components/sections/Offer'
+import FormationTeaser from '@/components/sections/FormationTeaser'
+import AccompagnementTeaser from '@/components/sections/AccompagnementTeaser'
 import FAQ from '@/components/sections/FAQ'
-import DataPrivacy from '@/components/sections/DataPrivacy'
 import Contact from '@/components/sections/Contact'
 import Footer from '@/components/sections/Footer'
-import Founder from '@/components/sections/Founder'
 import { faq } from '@/data/content'
 
 const faqSchema = {
@@ -38,18 +38,17 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
-        <Cockpit />
-        <CockpitTeaser />
-        {/* TODO: Social proof — ajouter bloc temoignages/chiffres clients ici */}
+        <ProcessJourney />
         <Separator />
         <Founder />
         <Separator />
         <Philosophy />
         <Separator />
         <Offer />
+        <FormationTeaser />
+        <AccompagnementTeaser />
         <Separator />
         <FAQ />
-        <DataPrivacy />
         <Contact />
         <Footer />
       </main>

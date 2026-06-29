@@ -1,4 +1,5 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
+import Script from 'next/script'
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Inter, Montserrat, Geist, Geist_Mono } from 'next/font/google'
@@ -29,9 +30,9 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'AGS & Co. – Automatisation opérationnelle pour dirigeants et cabinets',
+  title: "AGS & Co. – Cabinet d'optimisation des opérations métier",
   description:
-    "AGS & Co. conçoit des assistants IA opérationnels pour PME, courtiers et cabinets. Moins de tâches répétitives, plus de temps sur l'essentiel. Audit gratuit de 60 min.",
+    "AGS & Co. accompagne les PME, ETI et organisations à cartographier leurs opérations, concevoir des copilotes métier sur mesure, et les déployer durablement. Audit gratuit · 60 minutes · Sans engagement.",
   icons: {
     icon: '/logo.png',
     apple: '/logo.png',
@@ -51,11 +52,12 @@ const orgSchema = {
     postalCode: '75008',
     addressCountry: 'FR',
   },
-  description: 'Cabinet IA opérationnel spécialisé en automatisation pour PME, courtiers et cabinets.',
+  description: "Cabinet d'optimisation des opérations métier — copilotes sur mesure pour PME, ETI et organisations.",
 }
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID
 const CLARITY_ID = process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID
+const AXEPTIO_ID = process.env.NEXT_PUBLIC_AXEPTIO_PROJECT_ID
 
 export default function RootLayout({
   children,
@@ -76,6 +78,17 @@ export default function RootLayout({
         <SpeedInsights />
         {GA_ID && <GoogleAnalytics gaId={GA_ID} />}
         {CLARITY_ID && <MicrosoftClarity clarityId={CLARITY_ID} />}
+        {AXEPTIO_ID && (
+          <>
+            <Script id="axeptio-init" strategy="afterInteractive">{`
+              window.axeptioSettings = {
+                clientId: "${AXEPTIO_ID}",
+                cookiesVersion: "agsandco-fr",
+              };
+            `}</Script>
+            <Script src="https://static.axept.io/sdk.js" strategy="afterInteractive" />
+          </>
+        )}
       </body>
     </html>
   )

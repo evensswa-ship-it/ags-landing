@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { motion } from 'framer-motion'
 import { hero } from '@/data/content'
@@ -52,21 +52,10 @@ export default function Hero() {
             <Button as="a" href={hero.primaryCtaHref} target="_blank" rel="noreferrer">
               {hero.primaryCta}
             </Button>
-            {'secondaryCta' in hero && (
-              <Button as="a" href={hero.secondaryCtaHref as string} variant="outline">
-                {hero.secondaryCta as string}
-              </Button>
-            )}
+            <Button as="a" href={hero.secondaryCtaHref} variant="outline">
+              {hero.secondaryCta}
+            </Button>
           </motion.div>
-          {'stat' in hero && (
-            <motion.p
-              variants={item}
-              transition={{ duration: 0.5 }}
-              className="mt-6 inline-flex items-center gap-2 rounded-[6px] border border-[#1A2E55] bg-[#050E22] px-3 py-1.5 text-xs font-medium text-white"
-            >
-              {hero.stat}
-            </motion.p>
-          )}
           <motion.p
             variants={item}
             transition={{ duration: 0.5 }}
