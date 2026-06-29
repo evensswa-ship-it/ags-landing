@@ -16,7 +16,7 @@ export const hero = {
   eyebrow: "Cabinet d'optimisation des opérations métier",
   h1: "Identifiez vos frictions. Déployez des systèmes qui travaillent à votre place.",
   subtitle:
-    "Nous accompagnons les PME, ETI et organisations à cartographier leurs opérations, concevoir des copilotes métier sur mesure, et les déployer durablement — avec formation et suivi continu.",
+    "Nous accompagnons les PME, ETI et organisations à cartographier leurs opérations, concevoir des copilotes métier sur mesure, et les déployer durablement, avec formation et suivi continu.",
   primaryCta: 'Réserver un audit gratuit',
   primaryCtaHref: nav.ctaHref,
   secondaryCta: 'Voir notre méthode',
@@ -222,7 +222,7 @@ export const formationTeaser = {
 export const accompagnementTeaser = {
   eyebrow: 'Accompagnement continu',
   title: 'Les assistants évoluent. Votre organisation aussi.',
-  subtitle: "Vos opérations changent. Les usages évoluent. Nous faisons évoluer les copilotes en continu — sans que vous ayez à relancer un nouveau projet à chaque évolution.",
+  subtitle: "Vos opérations changent. Les usages évoluent. Nous faisons évoluer les copilotes en continu, sans que vous ayez à relancer un nouveau projet à chaque évolution.",
   points: [
     'Suivi bimestriel des performances',
     'Mises à jour fonctionnelles incluses',

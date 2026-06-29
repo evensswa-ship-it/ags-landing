@@ -17,8 +17,8 @@ export type OfferPageData = {
 export const offerPages: Record<string, OfferPageData> = {
   audit: {
     meta: {
-      title: "Audit opérationnel — AGS & Co.",
-      description: "Comprenez vos opérations, identifiez vos frictions et validez une première piste avec un POC testé sur le terrain. 2 à 4 semaines.",
+      title: "Audit opérationnel | AGS & Co.",
+      description: "Cartographiez vos opérations, identifiez vos frictions prioritaires et obtenez un premier copilote testé terrain en 2 à 4 semaines. Forfait, sans engagement.",
     },
     title: 'Audit',
     tagline: "On ne déploie rien sans comprendre comment vous travaillez.",
@@ -31,7 +31,7 @@ export const offerPages: Record<string, OfferPageData> = {
       "Incertitude sur la faisabilité technique",
     ],
     process: [
-      { num: 1, title: 'Entretien de cadrage', detail: 'Périmètre, outils utilisés, équipes concernées — 60 min.' },
+      { num: 1, title: 'Entretien de cadrage', detail: 'Périmètre, outils utilisés, équipes concernées. Durée : 60 min.' },
       { num: 2, title: 'Cartographie des opérations', detail: 'Schéma de vos flux réels, identification des points de friction.' },
       { num: 3, title: 'Priorisation', detail: 'Frictions classées par impact et faisabilité, estimation des gains.' },
       { num: 4, title: 'Conception du POC', detail: "Premier copilote conçu sur le cas d'usage prioritaire." },
@@ -65,8 +65,8 @@ export const offerPages: Record<string, OfferPageData> = {
   },
   deploiement: {
     meta: {
-      title: "Déploiement — AGS & Co.",
-      description: "Mettez en production votre copilote métier, intégrez-le à vos outils et formez vos équipes. 3 à 6 semaines.",
+      title: "Déploiement | AGS & Co.",
+      description: "Mettez votre copilote en production, intégrez-le à vos outils existants et formez vos équipes. Déploiement progressif en 3 à 6 semaines, sans rupture de vos processus.",
     },
     title: 'Déploiement',
     tagline: "Le POC est validé. On passe à l'échelle, avec les bonnes intégrations et les équipes formées.",
@@ -107,14 +107,14 @@ export const offerPages: Record<string, OfferPageData> = {
       },
       {
         q: "Que se passe-t-il après les 30 premiers jours ?",
-        a: "Nous proposons un accompagnement bimestriel pour maintenir, faire évoluer et optimiser le système. Mais rien n'est obligatoire — vous êtes libre de gérer la suite en autonomie.",
+        a: "Nous proposons un accompagnement bimestriel pour maintenir, faire évoluer et optimiser le système. Mais rien n'est obligatoire. Vous êtes libre de gérer la suite en autonomie.",
       },
     ],
   },
   accompagnement: {
     meta: {
-      title: "Accompagnement continu — AGS & Co.",
-      description: "Maintenez, faites évoluer et optimisez vos copilotes métier dans la durée. Mises à jour incluses, support dédié.",
+      title: "Accompagnement continu | AGS & Co.",
+      description: "Maintenez et faites évoluer vos copilotes métier sur la durée. Suivi bimestriel, mises à jour incluses, support dédié. Sans engagement minimum.",
     },
     title: 'Accompagnement',
     tagline: "Vos besoins évoluent. Vos outils aussi.",
@@ -126,7 +126,7 @@ export const offerPages: Record<string, OfferPageData> = {
       "Coût de relancer un nouveau projet à chaque évolution",
     ],
     process: [
-      { num: 1, title: 'Point de suivi bimestriel', detail: 'Usages, retours terrain, points de friction rencontrés — 60 min.' },
+      { num: 1, title: 'Point de suivi bimestriel', detail: 'Usages, retours terrain, points de friction rencontrés. Durée : 60 min.' },
       { num: 2, title: "Analyse des métriques d'usage", detail: "Fréquence d'utilisation, gains mesurés, tendances." },
       { num: 3, title: 'Résolution des frictions', detail: 'Ajustements fonctionnels basés sur les retours terrain.' },
       { num: 4, title: 'Évolutions fonctionnelles', detail: "Nouvelles fonctionnalités si pertinent, incluses dans l'abonnement." },

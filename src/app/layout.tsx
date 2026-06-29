@@ -1,4 +1,4 @@
-﻿import type { Metadata } from 'next'
+import type { Metadata } from 'next'
 import Script from 'next/script'
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from '@vercel/speed-insights/next'
@@ -30,9 +30,30 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://agsandco.fr'),
   title: "AGS & Co. – Cabinet d'optimisation des opérations métier",
   description:
-    "AGS & Co. accompagne les PME, ETI et organisations à cartographier leurs opérations, concevoir des copilotes métier sur mesure, et les déployer durablement. Audit gratuit · 60 minutes · Sans engagement.",
+    "AGS & Co. identifie vos frictions opérationnelles et déploie des copilotes métier sur mesure pour PME et ETI. Audit gratuit 60 min, sans engagement. Paris.",
+  keywords: ['optimisation opérations', 'copilotes métier', 'automatisation', 'PME ETI', 'audit opérationnel', 'Paris'],
+  authors: [{ name: 'Evens Augustin', url: 'https://agsandco.fr' }],
+  robots: { index: true, follow: true },
+  openGraph: {
+    type: 'website',
+    locale: 'fr_FR',
+    url: 'https://agsandco.fr',
+    siteName: 'AGS & Co.',
+    title: "AGS & Co. – Cabinet d'optimisation des opérations métier",
+    description:
+      "Identifiez vos frictions opérationnelles et déployez des copilotes métier sur mesure. Audit gratuit 60 min, sans engagement.",
+    images: [{ url: '/logo.png', width: 400, height: 400, alt: 'AGS & Co.' }],
+  },
+  twitter: {
+    card: 'summary',
+    title: "AGS & Co. – Cabinet d'optimisation des opérations métier",
+    description:
+      "Identifiez vos frictions opérationnelles et déployez des copilotes métier sur mesure. Audit gratuit 60 min, sans engagement.",
+    images: ['/logo.png'],
+  },
   icons: {
     icon: '/logo.png',
     apple: '/logo.png',
@@ -52,7 +73,7 @@ const orgSchema = {
     postalCode: '75008',
     addressCountry: 'FR',
   },
-  description: "Cabinet d'optimisation des opérations métier — copilotes sur mesure pour PME, ETI et organisations.",
+  description: "Cabinet d'optimisation des opérations métier, spécialisé dans les copilotes sur mesure pour PME, ETI et organisations.",
 }
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID

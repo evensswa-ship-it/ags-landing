@@ -1,4 +1,4 @@
-﻿export type LegalSection = { heading: string; content: string }
+export type LegalSection = { heading: string; content: string }
 
 export type LegalPageData = {
   title: string
@@ -49,7 +49,7 @@ export const legalPages: Record<string, LegalPageData> = {
       },
       {
         heading: '2. Responsable du traitement',
-        content: "AGS & Co. — entreprise individuelle\nSIRET : 91206657800028\n59 rue de Ponthieu, Bureau 326, 75008 Paris\nContact : contact@agsandco.fr",
+        content: "AGS & Co., entreprise individuelle\nSIRET : 91206657800028\n59 rue de Ponthieu, Bureau 326, 75008 Paris\nContact : contact@agsandco.fr",
       },
       {
         heading: '3. Délégué à la protection des données',
@@ -57,7 +57,7 @@ export const legalPages: Record<string, LegalPageData> = {
       },
       {
         heading: '4. Données collectées',
-        content: "Nous collectons uniquement les données que vous nous communiquez volontairement via le formulaire de contact : prénom, adresse email, secteur d'activité et message.\n\nNous collectons également des données de navigation anonymisées via Google Analytics 4 (pages visitées, durée de session, pays de connexion) — uniquement après votre consentement explicite.",
+        content: "Nous collectons uniquement les données que vous nous communiquez volontairement via le formulaire de contact : prénom, adresse email, secteur d'activité et message.\n\nNous collectons également des données de navigation anonymisées via Google Analytics 4 (pages visitées, durée de session, pays de connexion), collectées uniquement avec votre consentement explicite.",
       },
       {
         heading: '5. Finalités et bases légales',
@@ -65,7 +65,7 @@ export const legalPages: Record<string, LegalPageData> = {
       },
       {
         heading: '6. Sous-traitants et hébergeurs',
-        content: "Vercel Inc. (USA) — hébergement du site web — couvert par des clauses contractuelles types (SCCs).\nSupabase Inc. (AWS EU, Francfort) — base de données.\nOpenAI LP (USA) — modèles de langage — couvert par des SCCs.\nAnthropic PBC (USA) — modèles Claude — couvert par des SCCs.\nGoogle LLC (USA) — Google Analytics 4 — couvert par des SCCs.",
+        content: "Vercel Inc. (USA) : hébergement du site web, couvert par clauses contractuelles types (SCCs).\nSupabase Inc. (AWS EU, Francfort) : base de données.\nOpenAI LP (USA) : modèles de langage, couvert par SCCs.\nAnthropic PBC (USA) : modèles Claude, couvert par SCCs.\nGoogle LLC (USA) : Google Analytics 4, couvert par SCCs.",
       },
       {
         heading: '7. Transferts hors Union Européenne',
@@ -85,7 +85,7 @@ export const legalPages: Record<string, LegalPageData> = {
       },
       {
         heading: '11. Réclamation',
-        content: "Vous avez le droit de déposer une réclamation auprès de la CNIL : cnil.fr — 3 place de Fontenoy, TSA 80715, 75334 Paris Cedex 07.",
+        content: "Vous avez le droit de déposer une réclamation auprès de la CNIL : cnil.fr, 3 place de Fontenoy, TSA 80715, 75334 Paris Cedex 07.",
       },
     ],
   },
@@ -95,19 +95,19 @@ export const legalPages: Record<string, LegalPageData> = {
     sections: [
       {
         heading: 'Responsable du traitement',
-        content: "Evens Augustin — AGS & Co.\nSIRET : 91206657800028\n59 rue de Ponthieu, Bureau 326, 75008 Paris\ncontact@agsandco.fr",
+        content: "Evens Augustin, AGS & Co.\nSIRET : 91206657800028\n59 rue de Ponthieu, Bureau 326, 75008 Paris\ncontact@agsandco.fr",
       },
       {
         heading: 'Catégories de données traitées',
-        content: "Coordonnées (formulaire de contact) : prénom, email, secteur d'activité, message.\nDonnées de navigation (analytics) : pages vues, durée, pays — sans identification personnelle.",
+        content: "Coordonnées (formulaire de contact) : prénom, email, secteur d'activité, message.\nDonnées de navigation (analytics) : pages vues, durée, pays, sans identification personnelle.",
       },
       {
         heading: 'Base légale de chaque traitement',
-        content: "Formulaire de contact — Base légale : intérêt légitime — Durée de conservation : 3 ans\nAnalytics GA4 — Base légale : consentement — Durée de conservation : 13 mois\nConsentement cookies (Axeptio) — Base légale : obligation légale — Durée : 13 mois",
+        content: "Formulaire de contact : base légale, intérêt légitime. Durée de conservation : 3 ans.\nAnalytics GA4 : base légale, consentement. Durée de conservation : 13 mois.\nConsentement cookies (Axeptio) : base légale, obligation légale. Durée : 13 mois.",
       },
       {
         heading: 'Vos droits',
-        content: "Vous disposez des droits suivants :\n— Droit d'accès à vos données\n— Droit de rectification\n— Droit à l'effacement (droit à l'oubli)\n— Droit à la portabilité\n— Droit d'opposition au traitement\n— Droit à la limitation du traitement\n— Droit de retrait du consentement\n— Directives relatives au sort de vos données post-mortem",
+        content: "Vous disposez des droits suivants :\nDroit d'accès à vos données\nDroit de rectification\nDroit à l'effacement (droit à l'oubli)\nDroit à la portabilité\nDroit d'opposition au traitement\nDroit à la limitation du traitement\nDroit de retrait du consentement\nDirectives relatives au sort de vos données post-mortem",
       },
       {
         heading: 'Exercer vos droits',
@@ -115,7 +115,7 @@ export const legalPages: Record<string, LegalPageData> = {
       },
       {
         heading: 'Réclamation auprès de la CNIL',
-        content: "Commission Nationale de l'Informatique et des Libertés\ncnil.fr — 3 place de Fontenoy, TSA 80715, 75334 Paris Cedex 07",
+        content: "Commission Nationale de l'Informatique et des Libertés\ncnil.fr, 3 place de Fontenoy, TSA 80715, 75334 Paris Cedex 07",
       },
     ],
   },
@@ -129,7 +129,7 @@ export const legalPages: Record<string, LegalPageData> = {
       },
       {
         heading: 'Cookies utilisés par AGS & Co.',
-        content: "Cookies analytiques (Google Analytics 4) :\n_ga — Google — Distinguer les utilisateurs — 13 mois\n_gid — Google — Distinguer les utilisateurs — 24 heures\nCes cookies ne sont déposés qu'après votre consentement.\n\nCookies de consentement (Axeptio) :\naxeptio_cookies — Axeptio — Mémoriser vos préférences de consentement — 13 mois\nCes cookies sont nécessaires au fonctionnement du bandeau de consentement.",
+        content: "Cookies analytiques (Google Analytics 4) :\n_ga (Google) : distinguer les utilisateurs, conservé 13 mois.\n_gid (Google) : distinguer les utilisateurs, conservé 24 heures.\nCes cookies ne sont déposés qu'après votre consentement.\n\nCookies de consentement (Axeptio) :\naxeptio_cookies (Axeptio) : mémoriser vos préférences de consentement, conservé 13 mois.\nCes cookies sont nécessaires au fonctionnement du bandeau de consentement.",
       },
       {
         heading: 'Cookies strictement nécessaires',

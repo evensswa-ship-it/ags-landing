@@ -1,7 +1,7 @@
 export const formationPage = {
   meta: {
-    title: "Formation — AGS & Co.",
-    description: "Formation des équipes après chaque déploiement. Comprendre, adopter et mesurer les gains de vos copilotes métier.",
+    title: "Formation | AGS & Co.",
+    description: "Formation des équipes après déploiement : comprendre les assistants, adopter les nouveaux usages et mesurer les premiers gains. Sessions adaptées à chaque profil.",
   },
   eyebrow: 'Formation',
   title: "La formation fait partie du déploiement, pas d'un extra",
@@ -59,8 +59,8 @@ export const formationPage = {
 
 export const accompagnementPage = {
   meta: {
-    title: "Accompagnement continu — AGS & Co.",
-    description: "Pourquoi AGS continue d'accompagner ses clients après le déploiement. Les assistants évoluent avec votre organisation.",
+    title: "Accompagnement continu | AGS & Co.",
+    description: "Suivi continu post-déploiement pour faire évoluer vos copilotes métier avec votre organisation. Bimestriel, sans engagement. Référent dédié inclus.",
   },
   eyebrow: 'Accompagnement',
   title: "Votre organisation évolue. Vos copilotes aussi.",
@@ -76,11 +76,11 @@ export const accompagnementPage = {
     },
     {
       title: "Les besoins évoluent",
-      text: "Votre organisation grandit, se réorganise, prend de nouveaux clients. Les copilotes doivent s'adapter — sans avoir à relancer un projet complet à chaque fois.",
+      text: "Votre organisation grandit, se réorganise, prend de nouveaux clients. Les copilotes doivent s'adapter, sans avoir à relancer un projet complet à chaque fois.",
     },
   ],
   includes: [
-    "Point bimestriel de 60 min — usages, retours, frictions",
+    "Point bimestriel de 60 min : usages, retours, frictions",
     "Analyse des métriques d'utilisation",
     "Résolution des frictions identifiées",
     "Évolutions fonctionnelles incluses",
@@ -89,7 +89,7 @@ export const accompagnementPage = {
   ],
   format: {
     label: 'Format',
-    detail: "Distanciel — 60 min tous les 2 mois + rapport écrit · Support disponible en cas d'urgence",
+    detail: "Distanciel, 60 min tous les 2 mois. Rapport écrit inclus. Support disponible en cas d'urgence.",
   },
   cta: 'En savoir plus',
   ctaHref: 'https://calendly.com/evens-agsandco/30min',
