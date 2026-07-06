@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import Script from 'next/script'
 import { usePathname } from 'next/navigation'
@@ -29,6 +29,8 @@ export function GoogleAnalytics({ gaId }: { gaId: string }) {
           gtag('consent', 'default', {
             analytics_storage: 'denied',
             ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied',
             wait_for_update: 500,
           });
         `}

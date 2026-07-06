@@ -11,8 +11,8 @@ const breadcrumb = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://agsandco.fr' },
-    { '@type': 'ListItem', position: 2, name: 'PME', item: 'https://agsandco.fr/secteurs/pme' },
+    { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://www.agsandco.fr' },
+    { '@type': 'ListItem', position: 2, name: 'PME', item: 'https://www.agsandco.fr/secteurs/pme' },
   ],
 }
 

@@ -15,17 +15,17 @@ const schemas = [
     '@type': 'Service',
     name: 'Déploiement de copilote métier',
     description: data.meta.description,
-    provider: { '@id': 'https://agsandco.fr/#organization' },
+    provider: { '@id': 'https://www.agsandco.fr/#organization' },
     areaServed: 'FR',
     serviceType: 'Déploiement opérationnel',
-    url: 'https://agsandco.fr/offres/deploiement',
+    url: 'https://www.agsandco.fr/offres/deploiement',
   },
   {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://agsandco.fr' },
-      { '@type': 'ListItem', position: 2, name: 'Déploiement', item: 'https://agsandco.fr/offres/deploiement' },
+      { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://www.agsandco.fr' },
+      { '@type': 'ListItem', position: 2, name: 'Déploiement', item: 'https://www.agsandco.fr/offres/deploiement' },
     ],
   },
 ]

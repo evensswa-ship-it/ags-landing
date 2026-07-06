@@ -15,17 +15,17 @@ const schemas = [
     '@type': 'Service',
     name: 'Accompagnement continu',
     description: data.meta.description,
-    provider: { '@id': 'https://agsandco.fr/#organization' },
+    provider: { '@id': 'https://www.agsandco.fr/#organization' },
     areaServed: 'FR',
     serviceType: 'Accompagnement opérationnel',
-    url: 'https://agsandco.fr/offres/accompagnement',
+    url: 'https://www.agsandco.fr/offres/accompagnement',
   },
   {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://agsandco.fr' },
-      { '@type': 'ListItem', position: 2, name: 'Accompagnement continu', item: 'https://agsandco.fr/offres/accompagnement' },
+      { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://www.agsandco.fr' },
+      { '@type': 'ListItem', position: 2, name: 'Accompagnement continu', item: 'https://www.agsandco.fr/offres/accompagnement' },
     ],
   },
 ]

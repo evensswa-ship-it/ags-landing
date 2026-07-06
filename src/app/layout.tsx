@@ -113,7 +113,16 @@ export default function RootLayout({
             <Script id="axeptio-init" strategy="afterInteractive">{`
               window.axeptioSettings = {
                 clientId: "${AXEPTIO_ID}",
-                cookiesVersion: "agsandco-fr",
+                cookiesVersion: "8a8cf65a-9113-49cc-9955-254378b29cb9",
+                googleConsentMode: {
+                  default: {
+                    analytics_storage: "denied",
+                    ad_storage: "denied",
+                    ad_user_data: "denied",
+                    ad_personalization: "denied",
+                    wait_for_update: 500
+                  }
+                }
               };
             `}</Script>
             <Script src="https://static.axept.io/sdk.js" strategy="afterInteractive" />
