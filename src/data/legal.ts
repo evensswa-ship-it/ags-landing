@@ -6,7 +6,7 @@ export type LegalPageData = {
   sections: LegalSection[]
 }
 
-export const lastUpdated = '29 juin 2026'
+export const lastUpdated = '4 octobre 2026'
 
 export const legalChrome = {
   eyebrow: 'Informations légales',
@@ -20,7 +20,7 @@ export const legalPages: Record<string, LegalPageData> = {
     sections: [
       {
         heading: 'Éditeur du site',
-        content: "AGS & Co. est une entreprise individuelle enregistrée sous le numéro SIRET 91206657800028.\n\nDirecteur de publication : Evens Augustin\nAdresse : 59 rue de Ponthieu, Bureau 326, 75008 Paris\nContact : contact@agsandco.fr",
+        content: "AGS & Co. est une entreprise individuelle enregistrée sous le numéro SIRET 91206657800028.\n\nDirecteur de publication : Evens Augustin\nAdresse : 59 rue de Ponthieu, Bureau 326, 75008 Paris\nContact : claude@agsandco.fr",
       },
       {
         heading: 'Hébergement',
@@ -54,11 +54,11 @@ export const legalPages: Record<string, LegalPageData> = {
       },
       {
         heading: '2. Responsable du traitement',
-        content: "AGS & Co., entreprise individuelle\nSIRET : 91206657800028\n59 rue de Ponthieu, Bureau 326, 75008 Paris\nContact : contact@agsandco.fr",
+        content: "AGS & Co., entreprise individuelle\nSIRET : 91206657800028\n59 rue de Ponthieu, Bureau 326, 75008 Paris\nContact : claude@agsandco.fr",
       },
       {
         heading: '3. Délégué à la protection des données',
-        content: "Evens Augustin\nContact : contact@agsandco.fr\n59 rue de Ponthieu, Bureau 326, 75008 Paris",
+        content: "Evens Augustin\nContact : claude@agsandco.fr\n59 rue de Ponthieu, Bureau 326, 75008 Paris",
       },
       {
         heading: '4. Données collectées',
@@ -66,7 +66,7 @@ export const legalPages: Record<string, LegalPageData> = {
       },
       {
         heading: '5. Finalités et bases légales',
-        content: "Formulaire de contact : traitement basé sur l'intérêt légitime d'AGS & Co. à répondre aux demandes entrantes.\n\nAnalytics Google Analytics 4 : traitement basé sur votre consentement, recueilli via notre bandeau Axeptio.",
+        content: "Formulaire de contact : traitement basé sur l'intérêt légitime d'AGS & Co. à répondre aux demandes entrantes.\n\nAnalytics Google Analytics 4 : traitement basé sur votre consentement, recueilli via notre bandeau Axeptio.\n\nLes messages reçus par email ou via le formulaire de contact peuvent être lus, classés et préparés par un collaborateur IA d'AGS & Co. Chaque réponse est relue et validée par une personne avant envoi. Aucune décision vous concernant n'est prise de façon entièrement automatisée.",
       },
       {
         heading: '6. Sous-traitants et hébergeurs',
@@ -86,7 +86,7 @@ export const legalPages: Record<string, LegalPageData> = {
       },
       {
         heading: '10. Vos droits',
-        content: "Conformément au RGPD, vous disposez des droits suivants : accès, rectification, effacement, limitation du traitement, opposition, portabilité, retrait du consentement.\n\nPour exercer ces droits, contactez-nous à contact@agsandco.fr. Nous répondons dans un délai de 30 jours.",
+        content: "Conformément au RGPD, vous disposez des droits suivants : accès, rectification, effacement, limitation du traitement, opposition, portabilité, retrait du consentement.\n\nPour exercer ces droits, contactez-nous à claude@agsandco.fr. Nous répondons dans un délai de 30 jours.",
       },
       {
         heading: '11. Réclamation',
@@ -100,7 +100,7 @@ export const legalPages: Record<string, LegalPageData> = {
     sections: [
       {
         heading: 'Responsable du traitement',
-        content: "Evens Augustin, AGS & Co.\nSIRET : 91206657800028\n59 rue de Ponthieu, Bureau 326, 75008 Paris\ncontact@agsandco.fr",
+        content: "Evens Augustin, AGS & Co.\nSIRET : 91206657800028\n59 rue de Ponthieu, Bureau 326, 75008 Paris\nclaude@agsandco.fr",
       },
       {
         heading: 'Catégories de données traitées',
@@ -116,7 +116,7 @@ export const legalPages: Record<string, LegalPageData> = {
       },
       {
         heading: 'Exercer vos droits',
-        content: "Adressez votre demande par email à contact@agsandco.fr en précisant votre identité. Nous répondons dans un délai maximum de 30 jours.\n\nEn cas d'absence de réponse satisfaisante, vous pouvez saisir la CNIL : cnil.fr",
+        content: "Adressez votre demande par email à claude@agsandco.fr en précisant votre identité. Nous répondons dans un délai maximum de 30 jours.\n\nEn cas d'absence de réponse satisfaisante, vous pouvez saisir la CNIL : cnil.fr",
       },
       {
         heading: 'Réclamation auprès de la CNIL',

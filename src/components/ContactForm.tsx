@@ -106,6 +106,7 @@ export default function ContactForm() {
       >
         {status === 'sending' ? form.sending : form.submit}
       </button>
+      <p className="t-small text-mist">{form.aiNotice}</p>
     </form>
   )
 }
