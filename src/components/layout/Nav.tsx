@@ -9,7 +9,7 @@ export default function Nav() {
     <header className="sticky top-0 z-50 border-b border-line/60 bg-night/85 backdrop-blur-md">
       <div className="relative mx-auto flex h-[4.5rem] max-w-page items-center justify-between gap-6 px-5 sm:px-8">
         <Link href="/" aria-label={nav.homeLabel} className="flex shrink-0 items-center py-2">
-          <Logo className="h-6 w-auto lg:h-7" />
+          <Logo className="h-7 w-auto" />
         </Link>
 
         <nav aria-label={nav.mainLabel} className="hidden items-center gap-8 lg:flex">

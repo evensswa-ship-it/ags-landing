@@ -70,7 +70,7 @@ export const legalPages: Record<string, LegalPageData> = {
       },
       {
         heading: '6. Sous-traitants et hébergeurs',
-        content: "Vercel Inc. (USA) : hébergement du site web, couvert par clauses contractuelles types (SCCs).\nSupabase Inc. (AWS EU, Francfort) : base de données.\nOpenAI LP (USA) : modèles de langage, couvert par SCCs.\nAnthropic PBC (USA) : modèles Claude, couvert par SCCs.\nGoogle LLC (USA) : Google Analytics 4, couvert par SCCs.",
+        content: "Vercel Inc. (USA) : hébergement du site web, couvert par clauses contractuelles types (SCCs).\nFormspree Inc. (USA) : réception des messages du formulaire de contact, couvert par SCCs.\nAnthropic PBC (USA) : modèles Claude, couvert par SCCs.\nGoogle LLC (USA) : Google Analytics 4, couvert par SCCs.",
       },
       {
         heading: '7. Transferts hors Union Européenne',
