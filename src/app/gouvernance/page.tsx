@@ -56,6 +56,7 @@ export default function GouvernancePage() {
             <div key={note.title} className="border-t border-line pt-7">
               <h2 className="t-h3">{note.title}</h2>
               <p className="mt-4 text-mist">{note.text}</p>
+              {note.more ? <p className="mt-4 text-mist">{note.more}</p> : null}
             </div>
           ))}
         </div>

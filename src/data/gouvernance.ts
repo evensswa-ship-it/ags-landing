@@ -80,6 +80,7 @@ export const gouvernance = {
     {
       title: 'Trajectoire européenne',
       text: "Notre objectif est de privilégier, quand c’est possible, des solutions hébergées en Europe. C’est une trajectoire, pas une promesse.",
+      more: "Chaque collaborateur IA est conçu en lisant le règlement européen sur l’IA (AI Act) : niveau de risque qualifié dès l’audit, usages interdits écartés, personnes informées quand elles échangent avec une IA, contrôle humain et documentation tenus à jour.",
     },
   ],
   closing: {
