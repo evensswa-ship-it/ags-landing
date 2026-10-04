@@ -29,6 +29,7 @@ export default function Home() {
           <p className="t-small mt-5 text-mist">{hero.note}</p>
 
           <div className="mt-16 lg:mt-24">
+            <p className="t-small mb-8 text-mist">{hero.flowLabel}</p>
             <Flow steps={hero.flow} label={hero.flowLabel} />
             <div className="mt-8 flex flex-wrap items-center gap-x-10 gap-y-4 border-t border-line pt-6 lg:mt-12">
               <dl className="flex flex-wrap gap-x-10 gap-y-3">

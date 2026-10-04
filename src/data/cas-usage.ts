@@ -1,10 +1,10 @@
 export const casUsage = {
   title: { lead: "Ce qu’un collaborateur IA peut prendre en charge", rest: 'chez vous.' },
   intro:
-    "Dix situations courantes, classées par fonction. Pour chacune : le problème, ce que fait le collaborateur IA, ce que vous gardez, ce qu’on mesure.",
+    "Dix situations courantes, classées par fonction. Pour chacune : ce qui se passe aujourd’hui, ce que fait le collaborateur IA, ce que vous gardez, ce qu’on mesure.",
   labels: {
-    problem: 'Le problème',
-    agent: 'Ce que fait le collaborateur IA',
+    problem: "Aujourd’hui",
+    agent: 'Avec le collaborateur IA',
     human: 'Ce que vous gardez',
     metric: 'On mesure',
     agentKind: 'Collaborateur IA',

@@ -10,7 +10,7 @@
 ## Positionnement (référence pour tout texte)
 
 - AGS transforme des processus métier en opérations augmentées et automatisées par l'IA. On vend une capacité opérationnelle avec des résultats mesurables, pas un agent.
-- Cibles : PME et ETI, de façon transversale. **Pas de segmentation par secteur** : on segmente par problème, processus, capacité, résultat. Les secteurs n'apparaissent que dans des cas clients.
+- Cibles : PME et ETI, de façon transversale. **Pas de segmentation par secteur** : on segmente par situation, processus, capacité, résultat. Les secteurs n'apparaissent que dans des cas clients.
 - Offre : Audit (forfait) → Setup initial (projet) → Abonnement mensuel avec 4 revues trimestrielles incluses (feuille de route remplie par le client avant chaque revue).
 - AGS est basé à Rouen (Normandie). Premier échange : https://calendly.com/evens-agsandco/30min
 
@@ -30,6 +30,7 @@
 **Interdits** :
 - Promesses irréalistes (« 100 % sécurisé », « conformité garantie », « hébergement souverain total »).
 - Formules creuses : révolutionner, réinventer, puissance de l'IA, entrez dans le futur, solution innovante, magique, 100 % automatisé.
+- Le mot « problème » dans les textes affichés : dire « aujourd’hui », « la situation », « ce qui prend du temps ».
 - Arguments de remplacement : « remplace N salariés », « moins cher qu'un salarié ».
 - Chiffres, clients, logos clients ou témoignages inventés. Tout exemple chiffré est étiqueté « Exemple illustratif ».
 - Logos d'outils ou de fournisseurs d'IA sur le site. AGS est agnostique technologiquement.
