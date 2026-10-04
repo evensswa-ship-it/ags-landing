@@ -229,27 +229,6 @@
     }
   }
 
-  /* ——— Équation : les termes s'allument un à un ——— */
-  .eq-term {
-    transition:
-      opacity 0.5s ease,
-      color 0.5s ease;
-    transition-delay: calc(var(--i, 0) * 0.28s);
-  }
-
-  /* Avant l'entrée dans la vue, les termes restent lisibles (gris), puis s'allument. */
-  .eq[data-armed='true'] .eq-term {
-    color: var(--color-mist);
-  }
-
-  .eq[data-on='true'] .eq-term {
-    color: inherit;
-  }
-
-  .eq[data-on='true'] .eq-term.text-signal {
-    color: var(--color-signal);
-  }
-
   /* ——— Avant / après ——— */
   .ba-cut {
     position: relative;
@@ -377,7 +356,6 @@
     display: none;
   }
 
-  .eq .eq-term,
   .ba .ba-in {
     opacity: 1 !important;
     transform: none !important;

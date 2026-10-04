@@ -90,7 +90,7 @@ Classes Tailwind : `bg-night`, `text-mist`, `border-line`, `rounded-pill`, `roun
 - `ui/Button` : pilule. `primary` (fond `signal`, texte `night`), `secondary` (contour), `link`. Un seul CTA principal sur le site : « Parler d’un processus ».
 - `ui/Title`, `ui/Section` (fond `night` ou `deep`, sans dégradé), `ui/Tag` (« Exemple illustratif », obligatoire sur tout chiffre non issu d’un vrai cas).
 - `visuals/Flow` : étapes numérotées reliées par une ligne ; l’étape marquée `human` est en couleur `human` avec halo. Horizontal dès 1024 px, vertical en dessous.
-- `visuals/Equation`, `visuals/BeforeAfter`, `visuals/PersonCard`, `visuals/Results` (masqué par `results.enabled`).
+- `visuals/BeforeAfter`, `visuals/PersonCard`, `visuals/Results` (masqué par `results.enabled`).
 - `layout/Nav` et `layout/Footer` sont rendus par `app/layout.tsx` : ne pas les répéter dans les pages.
 - `visuals/AgentAvatar` : portrait rond d’un collaborateur IA, avec la mention « Collaborateur IA · métier ». Il identifie un collaborateur IA : ce n’est pas une icône décorative.
 - Cartes rares : seulement pour un objet réel (fiche de collaborateur IA, offre, exemple). Pas de grille de cartes identiques, pas d’icône décorative.
@@ -108,7 +108,7 @@ Seule exception aux interdits visuels ci-dessous : chaque collaborateur IA de la
 ### Motion
 
 - Le contenu est visible au repos : jamais de contenu bloqué à `opacity: 0`. `lib/useInView` « arme » puis « allume » un bloc ; sans JavaScript ou avec `prefers-reduced-motion`, l’état final s’affiche directement.
-- Tout est en CSS (`@keyframes flux-*`, transitions `.eq-*` et `.ba-*` dans `globals.css`). N’ajouter une librairie de motion que pour une séquence impossible en CSS, et le justifier.
+- Tout est en CSS (`@keyframes flux-*`, transitions `.ba-*` dans `globals.css`). N’ajouter une librairie de motion que pour une séquence impossible en CSS, et le justifier.
 - Une animation doit raconter quelque chose (un flux, une étape supprimée, un résultat). Pas d’apparition décorative sur chaque section.
 
 ### Logo

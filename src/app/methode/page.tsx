@@ -1,14 +1,12 @@
 import type { Metadata } from 'next'
 import FinalCta from '@/components/layout/FinalCta'
-import PageHero from '@/components/layout/PageHero'
 import Button from '@/components/ui/Button'
 import Faq from '@/components/ui/Faq'
 import JsonLd from '@/components/ui/JsonLd'
 import Section from '@/components/ui/Section'
 import Title from '@/components/ui/Title'
 import BeforeAfter from '@/components/visuals/BeforeAfter'
-import Equation from '@/components/visuals/Equation'
-import { changes, examples, methode, what } from '@/data/methode'
+import { changes, examples, methode } from '@/data/methode'
 import { site } from '@/data/site'
 import { breadcrumbSchema, pageMetadata } from '@/lib/seo'
 
@@ -40,19 +38,31 @@ export default function MethodePage() {
   return (
     <>
       <JsonLd data={schemas} />
-      <PageHero title={methode.title} intro={methode.intro} />
-
-      <Section tone="deep" labelledBy="what-title">
-        <div className="grid gap-8 lg:grid-cols-[7fr_5fr] lg:items-end lg:gap-20">
-          <Title id="what-title" stacked {...what.title} />
-          <p className="t-lede">{what.text}</p>
+      <section
+        aria-labelledby="page-title"
+        className="bg-night px-5 pb-[clamp(4.5rem,11vw,9.5rem)] pt-16 sm:px-8 sm:pt-24"
+      >
+        <div className="mx-auto max-w-page">
+          <Title as="h1" size="h2" id="page-title" stacked {...examples.title} />
+          <div className="mt-14 grid gap-14 lg:grid-cols-[5fr_7fr] lg:gap-20">
+            <div>
+              <ul>
+                {examples.items.map((item) => (
+                  <li key={item} className="t-lede border-t border-line py-5 text-ink last:border-b">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <Button href={examples.link.href} variant="link" className="mt-8">
+                {examples.link.label}
+              </Button>
+            </div>
+            <BeforeAfter {...examples.beforeAfter} />
+          </div>
         </div>
-        <div className="mt-16 border-t border-line pt-12 lg:mt-24 lg:pt-16">
-          <Equation {...what.equation} />
-        </div>
-      </Section>
+      </section>
 
-      <Section labelledBy="journey-title">
+      <Section tone="deep" labelledBy="journey-title">
         <Title id="journey-title" stacked {...methode.journey.title} />
         <ol className="mt-14 grid gap-x-12 sm:grid-cols-2 lg:grid-cols-4">
           {methode.journey.steps.map((step, i) => (
@@ -69,7 +79,7 @@ export default function MethodePage() {
         <Section
           key={offer.id}
           id={offer.id}
-          tone={index % 2 === 0 ? 'deep' : 'night'}
+          tone={index % 2 === 0 ? 'night' : 'deep'}
           labelledBy={`${offer.id}-title`}
         >
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
@@ -82,7 +92,7 @@ export default function MethodePage() {
               {offer.note ? <p className="mt-6 font-medium text-ink">{offer.note}</p> : null}
             </div>
             <div
-              className={`rounded-card border border-line p-6 sm:p-9 ${index % 2 === 0 ? 'bg-night' : 'bg-deep'}`}
+              className={`rounded-card border border-line p-6 sm:p-9 ${index % 2 === 0 ? 'bg-deep' : 'bg-night'}`}
             >
               <h3 className="t-small font-semibold text-mist">{methode.includesLabel}</h3>
               <ul className="mt-2">
@@ -97,7 +107,7 @@ export default function MethodePage() {
         </Section>
       ))}
 
-      <Section labelledBy="changes-title">
+      <Section tone="deep" labelledBy="changes-title">
         <div className="grid gap-12 lg:grid-cols-[5fr_7fr] lg:gap-20">
           <Title id="changes-title" stacked {...changes.title} />
           <ul>
@@ -108,25 +118,6 @@ export default function MethodePage() {
               </li>
             ))}
           </ul>
-        </div>
-      </Section>
-
-      <Section tone="deep" labelledBy="examples-title">
-        <Title id="examples-title" stacked {...examples.title} />
-        <div className="mt-14 grid gap-14 lg:grid-cols-[5fr_7fr] lg:gap-20">
-          <div>
-            <ul>
-              {examples.items.map((item) => (
-                <li key={item} className="t-lede border-t border-line py-5 text-ink last:border-b">
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <Button href={examples.link.href} variant="link" className="mt-8">
-              {examples.link.label}
-            </Button>
-          </div>
-          <BeforeAfter {...examples.beforeAfter} />
         </div>
       </Section>
 

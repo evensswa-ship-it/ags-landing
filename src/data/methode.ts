@@ -8,8 +8,6 @@ export const methode = {
     description:
       'Intégration IA en trois étapes : un audit de 2 à 4 semaines, une mise en place de 3 à 6 semaines, un abonnement avec revue trimestrielle.',
   },
-  title: { lead: 'Démarrer petit. Prouver.', rest: 'Puis étendre.' },
-  intro: 'Trois étapes, trois décisions. Vous pouvez vous arrêter après chacune.',
   journey: {
     title: { lead: 'Le parcours,', rest: 'en sept temps.' },
     steps: [
@@ -123,15 +121,6 @@ export const changes = {
       text: 'Volume traité, temps gagné, erreurs évitées : vous savez ce que vous y gagnez.',
     },
   ],
-}
-
-export const what = {
-  title: { lead: "L’IA seule ne suffit pas.", rest: "Nous construisons ce qu’il faut autour." },
-  text: "Les outils d’IA sont accessibles à tous. Ce qui fait la différence, c’est la façon de les brancher sur votre façon de travailler.",
-  equation: {
-    terms: ['Vos processus', 'Vos données', "L’IA", 'Vos outils', 'Des règles claires'],
-    result: 'Un collaborateur IA qui travaille vraiment',
-  },
 }
 
 export const examples = {
