@@ -33,6 +33,6 @@ export const contact = {
     submit: 'Envoyer',
     sending: 'Envoi en cours…',
     success: 'Message envoyé. On vous répond sous 24 h.',
-    error: 'Le message n’est pas parti. Réessayez, ou écrivez-nous à contact@agsandco.fr.',
+    error: 'Le message n’est pas parti. Réessayez, ou écrivez-nous à claude@agsandco.fr.',
   },
 }

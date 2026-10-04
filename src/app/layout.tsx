@@ -53,7 +53,7 @@ const siteSchemas = [
     '@id': 'https://www.agsandco.fr/#organization',
     name: 'AGS & Co',
     url: 'https://www.agsandco.fr',
-    email: 'contact@agsandco.fr',
+    email: 'claude@agsandco.fr',
     address: {
       '@type': 'PostalAddress',
       streetAddress: '59 rue de Ponthieu, Bureau 326',
