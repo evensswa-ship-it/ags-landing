@@ -1,3 +1,4 @@
+import FinalCta from '@/components/layout/FinalCta'
 import Button from '@/components/ui/Button'
 import Section from '@/components/ui/Section'
 import Tag from '@/components/ui/Tag'
@@ -146,10 +147,7 @@ export default function Home() {
 
       {/* 7 — Derrière AGS */}
       <Section tone="deep" labelledBy="about-title">
-        <div className="grid gap-8 lg:grid-cols-[7fr_5fr] lg:items-end lg:gap-20">
-          <Title id="about-title" stacked {...about.title} />
-          <p className="t-lede">{about.text}</p>
-        </div>
+        <Title id="about-title" stacked {...about.title} />
         <div className="mt-14 grid max-w-[54rem] gap-6 md:grid-cols-2">
           {about.people.map((person) => (
             <PersonCard key={person.name} {...person} />
@@ -161,16 +159,7 @@ export default function Home() {
       </Section>
 
       {/* 8 — Appel final */}
-      <Section labelledBy="final-title">
-        <Title id="final-title" className="max-w-[20ch]" {...finalCta.title} />
-        <p className="t-lede mt-6">{finalCta.text}</p>
-        <div className="mt-9 flex flex-col gap-5 sm:flex-row sm:items-center sm:gap-8">
-          <Button href={finalCta.primary.href}>{finalCta.primary.label}</Button>
-          <Button href={finalCta.secondary.href} variant="link">
-            {finalCta.secondary.label}
-          </Button>
-        </div>
-      </Section>
+      <FinalCta {...finalCta} />
     </>
   )
 }

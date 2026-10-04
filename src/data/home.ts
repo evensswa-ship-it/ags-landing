@@ -148,7 +148,6 @@ export const governance = {
 
 export const about = {
   title: { lead: "Comprendre votre terrain", rest: "avant de parler technologie." },
-  text: "AGS & Co est basé à Rouen. Deux parcours complémentaires, une même méthode : partir de vos objectifs et de vos irritants, puis choisir la bonne solution.",
   people: [
     {
       name: "Evens Augustin",
