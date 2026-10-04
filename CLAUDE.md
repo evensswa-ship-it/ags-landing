@@ -91,7 +91,18 @@ Classes Tailwind : `bg-night`, `text-mist`, `border-line`, `rounded-pill`, `roun
 - `visuals/Flow` : étapes numérotées reliées par une ligne ; l’étape marquée `human` est en couleur `human` avec halo. Horizontal dès 1024 px, vertical en dessous.
 - `visuals/Equation`, `visuals/BeforeAfter`, `visuals/AgentCard`, `visuals/Results` (masqué par `results.enabled`).
 - `layout/Nav` et `layout/Footer` sont rendus par `app/layout.tsx` : ne pas les répéter dans les pages.
+- `visuals/AgentAvatar` : portrait rond d’un collaborateur IA, avec la mention « Collaborateur IA · métier ». Il identifie un collaborateur IA : ce n’est pas une icône décorative.
 - Cartes rares : seulement pour un objet réel (fiche de collaborateur IA, offre, exemple). Pas de grille de cartes identiques, pas d’icône décorative.
+
+### Avatars des collaborateurs IA
+
+Seule exception aux interdits visuels ci-dessous : chaque collaborateur IA de la page Cas d’usage a un avatar à visage humain réaliste.
+
+- Un avatar par fonction (Commercial, Service client, Administration & finance, Opérations, Direction). Même cadrage, même lumière, fond sombre proche de `night`.
+- Toujours accompagné de la mention « Collaborateur IA · métier ». Jamais de prénom.
+- Jamais présenté comme un salarié, un client ou un témoignage. Ne ressemble à aucune personne réelle.
+- La mention « Visages générés par IA » est visible sur la page.
+- Sources dans `brand/photos/agents/`, versions recadrées dans `public/agents/`.
 
 ### Motion
 
@@ -105,7 +116,7 @@ Logo : `/brand`, ne jamais le recréer en texte ou le redessiner. Navigation et 
 
 ### Interdits visuels
 
-Robot, cerveau, main robotique, circuit, globe, particules, réseau neuronal décoratif, néons, photos stock, logos d’outils ou de fournisseurs d’IA, faux logos clients, faux témoignages.
+Robot, cerveau, main robotique, circuit, globe, particules, réseau neuronal décoratif, néons, photos stock, logos d’outils ou de fournisseurs d’IA, faux logos clients, faux témoignages. Les avatars des collaborateurs IA sont la seule exception (voir « Avatars des collaborateurs IA »).
 
 ## Stack technique
 

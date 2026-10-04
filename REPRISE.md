@@ -48,6 +48,7 @@ Où sont les choses :
 - « Collaborateur IA » dans les textes commerciaux ; « agent IA » pour expliquer ou pour le SEO. Jamais « copilote » ni « assistant ».
 - Aucun chiffre, client, logo ou témoignage inventé. Tout chiffre d'exemple porte l'étiquette « Exemple illustratif ».
 - Pas de segmentation par secteur, pas de logos d'outils ou de fournisseurs d'IA.
+- Avatars à visage humain réaliste autorisés pour les collaborateurs IA de la page Cas d'usage uniquement : mention « Collaborateur IA · métier », pas de prénom, jamais présentés comme des salariés, mention « Visages générés par IA » sur la page (détail dans `CLAUDE.md`).
 - Adresse de contact unique : `claude@agsandco.fr` (boîte de son collaborateur IA, qui ne répond jamais seul : une personne valide chaque réponse). L'ancienne adresse `contact@` n'existe pas, ne pas la réintroduire.
 - Apostrophes typographiques (’) dans les textes affichés.
 - Couleurs uniquement via les tokens (`night`, `deep`, `ink`, `mist`, `line`, `signal`, `human`). La couleur `human` ne sert qu'à « une personne valide ».
