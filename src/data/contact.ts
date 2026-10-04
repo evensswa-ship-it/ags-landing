@@ -29,11 +29,11 @@ export const contact = {
     },
     audience: ['Une entreprise', 'Un partenaire potentiel'],
     sizes: ['Moins de 50 salariés', '50 à 250', '250 à 5 000', 'Plus de 5 000'],
-    rgpd: "Vos données sont utilisées uniquement pour traiter votre demande. Conformément au RGPD, vous disposez d’un droit d’accès et de suppression : claude@agsandco.fr",
+    rgpd: "Vos données sont utilisées uniquement pour traiter votre demande. Conformément au RGPD, vous disposez d’un droit d’accès et de suppression : evens@agsandco.fr",
     aiNotice: 'Votre message peut être préparé par un collaborateur IA ; une personne valide chaque réponse.',
     submit: 'Envoyer',
     sending: 'Envoi en cours…',
     success: 'Message envoyé. On vous répond sous 24 h.',
-    error: 'Le message n’est pas parti. Réessayez, ou écrivez-nous à claude@agsandco.fr.',
+    error: 'Le message n’est pas parti. Réessayez, ou écrivez-nous à evens@agsandco.fr.',
   },
 }

@@ -1,7 +1,7 @@
 export const site = {
   name: 'AGS & Co',
   url: 'https://www.agsandco.fr',
-  email: 'claude@agsandco.fr',
+  email: 'evens@agsandco.fr',
   linkedin: 'https://www.linkedin.com/company/agsandco/?viewAsMember=true',
   calendly: 'https://calendly.com/evens-agsandco/30min',
 }

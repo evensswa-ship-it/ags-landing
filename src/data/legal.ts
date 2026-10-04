@@ -20,7 +20,7 @@ export const legalPages: Record<string, LegalPageData> = {
     sections: [
       {
         heading: 'Éditeur du site',
-        content: "AGS & Co. est une entreprise individuelle enregistrée sous le numéro SIRET 91206657800028.\n\nDirecteur de publication : Evens Augustin\nAdresse : 59 rue de Ponthieu, Bureau 326, 75008 Paris\nContact : claude@agsandco.fr",
+        content: "AGS & Co. est une entreprise individuelle enregistrée sous le numéro SIRET 91206657800028.\n\nDirecteur de publication : Evens Augustin\nAdresse : 59 rue de Ponthieu, Bureau 326, 75008 Paris\nContact : evens@agsandco.fr",
       },
       {
         heading: 'Hébergement',
@@ -54,11 +54,11 @@ export const legalPages: Record<string, LegalPageData> = {
       },
       {
         heading: '2. Responsable du traitement',
-        content: "AGS & Co., entreprise individuelle\nSIRET : 91206657800028\n59 rue de Ponthieu, Bureau 326, 75008 Paris\nContact : claude@agsandco.fr",
+        content: "AGS & Co., entreprise individuelle\nSIRET : 91206657800028\n59 rue de Ponthieu, Bureau 326, 75008 Paris\nContact : evens@agsandco.fr",
       },
       {
         heading: '3. Délégué à la protection des données',
-        content: "Evens Augustin\nContact : claude@agsandco.fr\n59 rue de Ponthieu, Bureau 326, 75008 Paris",
+        content: "Evens Augustin\nContact : evens@agsandco.fr\n59 rue de Ponthieu, Bureau 326, 75008 Paris",
       },
       {
         heading: '4. Données collectées',
@@ -86,7 +86,7 @@ export const legalPages: Record<string, LegalPageData> = {
       },
       {
         heading: '10. Vos droits',
-        content: "Conformément au RGPD, vous disposez des droits suivants : accès, rectification, effacement, limitation du traitement, opposition, portabilité, retrait du consentement.\n\nPour exercer ces droits, contactez-nous à claude@agsandco.fr. Nous répondons dans un délai de 30 jours.",
+        content: "Conformément au RGPD, vous disposez des droits suivants : accès, rectification, effacement, limitation du traitement, opposition, portabilité, retrait du consentement.\n\nPour exercer ces droits, contactez-nous à evens@agsandco.fr. Nous répondons dans un délai de 30 jours.",
       },
       {
         heading: '11. Réclamation',
@@ -100,7 +100,7 @@ export const legalPages: Record<string, LegalPageData> = {
     sections: [
       {
         heading: 'Responsable du traitement',
-        content: "Evens Augustin, AGS & Co.\nSIRET : 91206657800028\n59 rue de Ponthieu, Bureau 326, 75008 Paris\nclaude@agsandco.fr",
+        content: "Evens Augustin, AGS & Co.\nSIRET : 91206657800028\n59 rue de Ponthieu, Bureau 326, 75008 Paris\nevens@agsandco.fr",
       },
       {
         heading: 'Catégories de données traitées',
@@ -116,7 +116,7 @@ export const legalPages: Record<string, LegalPageData> = {
       },
       {
         heading: 'Exercer vos droits',
-        content: "Adressez votre demande par email à claude@agsandco.fr en précisant votre identité. Nous répondons dans un délai maximum de 30 jours.\n\nEn cas d'absence de réponse satisfaisante, vous pouvez saisir la CNIL : cnil.fr",
+        content: "Adressez votre demande par email à evens@agsandco.fr en précisant votre identité. Nous répondons dans un délai maximum de 30 jours.\n\nEn cas d'absence de réponse satisfaisante, vous pouvez saisir la CNIL : cnil.fr",
       },
       {
         heading: 'Réclamation auprès de la CNIL',

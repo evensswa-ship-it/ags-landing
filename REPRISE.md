@@ -37,7 +37,7 @@ Où sont les choses :
 ## Points en attente de décision d'Evens
 
 1. Page Confidentialité, section 6 (sous-traitants) : Formspree n'y figure pas alors que le formulaire passe par lui ; Supabase et OpenAI y figurent alors que le site ne les utilise pas (seul Anthropic est utilisé). À corriger s'il confirme.
-2. Formspree : les messages du formulaire arrivent à l'adresse configurée dans son compte Formspree, pas à `claude@agsandco.fr`. Il a choisi de laisser ainsi pour l'instant.
+2. Formspree : les messages du formulaire arrivent à l'adresse configurée dans son compte Formspree, pas forcément à `evens@agsandco.fr`. Il a choisi de laisser ainsi pour l'instant.
 3. Le formulaire de contact n'a jamais été testé en envoi réel.
 4. Le bandeau cookies (Axeptio) et les scripts de mesure se chargent à la première interaction du visiteur ou après 8 s (`src/components/ThirdParties.tsx`). C'est ce qui tient le score de performance au-dessus de 90. Il n'a pas encore validé ce choix.
 5. Le logo mobile fait 24 px de haut ; « & CO » y est fin. Il peut vouloir 28 px.
@@ -49,7 +49,7 @@ Où sont les choses :
 - Aucun chiffre, client, logo ou témoignage inventé. Tout chiffre d'exemple porte l'étiquette « Exemple illustratif ».
 - Pas de segmentation par secteur, pas de logos d'outils ou de fournisseurs d'IA.
 - Avatars à visage humain réaliste autorisés pour les collaborateurs IA de la section Cas d'usage de l'accueil uniquement : mention « Collaborateur IA · métier », pas de prénom, jamais présentés comme des salariés, mention « Visages générés par IA » sur la page (détail dans `CLAUDE.md`).
-- Adresse de contact unique : `claude@agsandco.fr` (boîte de son collaborateur IA, qui ne répond jamais seul : une personne valide chaque réponse). L'ancienne adresse `contact@` n'existe pas, ne pas la réintroduire.
+- Adresse de contact unique : `evens@agsandco.fr`. Un collaborateur IA aide à traiter les messages, mais une personne valide chaque réponse (la page Confidentialité le dit). Ne pas réintroduire les anciennes adresses.
 - Apostrophes typographiques (’) dans les textes affichés.
 - Couleurs uniquement via les tokens (`night`, `deep`, `ink`, `mist`, `line`, `signal`, `human`). La couleur `human` ne sert qu'à « une personne valide ».
 - Pages légales : ne modifier le contenu que sur demande explicite.
