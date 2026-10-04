@@ -16,10 +16,13 @@ export const casUsage = {
     agent: 'Ce que fait le collaborateur IA',
     human: 'Ce que vous gardez',
     metric: 'On mesure',
+    agentKind: 'Collaborateur IA',
+    aiNotice: 'Visages générés par IA : ces portraits représentent des collaborateurs IA, pas des personnes réelles.',
   },
   groups: [
     {
       name: 'Commercial',
+      avatar: { src: '/agents/commercial.webp', alt: 'Avatar du collaborateur IA Commercial' },
       cases: [
         {
           title: 'Relancer devis et prospects',
@@ -39,6 +42,7 @@ export const casUsage = {
     },
     {
       name: 'Service client',
+      avatar: { src: '/agents/service-client.webp', alt: 'Avatar du collaborateur IA Service client' },
       cases: [
         {
           title: 'Orienter les demandes entrantes',
@@ -58,6 +62,7 @@ export const casUsage = {
     },
     {
       name: 'Administration & finance',
+      avatar: { src: '/agents/administration-finance.webp', alt: 'Avatar du collaborateur IA Administration & finance' },
       cases: [
         {
           title: 'Traiter factures et documents',
@@ -77,6 +82,7 @@ export const casUsage = {
     },
     {
       name: 'Opérations',
+      avatar: { src: '/agents/operations.webp', alt: 'Avatar du collaborateur IA Opérations' },
       cases: [
         {
           title: 'Repérer les dossiers incomplets',
@@ -96,6 +102,7 @@ export const casUsage = {
     },
     {
       name: 'Direction',
+      avatar: { src: '/agents/direction.webp', alt: 'Avatar du collaborateur IA Direction' },
       cases: [
         {
           title: 'Produire le reporting',

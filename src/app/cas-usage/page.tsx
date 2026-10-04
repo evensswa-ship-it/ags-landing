@@ -3,6 +3,7 @@ import FinalCta from '@/components/layout/FinalCta'
 import PageHero from '@/components/layout/PageHero'
 import JsonLd from '@/components/ui/JsonLd'
 import Section from '@/components/ui/Section'
+import AgentAvatar from '@/components/visuals/AgentAvatar'
 import { casUsage } from '@/data/cas-usage'
 import { breadcrumbSchema, pageMetadata } from '@/lib/seo'
 
@@ -18,7 +19,10 @@ export default function CasUsagePage() {
       {casUsage.groups.map((group, index) => (
         <Section key={group.name} tone={index % 2 === 0 ? 'deep' : 'night'}>
           <div className="grid gap-10 lg:grid-cols-[minmax(0,4fr)_minmax(0,8fr)] lg:gap-16">
-            <h2 className="t-h2 text-[clamp(1.75rem,3.2vw,2.75rem)] lg:sticky lg:top-28 lg:self-start">{group.name}</h2>
+            <div className="grid gap-7 lg:sticky lg:top-28 lg:self-start">
+              <h2 className="t-h2 text-[clamp(1.75rem,3.2vw,2.75rem)]">{group.name}</h2>
+              <AgentAvatar {...group.avatar} kind={labels.agentKind} role={group.name} />
+            </div>
             <div className="grid gap-14">
               {group.cases.map((item) => (
                 <article key={item.title} className="border-t border-line pt-7">
@@ -45,6 +49,9 @@ export default function CasUsagePage() {
               ))}
             </div>
           </div>
+          {index === casUsage.groups.length - 1 ? (
+            <p className="t-small mt-14 text-mist">{labels.aiNotice}</p>
+          ) : null}
         </Section>
       ))}
 
