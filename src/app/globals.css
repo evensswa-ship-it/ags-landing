@@ -1,60 +1,384 @@
 @import "tailwindcss";
 
-:root {
-  --background: #010310;
-  --foreground: #ffffff;
+/* Direction artistique « Flux ». Toute couleur, police ou rayon passe par ces tokens. */
+@theme {
+  --color-*: initial;
+  --color-night: #050A18;
+  --color-deep: #081226;
+  --color-glow: #12244D;
+  --color-ink: #F1F4FA;
+  --color-mist: #9DABC8;
+  --color-line: #22325A;
+  --color-signal: #7CC4FF;
+  --color-human: #F2C46D;
+  --color-transparent: transparent;
+  --color-current: currentColor;
+
+  --radius-pill: 999px;
+  --radius-card: 1.25rem;
+
+  --container-page: 76rem;
 }
 
-html {
-  scroll-behavior: smooth;
+@theme inline {
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-display: var(--font-inter-tight), var(--font-inter), system-ui, sans-serif;
 }
 
-body {
-  margin: 0;
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-montserrat), Arial, sans-serif;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    background: var(--color-night);
+  }
+
+  body {
+    margin: 0;
+    background: var(--color-night);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    font-weight: 400;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: var(--color-signal);
+    color: var(--color-night);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-signal);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  input,
+  select,
+  textarea,
+  button {
+    font: inherit;
+  }
 }
 
-* {
-  box-sizing: border-box;
+@layer components {
+  /* Échelle typographique : Inter Tight pour les titres, Inter pour tout le reste. */
+  .t-h1,
+  .t-h2,
+  .t-h3 {
+    font-family: var(--font-display);
+    color: var(--color-ink);
+    text-wrap: balance;
+  }
+
+  .t-h1 {
+    font-size: clamp(2.9rem, 9.2vw, 7.75rem);
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    line-height: 0.98;
+  }
+
+  .t-h2 {
+    font-size: clamp(2.05rem, 4.9vw, 4.1rem);
+    font-weight: 650;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+  }
+
+  .t-h3 {
+    font-size: clamp(1.3rem, 2.1vw, 1.7rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+  }
+
+  .t-lede {
+    font-size: clamp(1.0625rem, 1.5vw, 1.1875rem);
+    line-height: 1.5;
+    color: var(--color-mist);
+    text-wrap: pretty;
+  }
+
+  .t-small {
+    font-size: 0.9375rem;
+    line-height: 1.45;
+  }
+
+  .t-num {
+    font-variant-numeric: tabular-nums;
+  }
+
+  .hero-bg {
+    background: radial-gradient(120% 80% at 80% 0%, var(--color-glow) 0%, var(--color-deep) 45%, var(--color-night) 100%);
+  }
+
+  /* ——— Flux : étapes reliées par une ligne, parcourue par une impulsion ——— */
+  .flux {
+    --flux-cycle: 9s;
+    position: relative;
+    display: grid;
+    gap: 0;
+  }
+
+  .flux-step {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.75rem 1fr;
+    column-gap: 1rem;
+    padding-bottom: 1.6rem;
+  }
+
+  /* Ligne verticale entre deux étapes (mobile). */
+  .flux-step:not([data-last])::before {
+    content: '';
+    position: absolute;
+    left: calc(0.875rem - 0.5px);
+    top: 1.75rem;
+    bottom: 0;
+    width: 1px;
+    background: var(--color-line);
+  }
+
+  .flux-node {
+    position: relative;
+    z-index: 1;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 999px;
+    border: 1px solid var(--color-line);
+    background: var(--color-deep);
+    display: grid;
+    place-items: center;
+  }
+
+  .flux-node::after {
+    content: '';
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 999px;
+    background: var(--color-signal);
+    animation: flux-node var(--flux-cycle) linear infinite;
+    animation-delay: var(--flux-at, 0s);
+  }
+
+  .flux-step[data-human] .flux-node {
+    border-color: var(--color-human);
+    box-shadow: 0 0 0 6px color-mix(in srgb, var(--color-human) 14%, transparent);
+  }
+
+  .flux-step[data-human] .flux-node::after {
+    background: var(--color-human);
+    animation-name: flux-node-human;
+  }
+
+  .flux-rail {
+    display: none;
+  }
+
+  @media (min-width: 64rem) {
+    .flux {
+      grid-template-columns: repeat(var(--flux-count), minmax(0, 1fr));
+    }
+
+    .flux-step {
+      align-content: start;
+      grid-template-columns: 1fr;
+      row-gap: 1.1rem;
+      padding-bottom: 0;
+      padding-right: 1.25rem;
+    }
+
+    .flux-step:not([data-last])::before {
+      left: 1.75rem;
+      right: 0;
+      top: calc(0.875rem - 0.5px);
+      bottom: auto;
+      width: auto;
+      height: 1px;
+    }
+
+    /* Rail de l'impulsion : du centre du premier nœud au centre du dernier. */
+    .flux-rail {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0.875rem;
+      width: calc(100% - (100% / var(--flux-count)));
+      height: 1.75rem;
+      container-type: inline-size;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .flux-pulse {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 0.625rem;
+      height: 0.625rem;
+      margin: -0.3125rem 0 0 -0.3125rem;
+      border-radius: 999px;
+      background: var(--color-signal);
+      box-shadow:
+        0 0 0 4px color-mix(in srgb, var(--color-signal) 22%, transparent),
+        0 0 22px 6px color-mix(in srgb, var(--color-signal) 45%, transparent);
+      animation: flux-pulse var(--flux-cycle) linear infinite;
+      will-change: transform, opacity;
+    }
+  }
+
+  /* ——— Équation : les termes s'allument un à un ——— */
+  .eq-term {
+    transition:
+      opacity 0.5s ease,
+      color 0.5s ease;
+    transition-delay: calc(var(--i, 0) * 0.28s);
+  }
+
+  .eq[data-armed='true'] .eq-term {
+    opacity: 0.28;
+  }
+
+  .eq[data-on='true'] .eq-term {
+    opacity: 1;
+  }
+
+  /* ——— Avant / après ——— */
+  .ba-cut {
+    position: relative;
+    color: var(--color-mist);
+  }
+
+  .ba-cut::after {
+    content: '';
+    position: absolute;
+    left: -0.15em;
+    right: -0.15em;
+    top: 52%;
+    height: 1.5px;
+    background: var(--color-mist);
+    transform-origin: left center;
+    transition: transform 0.45s ease;
+    transition-delay: calc(0.25s + var(--i, 0) * 0.18s);
+  }
+
+  .ba[data-armed='true'] .ba-cut::after {
+    transform: scaleX(0);
+  }
+
+  .ba[data-on='true'] .ba-cut::after {
+    transform: scaleX(1);
+  }
+
+  .ba-in {
+    transition:
+      transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1),
+      opacity 0.5s ease;
+    transition-delay: calc(0.9s + var(--i, 0) * 0.14s);
+  }
+
+  .ba[data-armed='true'] .ba-in {
+    opacity: 0.25;
+    transform: translateX(-0.75rem);
+  }
+
+  .ba[data-on='true'] .ba-in {
+    opacity: 1;
+    transform: none;
+  }
 }
 
-::selection {
-  background: #1660EC;
-  color: #ffffff;
+/* L'impulsion avance, s'arrête sur « Une personne valide » (80 % du rail), puis repart. */
+@keyframes flux-pulse {
+  0% {
+    transform: translateX(0);
+    opacity: 0;
+    background: var(--color-signal);
+  }
+  3% {
+    opacity: 1;
+  }
+  55% {
+    transform: translateX(80cqw);
+    background: var(--color-signal);
+  }
+  58%,
+  74% {
+    transform: translateX(80cqw);
+    background: var(--color-human);
+  }
+  77% {
+    background: var(--color-signal);
+  }
+  90% {
+    transform: translateX(100cqw);
+    opacity: 1;
+  }
+  96%,
+  100% {
+    transform: translateX(100cqw);
+    opacity: 0;
+  }
 }
 
-input,
-select,
-textarea,
-button {
-  font: inherit;
+@keyframes flux-node {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+  2% {
+    transform: scale(1.55);
+    opacity: 1;
+  }
+  14% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
 }
 
-@keyframes shimmer {
-  0%   { transform: translateX(-100%); }
-  100% { transform: translateX(300%); }
+@keyframes flux-node-human {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  2%,
+  18% {
+    transform: scale(1.6);
+    opacity: 1;
+  }
+  26% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
 }
 
-.shimmer-primary {
-  position: relative;
-  overflow: hidden;
-}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 
-.shimmer-primary::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 33%;
-  height: 100%;
-  background: linear-gradient(
-    to right,
-    transparent 0%,
-    rgba(255, 255, 255, 0.18) 50%,
-    transparent 100%
-  );
-  animation: shimmer 2.8s ease-in-out infinite;
-  pointer-events: none;
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .flux-pulse {
+    display: none;
+  }
+
+  .eq .eq-term,
+  .ba .ba-in {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .ba .ba-cut::after {
+    transform: scaleX(1) !important;
+  }
 }

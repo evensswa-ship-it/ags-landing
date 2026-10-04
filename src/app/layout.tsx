@@ -1,42 +1,40 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import Script from 'next/script'
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
-import { Inter, Montserrat, Geist, Geist_Mono } from 'next/font/google'
+import { Inter, Inter_Tight } from 'next/font/google'
 import { GoogleAnalytics } from '@/components/GoogleAnalytics'
 import { MicrosoftClarity } from '@/components/MicrosoftClarity'
+import Nav from '@/components/layout/Nav'
+import Footer from '@/components/layout/Footer'
+import { seo } from '@/data/site'
 import './globals.css'
 
 const inter = Inter({
   subsets: ['latin'],
-  weight: ['700'],
   variable: '--font-inter',
+  display: 'swap',
 })
 
-const montserrat = Montserrat({
+const interTight = Inter_Tight({
   subsets: ['latin'],
-  weight: ['300', '400', '500'],
-  variable: '--font-montserrat',
+  variable: '--font-inter-tight',
+  display: 'swap',
 })
 
-const geist = Geist({
-  subsets: ['latin'],
-  variable: '--font-geist',
-})
-
-const geistMono = Geist_Mono({
-  subsets: ['latin'],
-  variable: '--font-geist-mono',
-})
+export const viewport: Viewport = {
+  themeColor: '#050A18',
+  colorScheme: 'dark',
+}
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.agsandco.fr'),
-  title: "AGS & Co. | Cabinet d'optimisation des opérations métier",
-  description:
-    "AGS & Co. identifie vos frictions opérationnelles et déploie des copilotes métier sur mesure pour PME et ETI. Audit gratuit 60 min, sans engagement. Paris.",
-  keywords: ['optimisation opérations', 'copilotes métier', 'automatisation', 'PME ETI', 'audit opérationnel', 'Paris'],
+  title: seo.home.title,
+  description: seo.home.description,
+  keywords: seo.keywords,
   authors: [{ name: 'Evens Augustin', url: 'https://www.agsandco.fr' }],
   robots: { index: true, follow: true },
+  alternates: { canonical: '/' },
   verification: {
     google: 'xHZl6-yn5BBwQAYaLuoMN-TlhrWJx2fK8Yxn9ktorQU',
   },
@@ -44,11 +42,9 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'fr_FR',
     url: 'https://www.agsandco.fr',
-    siteName: 'AGS & Co.',
-    title: "AGS & Co. | Cabinet d'optimisation des opérations métier",
-    description:
-      "Identifiez vos frictions opérationnelles et déployez des copilotes métier sur mesure. Audit gratuit 60 min, sans engagement.",
-    images: [{ url: '/logo.png', width: 400, height: 400, alt: 'AGS & Co.' }],
+    siteName: 'AGS & Co',
+    title: seo.home.title,
+    description: seo.home.description,
   },
   icons: {
     icon: '/logo.png',
@@ -61,7 +57,7 @@ const siteSchemas = [
     '@context': 'https://schema.org',
     '@type': ['ProfessionalService', 'Organization'],
     '@id': 'https://www.agsandco.fr/#organization',
-    name: 'AGS & Co.',
+    name: 'AGS & Co',
     url: 'https://www.agsandco.fr',
     email: 'contact@agsandco.fr',
     address: {
@@ -72,15 +68,15 @@ const siteSchemas = [
       addressCountry: 'FR',
     },
     areaServed: 'FR',
-    serviceType: "Optimisation des opérations métier",
-    description: "Cabinet d'optimisation des opérations métier, spécialisé dans les copilotes sur mesure pour PME, ETI et organisations.",
+    serviceType: seo.serviceType,
+    description: seo.home.description,
   },
   {
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: 'Evens Augustin',
-    jobTitle: "Fondateur & Dirigeant",
-    url: 'https://www.agsandco.fr/#fondateur',
+    jobTitle: 'Fondateur',
+    url: 'https://www.agsandco.fr/a-propos',
     worksFor: { '@id': 'https://www.agsandco.fr/#organization' },
   },
 ]
@@ -95,7 +91,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="fr" className={`${inter.variable} ${montserrat.variable} ${geist.variable} ${geistMono.variable}`}>
+    <html lang="fr" className={`${inter.variable} ${interTight.variable}`}>
       <head>
         <script
           type="application/ld+json"
@@ -103,7 +99,15 @@ export default function RootLayout({
         />
       </head>
       <body>
-        {children}
+        <a
+          href="#contenu"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-pill focus:bg-signal focus:px-5 focus:py-3 focus:font-semibold focus:text-night"
+        >
+          {seo.skipLabel}
+        </a>
+        <Nav />
+        <main id="contenu">{children}</main>
+        <Footer />
         <Analytics />
         <SpeedInsights />
         {GA_ID && <GoogleAnalytics gaId={GA_ID} />}
