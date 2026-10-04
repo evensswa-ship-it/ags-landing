@@ -102,3 +102,72 @@ export const methode = {
     secondary: cta.write,
   },
 }
+
+export const changes = {
+  title: { lead: 'Ce qui change', rest: 'dans vos journées.' },
+  items: [
+    {
+      title: 'Moins de ressaisie',
+      text: "Les informations passent d’un outil à l’autre sans copier-coller.",
+    },
+    {
+      title: 'Des demandes traitées plus vite',
+      text: 'Chaque demande est lue, classée et préparée dès son arrivée.',
+    },
+    {
+      title: 'Plus de relance oubliée',
+      text: 'Devis, pièces manquantes, prospects : le suivi part au bon moment.',
+    },
+    {
+      title: 'Des gains mesurés',
+      text: 'Volume traité, temps gagné, erreurs évitées : vous savez ce que vous y gagnez.',
+    },
+  ],
+}
+
+export const what = {
+  title: { lead: "L’IA seule ne suffit pas.", rest: "Nous construisons ce qu’il faut autour." },
+  text: "Les outils d’IA sont accessibles à tous. Ce qui fait la différence, c’est la façon de les brancher sur votre façon de travailler.",
+  equation: {
+    terms: ['Vos processus', 'Vos données', "L’IA", 'Vos outils', 'Des règles claires'],
+    result: 'Un collaborateur IA qui travaille vraiment',
+  },
+}
+
+export const examples = {
+  title: { lead: 'Concrètement,', rest: 'ce qui peut être pris en charge.' },
+  items: [
+    'Une demande entrante est comprise et envoyée à la bonne personne.',
+    'Un dossier est résumé avant que vous ne l’ouvriez.',
+    'Une information est retrouvée dans plusieurs outils en quelques secondes.',
+    'Un compte rendu de réunion déclenche les tâches qui suivent.',
+    'Un reporting fait à la main est généré, puis vérifié.',
+  ],
+  beforeAfter: {
+    before: {
+      label: 'Avant',
+      steps: [
+        { label: "Lire l’email" },
+        { label: 'Ressaisir dans le CRM', cut: true },
+        { label: 'Chercher les tarifs' },
+        { label: 'Vérifier le stock', cut: true },
+        { label: 'Copier dans le devis', cut: true },
+        { label: 'Rédiger' },
+        { label: 'Relancer plus tard', cut: true },
+        { label: 'Envoyer' },
+      ],
+      summary: '8 étapes · 3 outils · 45 min',
+    },
+    after: {
+      label: 'Avec AGS',
+      steps: [
+        { label: "L’IA lit et classe" },
+        { label: 'Infos retrouvées' },
+        { label: 'Devis préparé' },
+        { label: 'Une personne valide', human: true },
+      ],
+      summary: '4 étapes · 8 min',
+    },
+  },
+  link: cta.useCases,
+}

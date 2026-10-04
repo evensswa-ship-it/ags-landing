@@ -9,7 +9,7 @@ export const site = {
 export const cta = {
   primary: { label: "Parler d’un processus", href: site.calendly },
   method: { label: 'Voir comment ça marche', href: '/methode' },
-  useCases: { label: "Voir les cas d’usage", href: '/cas-usage' },
+  useCases: { label: "Voir les cas d’usage", href: '/#cas-usage' },
   governance: { label: 'Comment vos données sont protégées', href: '/gouvernance' },
   write: { label: 'Ou décrivez-le par écrit', href: '/contact' },
 }
@@ -20,7 +20,7 @@ export const nav = {
   menuLabel: 'Menu',
   closeLabel: 'Fermer le menu',
   links: [
-    { label: "Cas d’usage", href: '/cas-usage' },
+    { label: "Cas d’usage", href: '/#cas-usage' },
     { label: 'Méthode & offres', href: '/methode' },
     { label: 'Gouvernance', href: '/gouvernance' },
     { label: 'À propos', href: '/a-propos' },
@@ -36,7 +36,7 @@ export const footer = {
   contactLabel: 'Contact',
   pages: [
     { label: 'Accueil', href: '/' },
-    { label: "Cas d’usage", href: '/cas-usage' },
+    { label: "Cas d’usage", href: '/#cas-usage' },
     { label: 'Méthode & offres', href: '/methode' },
     { label: 'Gouvernance', href: '/gouvernance' },
     { label: 'À propos', href: '/a-propos' },
@@ -72,6 +72,6 @@ export const seo = {
   home: {
     title: "AGS & Co · Intégration de l’IA et automatisation des processus pour PME et ETI",
     description:
-      "AGS & Co connecte l’IA à vos outils pour prendre en charge les tâches répétitives : agents IA, automatisation des processus, gouvernance IA. Pour PME et ETI, depuis Rouen.",
+      "AGS & Co connecte l’IA à vos outils pour prendre en charge les tâches répétitives : dix cas d’usage par fonction, agents IA, automatisation des processus, gouvernance IA. Pour PME et ETI, depuis Rouen.",
   },
 }

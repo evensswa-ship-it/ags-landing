@@ -11,7 +11,8 @@ const nextConfig: NextConfig = {
       { source: '/offres/accompagnement', destination: '/methode#abonnement', permanent: true },
       { source: '/accompagnement', destination: '/methode#abonnement', permanent: true },
       { source: '/formation', destination: '/methode#setup', permanent: true },
-      { source: '/secteurs/:slug', destination: '/cas-usage', permanent: true },
+      { source: '/secteurs/:slug', destination: '/#cas-usage', permanent: true },
+      { source: '/cas-usage', destination: '/#cas-usage', permanent: true },
     ]
   },
   async headers() {

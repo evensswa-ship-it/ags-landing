@@ -1,13 +1,4 @@
-import { cta } from './site'
-
 export const casUsage = {
-  path: '/cas-usage',
-  breadcrumb: "Cas d’usage",
-  meta: {
-    title: "Cas d’usage : ce qu’un agent IA peut prendre en charge · AGS & Co",
-    description:
-      "Relances, demandes entrantes, factures, reporting : dix cas d’automatisation des processus par fonction, pour PME et ETI.",
-  },
   title: { lead: "Ce qu’un collaborateur IA peut prendre en charge", rest: 'chez vous.' },
   intro:
     "Dix situations courantes, classées par fonction. Pour chacune : le problème, ce que fait le collaborateur IA, ce que vous gardez, ce qu’on mesure.",
@@ -121,9 +112,4 @@ export const casUsage = {
       ],
     },
   ],
-  closing: {
-    title: { lead: "Votre cas n’est pas dans la liste ?", rest: 'Décrivez-le nous.' },
-    primary: cta.primary,
-    secondary: cta.write,
-  },
 }

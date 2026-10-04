@@ -3,25 +3,15 @@ import Button from '@/components/ui/Button'
 import Section from '@/components/ui/Section'
 import Tag from '@/components/ui/Tag'
 import Title from '@/components/ui/Title'
-import AgentCard from '@/components/visuals/AgentCard'
-import BeforeAfter from '@/components/visuals/BeforeAfter'
-import Equation from '@/components/visuals/Equation'
+import AgentAvatar from '@/components/visuals/AgentAvatar'
 import PersonCard from '@/components/visuals/PersonCard'
 import Flow from '@/components/visuals/Flow'
 import Results from '@/components/visuals/Results'
-import {
-  about,
-  changes,
-  examples,
-  finalCta,
-  governance,
-  hero,
-  method,
-  results,
-  what,
-} from '@/data/home'
+import { casUsage } from '@/data/cas-usage'
+import { about, finalCta, hero, links, results } from '@/data/home'
 
 export default function Home() {
+  const { labels } = casUsage
   return (
     <>
       {/* 1 — Hero */}
@@ -57,95 +47,72 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 2 — Ce qui change */}
-      <Section labelledBy="changes-title">
-        <div className="grid gap-12 lg:grid-cols-[5fr_7fr] lg:gap-20">
-          <Title id="changes-title" stacked {...changes.title} />
-          <ul>
-            {changes.items.map((item) => (
-              <li key={item.title} className="border-t border-line py-7 last:border-b">
-                <h3 className="t-h3">{item.title}</h3>
-                <p className="t-lede mt-2 max-w-[34rem]">{item.text}</p>
-              </li>
-            ))}
-          </ul>
+      {/* 2 — Cas d’usage */}
+      <section
+        id="cas-usage"
+        aria-labelledby="cas-usage-title"
+        className="bg-night px-5 pt-[clamp(4.5rem,11vw,9.5rem)] sm:px-8"
+      >
+        <div className="mx-auto max-w-page">
+          <Title id="cas-usage-title" stacked className="max-w-[22ch]" {...casUsage.title} />
+          <p className="t-lede mt-8 max-w-[38rem]">{casUsage.intro}</p>
         </div>
-      </Section>
+      </section>
 
-      {/* 3 — Ce que fait AGS */}
-      <Section tone="deep" labelledBy="what-title">
-        <div className="grid gap-8 lg:grid-cols-[7fr_5fr] lg:items-end lg:gap-20">
-          <Title id="what-title" stacked {...what.title} />
-          <p className="t-lede">{what.text}</p>
-        </div>
-        <div className="mt-16 border-t border-line pt-12 lg:mt-24 lg:pt-16">
-          <Equation {...what.equation} />
-        </div>
-      </Section>
-
-      {/* 4 — Exemples */}
-      <Section labelledBy="examples-title">
-        <Title id="examples-title" stacked {...examples.title} />
-        <div className="mt-14 grid gap-14 lg:grid-cols-[5fr_7fr] lg:gap-20">
-          <div>
-            <ul>
-              {examples.items.map((item) => (
-                <li key={item} className="t-lede border-t border-line py-5 text-ink last:border-b">
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <Button href={examples.link.href} variant="link" className="mt-8">
-              {examples.link.label}
-            </Button>
-          </div>
-          <BeforeAfter {...examples.beforeAfter} />
-        </div>
-      </Section>
+      {casUsage.groups.map((group, index) => {
+        const last = index === casUsage.groups.length - 1
+        return (
+          <Section key={group.name} tone={index % 2 === 0 ? 'night' : 'deep'}>
+            <div className="grid gap-10 lg:grid-cols-[minmax(0,4fr)_minmax(0,8fr)] lg:gap-16">
+              <div className="grid gap-7 lg:sticky lg:top-28 lg:self-start">
+                <h3 className="t-h2 text-[clamp(1.75rem,3.2vw,2.75rem)]">{group.name}</h3>
+                <AgentAvatar {...group.avatar} kind={labels.agentKind} role={group.name} />
+              </div>
+              <div className="grid gap-14">
+                {group.cases.map((item) => (
+                  <article key={item.title} className="border-t border-line pt-7">
+                    <h4 className="t-h3">{item.title}</h4>
+                    <dl className="mt-6 grid gap-6 sm:grid-cols-2 xl:grid-cols-4 xl:gap-8">
+                      <div>
+                        <dt className="t-small font-medium text-mist">{labels.problem}</dt>
+                        <dd className="mt-2 text-ink">{item.problem}</dd>
+                      </div>
+                      <div>
+                        <dt className="t-small font-medium text-signal">{labels.agent}</dt>
+                        <dd className="mt-2 text-ink">{item.agent}</dd>
+                      </div>
+                      <div>
+                        <dt className="t-small font-medium text-human">{labels.human}</dt>
+                        <dd className="mt-2 text-ink">{item.human}</dd>
+                      </div>
+                      <div>
+                        <dt className="t-small font-medium text-mist">{labels.metric}</dt>
+                        <dd className="mt-2 text-ink">{item.metric}</dd>
+                      </div>
+                    </dl>
+                  </article>
+                ))}
+              </div>
+            </div>
+            {last ? (
+              <>
+                <p className="t-small mt-14 text-mist">{labels.aiNotice}</p>
+                <div className="mt-10 flex flex-col gap-5 border-t border-line pt-8 sm:flex-row sm:gap-10">
+                  {links.map((link) => (
+                    <Button key={link.href} href={link.href} variant="link">
+                      {link.label}
+                    </Button>
+                  ))}
+                </div>
+              </>
+            ) : null}
+          </Section>
+        )
+      })}
 
       {results.enabled ? <Results {...results} /> : null}
 
-      {/* 5 — Méthode */}
-      <Section tone="deep" labelledBy="method-title">
-        <Title id="method-title" stacked {...method.title} />
-        <ol className="mt-14 grid gap-10 lg:grid-cols-3 lg:gap-0">
-          {method.steps.map((step, i) => (
-            <li key={step.title} className="border-t border-line pt-6 lg:pr-12">
-              <p className="t-num t-small font-medium text-mist">{i + 1}</p>
-              <h3 className="t-h3 mt-3">{step.title}</h3>
-              <p className="t-num t-small mt-1 font-medium text-signal">{step.duration}</p>
-              <p className="t-lede mt-4">{step.text}</p>
-            </li>
-          ))}
-        </ol>
-        <Button href={method.link.href} variant="link" className="mt-12">
-          {method.link.label}
-        </Button>
-      </Section>
-
-      {/* 6 — Gouvernance */}
-      <Section labelledBy="governance-title">
-        <div className="grid gap-14 lg:grid-cols-2 lg:gap-20">
-          <div>
-            <Title id="governance-title" stacked {...governance.title} />
-            <p className="t-lede mt-8">{governance.intro}</p>
-            <ul className="t-lede mt-3 grid gap-1.5 text-ink">
-              {governance.rules.map((rule) => (
-                <li key={rule}>{rule}</li>
-              ))}
-            </ul>
-            <p className="t-lede mt-5 text-ink">{governance.outro}</p>
-            <Button href={governance.link.href} variant="link" className="mt-8">
-              {governance.link.label}
-            </Button>
-          </div>
-          <div className="lg:pt-3">
-            <AgentCard {...governance.card} />
-          </div>
-        </div>
-      </Section>
-
-      {/* 7 — Derrière AGS */}
+      {/* 3 — Derrière AGS */}
       <Section tone="deep" labelledBy="about-title">
         <Title id="about-title" stacked {...about.title} />
         <div className="mt-14 grid max-w-[54rem] gap-6 md:grid-cols-2">
@@ -158,7 +125,7 @@ export default function Home() {
         </Button>
       </Section>
 
-      {/* 8 — Appel final */}
+      {/* 4 — Appel final */}
       <FinalCta {...finalCta} />
     </>
   )

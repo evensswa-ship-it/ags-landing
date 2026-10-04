@@ -4,7 +4,7 @@
 
 ## Statut : refonte complète en cours (branche `refonte-complete`)
 
-- Design system « Flux » en place (voir plus bas). Architecture : Accueil, Cas d’usage, Méthode & offres, Gouvernance, À propos, Contact.
+- Design system « Flux » en place (voir plus bas). Architecture : Accueil (Hero, cas d’usage, équipe, appel final), Méthode & offres, Gouvernance, À propos, Contact. Les cas d’usage sont une section de l’accueil (`/#cas-usage`), pas une page : l’accueil montre ce qu’AGS fait, le détail du processus vit sur Méthode & offres.
 - Ne pousse rien, ne déploie rien, ne merge rien sans validation explicite d'Evens.
 
 ## Positionnement (référence pour tout texte)
@@ -89,14 +89,14 @@ Classes Tailwind : `bg-night`, `text-mist`, `border-line`, `rounded-pill`, `roun
 - `ui/Button` : pilule. `primary` (fond `signal`, texte `night`), `secondary` (contour), `link`. Un seul CTA principal sur le site : « Parler d’un processus ».
 - `ui/Title`, `ui/Section` (fond `night` ou `deep`, sans dégradé), `ui/Tag` (« Exemple illustratif », obligatoire sur tout chiffre non issu d’un vrai cas).
 - `visuals/Flow` : étapes numérotées reliées par une ligne ; l’étape marquée `human` est en couleur `human` avec halo. Horizontal dès 1024 px, vertical en dessous.
-- `visuals/Equation`, `visuals/BeforeAfter`, `visuals/AgentCard`, `visuals/Results` (masqué par `results.enabled`).
+- `visuals/Equation`, `visuals/BeforeAfter`, `visuals/PersonCard`, `visuals/Results` (masqué par `results.enabled`).
 - `layout/Nav` et `layout/Footer` sont rendus par `app/layout.tsx` : ne pas les répéter dans les pages.
 - `visuals/AgentAvatar` : portrait rond d’un collaborateur IA, avec la mention « Collaborateur IA · métier ». Il identifie un collaborateur IA : ce n’est pas une icône décorative.
 - Cartes rares : seulement pour un objet réel (fiche de collaborateur IA, offre, exemple). Pas de grille de cartes identiques, pas d’icône décorative.
 
 ### Avatars des collaborateurs IA
 
-Seule exception aux interdits visuels ci-dessous : chaque collaborateur IA de la page Cas d’usage a un avatar à visage humain réaliste.
+Seule exception aux interdits visuels ci-dessous : chaque collaborateur IA de la section Cas d’usage de l’accueil a un avatar à visage humain réaliste.
 
 - Un avatar par fonction (Commercial, Service client, Administration & finance, Opérations, Direction). Même cadrage, même lumière, fond sombre proche de `night`.
 - Toujours accompagné de la mention « Collaborateur IA · métier ». Jamais de prénom.

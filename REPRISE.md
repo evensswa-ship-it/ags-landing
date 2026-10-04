@@ -23,7 +23,7 @@ Evens Augustin, fondateur d'AGS & Co. Il n'est pas technique : c'est un profil c
 
 ## État actuel
 
-Refonte terminée et commitée : design system « Flux », 6 pages (`/`, `/cas-usage`, `/methode`, `/gouvernance`, `/a-propos`, `/contact`), 4 pages légales, redirections permanentes des anciennes URL, logo SVG, deux fondateurs (Evens et Naomie).
+Refonte terminée et commitée : design system « Flux », 5 pages (`/`, `/methode`, `/gouvernance`, `/a-propos`, `/contact` ; les cas d'usage sont une section de l'accueil, `/#cas-usage`), 4 pages légales, redirections permanentes des anciennes URL, logo SVG, deux fondateurs (Evens et Naomie).
 
 Build et lint verts. Lighthouse mobile : performance 91-95, accessibilité 100, SEO 100.
 
@@ -48,7 +48,7 @@ Où sont les choses :
 - « Collaborateur IA » dans les textes commerciaux ; « agent IA » pour expliquer ou pour le SEO. Jamais « copilote » ni « assistant ».
 - Aucun chiffre, client, logo ou témoignage inventé. Tout chiffre d'exemple porte l'étiquette « Exemple illustratif ».
 - Pas de segmentation par secteur, pas de logos d'outils ou de fournisseurs d'IA.
-- Avatars à visage humain réaliste autorisés pour les collaborateurs IA de la page Cas d'usage uniquement : mention « Collaborateur IA · métier », pas de prénom, jamais présentés comme des salariés, mention « Visages générés par IA » sur la page (détail dans `CLAUDE.md`).
+- Avatars à visage humain réaliste autorisés pour les collaborateurs IA de la section Cas d'usage de l'accueil uniquement : mention « Collaborateur IA · métier », pas de prénom, jamais présentés comme des salariés, mention « Visages générés par IA » sur la page (détail dans `CLAUDE.md`).
 - Adresse de contact unique : `claude@agsandco.fr` (boîte de son collaborateur IA, qui ne répond jamais seul : une personne valide chaque réponse). L'ancienne adresse `contact@` n'existe pas, ne pas la réintroduire.
 - Apostrophes typographiques (’) dans les textes affichés.
 - Couleurs uniquement via les tokens (`night`, `deep`, `ink`, `mist`, `line`, `signal`, `human`). La couleur `human` ne sert qu'à « une personne valide ».
