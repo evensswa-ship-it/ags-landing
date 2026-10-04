@@ -87,7 +87,7 @@ export const examples = {
         { label: 'Devis préparé' },
         { label: 'Une personne valide', human: true },
       ],
-      summary: '3 étapes · 8 min',
+      summary: '4 étapes · 8 min',
     },
   },
   link: cta.useCases,
@@ -141,7 +141,7 @@ export const governance = {
       },
       { label: 'Ce qu’il ne fait jamais', value: 'Modifier un tarif, supprimer une donnée.' },
     ],
-    footer: 'Chaque action est tracée.',
+    footer: 'Chaque action est tracée : historisation, journal de bord, logs techniques.',
   },
   link: cta.governance,
 }
