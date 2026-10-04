@@ -99,6 +99,10 @@ Classes Tailwind : `bg-night`, `text-mist`, `border-line`, `rounded-pill`, `roun
 - Tout est en CSS (`@keyframes flux-*`, transitions `.eq-*` et `.ba-*` dans `globals.css`). N’ajouter une librairie de motion que pour une séquence impossible en CSS, et le justifier.
 - Une animation doit raconter quelque chose (un flux, une étape supprimée, un résultat). Pas d’apparition décorative sur chaque section.
 
+### Logo
+
+Logo : `/brand`, ne jamais le recréer en texte ou le redessiner. Navigation et footer utilisent `components/ui/Logo` (tracé de `brand/logo-dark.svg`) ; `brand/logo-light.svg` est réservé aux fonds clairs. Icônes et image de partage : fichiers `src/app/` (`favicon.ico`, `icon.*`, `apple-icon.png`, `opengraph-image.png`). Photos sources dans `brand/photos/`, versions recadrées dans `public/team/`.
+
 ### Interdits visuels
 
 Robot, cerveau, main robotique, circuit, globe, particules, réseau neuronal décoratif, néons, photos stock, logos d’outils ou de fournisseurs d’IA, faux logos clients, faux témoignages.

@@ -237,12 +237,17 @@
     transition-delay: calc(var(--i, 0) * 0.28s);
   }
 
+  /* Avant l'entrée dans la vue, les termes restent lisibles (gris), puis s'allument. */
   .eq[data-armed='true'] .eq-term {
-    opacity: 0.28;
+    color: var(--color-mist);
   }
 
   .eq[data-on='true'] .eq-term {
-    opacity: 1;
+    color: inherit;
+  }
+
+  .eq[data-on='true'] .eq-term.text-signal {
+    color: var(--color-signal);
   }
 
   /* ——— Avant / après ——— */
@@ -280,7 +285,7 @@
   }
 
   .ba[data-armed='true'] .ba-in {
-    opacity: 0.25;
+    opacity: 0.6;
     transform: translateX(-0.75rem);
   }
 

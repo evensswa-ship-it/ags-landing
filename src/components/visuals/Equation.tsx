@@ -8,7 +8,8 @@ export default function Equation({ terms, result }: { terms: string[]; result: s
   const sentence = `${terms.join(' + ')} = ${result}`
 
   return (
-    <p ref={ref} className="eq t-h2" data-armed={armed} data-on={on} aria-label={sentence}>
+    <p ref={ref} className="eq t-h2" data-armed={armed} data-on={on}>
+      <span className="sr-only">{sentence}</span>
       <span aria-hidden="true">
         {terms.map((term, i) => (
           <span key={term} className="eq-term" style={{ '--i': i } as CSSProperties}>

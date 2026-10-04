@@ -147,10 +147,23 @@ export const governance = {
 }
 
 export const about = {
-  title: { lead: 'Une approche de chef de projet,', rest: 'pas de vendeur d’outils.' },
-  text: "AGS & Co est basé à Rouen. Son fondateur, Evens Augustin, pilote depuis plusieurs années des projets techniques et métier, dont deux ans au sein d’un grand acteur de l’assurance. Sa conviction : comprendre un processus avant d’y mettre de l’IA.",
-  photo: { src: '/founder.jpg', alt: "Evens Augustin, fondateur d’AGS & Co" },
-  link: { label: 'En savoir plus', href: '/a-propos' },
+  title: { lead: "Comprendre votre terrain", rest: "avant de parler technologie." },
+  text: "AGS & Co est basé à Rouen. Deux parcours complémentaires, une même méthode : partir de vos objectifs et de vos irritants, puis choisir la bonne solution.",
+  people: [
+    {
+      name: "Evens Augustin",
+      role: "Fondateur · Intégration IA & pilotage de projets",
+      bio: "Chef de projet depuis plusieurs années, dont deux ans au sein d’un grand acteur de l’assurance. Il conçoit et pilote l’intégration des collaborateurs IA dans vos outils.",
+      photo: { src: "/team/evens-augustin.jpg", alt: "Portrait d’Evens Augustin" },
+    },
+    {
+      name: "Naomie",
+      role: "Co-fondatrice · Développement commercial & stratégie de marque",
+      bio: "Ancienne dirigeante de l’agence de communication DesignByNao, aujourd’hui entrepreneure dans la beauté. Elle mène les premiers échanges avec les entreprises pour comprendre le terrain avant de parler de solution.",
+      photo: { src: "/team/naomie.jpg", alt: "Portrait de Naomie" },
+    },
+  ],
+  link: { label: "En savoir plus", href: "/a-propos" },
 }
 
 export const finalCta = {

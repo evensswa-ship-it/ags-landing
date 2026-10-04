@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Logo from '@/components/ui/Logo'
 import { footer, site } from '@/data/site'
 
 const linkClass = 'text-mist transition-colors duration-200 hover:text-ink'
@@ -9,11 +10,9 @@ export default function Footer() {
       <div className="mx-auto max-w-page">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div>
-            <p className="t-h3">
-              {site.name}
-              <span className="block pt-1 text-mist">
-                {footer.tagline.lead} {footer.tagline.rest}
-              </span>
+            <Logo className="h-7 w-auto" />
+            <p className="t-h3 mt-5">
+              {footer.tagline.lead} <span className="text-mist">{footer.tagline.rest}</span>
             </p>
             <p className="t-small mt-5 text-mist">{footer.place}</p>
           </div>

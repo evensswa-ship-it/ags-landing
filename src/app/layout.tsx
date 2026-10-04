@@ -1,10 +1,8 @@
 import type { Metadata, Viewport } from 'next'
-import Script from 'next/script'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Inter, Inter_Tight } from 'next/font/google'
-import { GoogleAnalytics } from '@/components/GoogleAnalytics'
-import { MicrosoftClarity } from '@/components/MicrosoftClarity'
+import ThirdParties from '@/components/ThirdParties'
 import Nav from '@/components/layout/Nav'
 import Footer from '@/components/layout/Footer'
 import { seo } from '@/data/site'
@@ -45,10 +43,6 @@ export const metadata: Metadata = {
     siteName: 'AGS & Co',
     title: seo.home.title,
     description: seo.home.description,
-  },
-  icons: {
-    icon: '/logo.png',
-    apple: '/logo.png',
   },
 }
 
@@ -110,28 +104,7 @@ export default function RootLayout({
         <Footer />
         <Analytics />
         <SpeedInsights />
-        {GA_ID && <GoogleAnalytics gaId={GA_ID} />}
-        {CLARITY_ID && <MicrosoftClarity clarityId={CLARITY_ID} />}
-        {AXEPTIO_ID && (
-          <>
-            <Script id="axeptio-init" strategy="afterInteractive">{`
-              window.axeptioSettings = {
-                clientId: "${AXEPTIO_ID}",
-                cookiesVersion: "8a8cf65a-9113-49cc-9955-254378b29cb9",
-                googleConsentMode: {
-                  default: {
-                    analytics_storage: "denied",
-                    ad_storage: "denied",
-                    ad_user_data: "denied",
-                    ad_personalization: "denied",
-                    wait_for_update: 500
-                  }
-                }
-              };
-            `}</Script>
-            <Script src="https://static.axept.io/sdk.js" strategy="afterInteractive" />
-          </>
-        )}
+        <ThirdParties gaId={GA_ID} clarityId={CLARITY_ID} axeptioId={AXEPTIO_ID} />
       </body>
     </html>
   )

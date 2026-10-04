@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Button from '@/components/ui/Button'
 import Section from '@/components/ui/Section'
 import Tag from '@/components/ui/Tag'
@@ -6,6 +5,7 @@ import Title from '@/components/ui/Title'
 import AgentCard from '@/components/visuals/AgentCard'
 import BeforeAfter from '@/components/visuals/BeforeAfter'
 import Equation from '@/components/visuals/Equation'
+import PersonCard from '@/components/visuals/PersonCard'
 import Flow from '@/components/visuals/Flow'
 import Results from '@/components/visuals/Results'
 import {
@@ -146,23 +146,18 @@ export default function Home() {
 
       {/* 7 — Derrière AGS */}
       <Section tone="deep" labelledBy="about-title">
-        <div className="grid gap-10 md:grid-cols-[auto_1fr] md:gap-16">
-          <Image
-            src={about.photo.src}
-            alt={about.photo.alt}
-            width={3213}
-            height={4055}
-            sizes="(min-width: 768px) 220px, 160px"
-            className="h-auto w-40 rounded-card md:w-[13.75rem]"
-          />
-          <div>
-            <Title id="about-title" stacked {...about.title} />
-            <p className="t-lede mt-8 max-w-[40rem]">{about.text}</p>
-            <Button href={about.link.href} variant="link" className="mt-8">
-              {about.link.label}
-            </Button>
-          </div>
+        <div className="grid gap-8 lg:grid-cols-[7fr_5fr] lg:items-end lg:gap-20">
+          <Title id="about-title" stacked {...about.title} />
+          <p className="t-lede">{about.text}</p>
         </div>
+        <div className="mt-14 grid max-w-[54rem] gap-6 md:grid-cols-2">
+          {about.people.map((person) => (
+            <PersonCard key={person.name} {...person} />
+          ))}
+        </div>
+        <Button href={about.link.href} variant="link" className="mt-10">
+          {about.link.label}
+        </Button>
       </Section>
 
       {/* 8 — Appel final */}

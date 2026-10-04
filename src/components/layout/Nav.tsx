@@ -1,23 +1,15 @@
-import Image from 'next/image'
 import Link from 'next/link'
+import Logo from '@/components/ui/Logo'
 import Button from '@/components/ui/Button'
 import MobileMenu from './MobileMenu'
-import { cta, nav, site } from '@/data/site'
+import { cta, nav } from '@/data/site'
 
 export default function Nav() {
   return (
     <header className="sticky top-0 z-50 border-b border-line/60 bg-night/85 backdrop-blur-md">
       <div className="relative mx-auto flex h-[4.5rem] max-w-page items-center justify-between gap-6 px-5 sm:px-8">
-        <Link href="/" aria-label={nav.homeLabel} className="flex shrink-0 items-center">
-          <Image
-            src={site.logoSrc}
-            alt=""
-            width={1620}
-            height={971}
-            priority
-            sizes="110px"
-            className="-ml-7 h-16 w-auto"
-          />
+        <Link href="/" aria-label={nav.homeLabel} className="flex shrink-0 items-center py-2">
+          <Logo className="h-6 w-auto lg:h-7" />
         </Link>
 
         <nav aria-label={nav.mainLabel} className="hidden items-center gap-8 lg:flex">

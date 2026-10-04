@@ -1,8 +1,6 @@
 export const site = {
   name: 'AGS & Co',
   url: 'https://www.agsandco.fr',
-  logoSrc: '/agslogo (2).png',
-  logoAlt: 'AGS & Co',
   email: 'contact@agsandco.fr',
   linkedin: 'https://www.linkedin.com/company/agsandco/?viewAsMember=true',
   calendly: 'https://calendly.com/evens-agsandco/30min',
