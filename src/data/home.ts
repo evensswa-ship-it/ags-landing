@@ -150,10 +150,10 @@ export const about = {
   title: { lead: "Comprendre votre terrain", rest: "avant de parler technologie." },
   people: [
     {
-      name: "Evens Augustin",
+      name: "Evens",
       role: "Fondateur · Intégration IA & pilotage de projets",
       bio: "Chef de projet depuis plusieurs années, dont deux ans au sein d’un grand acteur de l’assurance. Il conçoit et pilote l’intégration des collaborateurs IA dans vos outils.",
-      photo: { src: "/team/evens-augustin.jpg", alt: "Portrait d’Evens Augustin" },
+      photo: { src: "/team/evens-augustin.jpg", alt: "Portrait d’Evens" },
     },
     {
       name: "Naomie",
