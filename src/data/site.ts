@@ -20,7 +20,6 @@ export const nav = {
   menuLabel: 'Menu',
   closeLabel: 'Fermer le menu',
   links: [
-    { label: "Cas d’usage", href: '/#cas-usage' },
     { label: 'Méthode & offres', href: '/methode' },
     { label: 'Gouvernance', href: '/gouvernance' },
     { label: 'À propos', href: '/a-propos' },
@@ -36,7 +35,6 @@ export const footer = {
   contactLabel: 'Contact',
   pages: [
     { label: 'Accueil', href: '/' },
-    { label: "Cas d’usage", href: '/#cas-usage' },
     { label: 'Méthode & offres', href: '/methode' },
     { label: 'Gouvernance', href: '/gouvernance' },
     { label: 'À propos', href: '/a-propos' },
