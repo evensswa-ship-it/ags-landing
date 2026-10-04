@@ -8,6 +8,11 @@ export type LegalPageData = {
 
 export const lastUpdated = '29 juin 2026'
 
+export const legalChrome = {
+  eyebrow: 'Informations légales',
+  updated: 'Dernière mise à jour :',
+}
+
 export const legalPages: Record<string, LegalPageData> = {
   'mentions-legales': {
     title: 'Mentions légales',
