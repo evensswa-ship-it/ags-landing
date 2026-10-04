@@ -6,7 +6,7 @@ import JsonLd from '@/components/ui/JsonLd'
 import Section from '@/components/ui/Section'
 import Title from '@/components/ui/Title'
 import BeforeAfter from '@/components/visuals/BeforeAfter'
-import { changes, examples, methode } from '@/data/methode'
+import { examples, methode } from '@/data/methode'
 import { site } from '@/data/site'
 import { breadcrumbSchema, pageMetadata } from '@/lib/seo'
 
@@ -107,28 +107,14 @@ export default function MethodePage() {
         </Section>
       ))}
 
-      <Section tone="deep" labelledBy="changes-title">
-        <div className="grid gap-12 lg:grid-cols-[5fr_7fr] lg:gap-20">
-          <Title id="changes-title" stacked {...changes.title} />
-          <ul>
-            {changes.items.map((item) => (
-              <li key={item.title} className="border-t border-line py-7 last:border-b">
-                <h3 className="t-h3">{item.title}</h3>
-                <p className="t-lede mt-2 max-w-[34rem]">{item.text}</p>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </Section>
-
-      <Section labelledBy="faq-title">
+      <Section tone="deep" labelledBy="faq-title">
         <div className="grid gap-12 lg:grid-cols-[4fr_8fr] lg:gap-20">
           <Title id="faq-title" stacked {...methode.faq.title} />
           <Faq items={methode.faq.items} />
         </div>
       </Section>
 
-      <FinalCta tone="deep" {...methode.closing} />
+      <FinalCta {...methode.closing} />
     </>
   )
 }

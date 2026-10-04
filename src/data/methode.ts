@@ -101,28 +101,6 @@ export const methode = {
   },
 }
 
-export const changes = {
-  title: { lead: 'Ce qui change', rest: 'dans vos journées.' },
-  items: [
-    {
-      title: 'Moins de ressaisie',
-      text: "Les informations passent d’un outil à l’autre sans copier-coller.",
-    },
-    {
-      title: 'Des demandes traitées plus vite',
-      text: 'Chaque demande est lue, classée et préparée dès son arrivée.',
-    },
-    {
-      title: 'Plus de relance oubliée',
-      text: 'Devis, pièces manquantes, prospects : le suivi part au bon moment.',
-    },
-    {
-      title: 'Des gains mesurés',
-      text: 'Volume traité, temps gagné, erreurs évitées : vous savez ce que vous y gagnez.',
-    },
-  ],
-}
-
 export const examples = {
   title: { lead: 'Concrètement,', rest: 'ce qui peut être pris en charge.' },
   items: [
