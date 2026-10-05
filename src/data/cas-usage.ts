@@ -1,5 +1,7 @@
 export const casUsage = {
   title: { lead: "Ce qu’un collaborateur IA peut prendre en charge", rest: 'chez vous.' },
+  definition:
+    "Un collaborateur IA est une capacité opérationnelle déployée dans votre entreprise pour prendre en charge ou assister certaines tâches répétitives, chronophages ou à faible valeur ajoutée.",
   intro:
     "Dix situations courantes, classées par fonction. Pour chacune : ce qui se passe aujourd’hui, ce que fait le collaborateur IA, ce que vous gardez, ce qu’on mesure.",
   labels: {

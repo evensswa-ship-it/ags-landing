@@ -4,14 +4,14 @@ export const methode = {
   path: '/methode',
   breadcrumb: 'Méthode & offres',
   meta: {
-    title: 'Méthode & offres : audit, mise en place, abonnement · AGS & Co',
+    title: 'Méthode & offres : diagnostic gratuit, audit, mise en place, AGS Care · AGS & Co',
     description:
-      'Intégration IA en trois étapes : un audit de 2 à 4 semaines, une mise en place de 3 à 6 semaines, un abonnement avec revue trimestrielle.',
+      'Un diagnostic initial gratuit de 45 minutes, puis trois offres : Audit AGS (650 € HT), mise en place sur devis, AGS Care (550 € HT par mois, 4 revues par an).',
   },
   journey: {
     title: { lead: 'Le parcours,', rest: 'en sept temps.' },
     steps: [
-      { name: 'Découvrir', text: '30 minutes pour comprendre votre activité.' },
+      { name: 'Découvrir', text: '45 minutes, gratuites, pour comprendre votre activité.' },
       { name: 'Cartographier', text: 'Comment le travail se fait vraiment, étape par étape.' },
       { name: 'Prioriser', text: 'Les cas qui rapportent le plus, pas les plus spectaculaires.' },
       { name: 'Tester', text: 'Un vrai cas, avec vos équipes.' },
@@ -23,9 +23,24 @@ export const methode = {
   includesLabel: 'Vous obtenez',
   offers: [
     {
+      id: 'diagnostic',
+      name: 'Diagnostic initial',
+      format: 'Gratuit · 45 min',
+      paid: false,
+      title: { lead: 'Un premier échange,', rest: 'pour voir s’il y a un sujet.' },
+      text: 'On prend 45 minutes pour comprendre votre activité et ce qui vous fait perdre du temps. Vous repartez avec un avis clair.',
+      includes: [
+        'Comprendre votre besoin',
+        'Repérer ce qui vous fait perdre du temps',
+        'Voir s’il existe un sujet qui mérite d’aller plus loin',
+      ],
+      note: 'Sans engagement. L’audit ne vient qu’ensuite, si vous le décidez.',
+    },
+    {
       id: 'audit',
-      name: 'Audit',
-      format: 'Forfait · 2 à 4 semaines',
+      name: 'Audit AGS',
+      format: 'Forfait · 650 € HT',
+      paid: true,
       title: { lead: "Savoir où l’IA vous fait gagner du temps,", rest: "preuve à l’appui." },
       text: 'On regarde comment vous travaillez, on choisit le cas le plus rentable et on le teste sur le terrain.',
       includes: [
@@ -40,7 +55,8 @@ export const methode = {
     {
       id: 'setup',
       name: 'Mise en place',
-      format: 'Projet · 3 à 6 semaines',
+      format: 'Projet · sur devis',
+      paid: true,
       title: { lead: 'Vos collaborateurs IA au travail,', rest: 'dans vos outils.' },
       text: 'Le test a fait ses preuves. On passe en conditions réelles, sans bousculer ce qui marche.',
       includes: [
@@ -54,16 +70,17 @@ export const methode = {
     },
     {
       id: 'abonnement',
-      name: 'Abonnement',
-      format: 'Mensuel',
+      name: 'AGS Care',
+      format: '550 € HT / mois',
+      paid: true,
       title: { lead: 'Vous ne payez pas tous les mois', rest: 'pour un outil installé une fois.' },
-      text: 'Vos collaborateurs IA tournent, nous les surveillons et nous les faisons évoluer avec votre activité.',
+      text: 'Vos collaborateurs IA tournent, nous les supervisons et nous les faisons évoluer avec votre activité.',
       includes: [
-        'Le fonctionnement et la surveillance au quotidien',
-        '4 revues par an, une par trimestre',
-        'Avant chaque revue, une feuille de route à remplir : ce qui marche, ce qui coince, ce que vous voulez faire évoluer',
-        'La mise à jour de vos collaborateurs IA après chaque revue',
-        'Un bilan des gains chaque trimestre',
+        'La supervision de vos collaborateurs IA',
+        'Un accompagnement dans la durée',
+        'Le suivi des performances et des gains',
+        'Les évolutions et la prise en compte de vos nouveaux besoins',
+        '4 revues par an',
       ],
       note: '',
     },
@@ -71,6 +88,11 @@ export const methode = {
   faq: {
     title: { lead: 'Questions', rest: 'fréquentes.' },
     items: [
+      {
+        question: 'Le diagnostic est-il vraiment gratuit ?',
+        answer:
+          "Oui. C’est un échange de 45 minutes, sans engagement, pour comprendre votre besoin et voir s’il y a un sujet. L’Audit AGS est une prestation distincte, à 650 € HT, que vous décidez ensuite ou non.",
+      },
       {
         question: 'Faut-il changer nos logiciels ?',
         answer:
@@ -87,15 +109,15 @@ export const methode = {
           "Oui, dans la mise en place. Chaque profil apprend ce que l’outil fait, ce qu’il ne fait pas et quand reprendre la main.",
       },
       {
-        question: "Que comprend l’abonnement ?",
+        question: 'Que comprend AGS Care ?',
         answer:
-          "Le fonctionnement, la surveillance, quatre revues par an et les mises à jour qui en découlent. Un nouveau collaborateur IA complet fait l’objet d’un devis.",
+          "La supervision, le suivi des performances, quatre revues par an et les évolutions qui en découlent. Un nouveau collaborateur IA complet fait l’objet d’un devis.",
       },
     ],
   },
   closing: {
     title: { lead: 'Quel processus vous fait perdre du temps aujourd’hui ?' },
-    text: '30 minutes pour en parler, sans engagement.',
+    text: "Diagnostic initial gratuit : 45 minutes pour comprendre votre besoin, repérer ce qui vous freine et voir s’il y a un sujet à creuser.",
     primary: cta.primary,
     secondary: cta.write,
   },

@@ -4,11 +4,12 @@ import Section from '@/components/ui/Section'
 import Tag from '@/components/ui/Tag'
 import Title from '@/components/ui/Title'
 import AgentAvatar from '@/components/visuals/AgentAvatar'
+import Ecosystem from '@/components/visuals/Ecosystem'
 import PersonCard from '@/components/visuals/PersonCard'
 import Flow from '@/components/visuals/Flow'
 import Results from '@/components/visuals/Results'
 import { casUsage } from '@/data/cas-usage'
-import { about, finalCta, hero, links, results } from '@/data/home'
+import { about, ecosystem, finalCta, hero, links, results } from '@/data/home'
 
 export default function Home() {
   const { labels } = casUsage
@@ -56,7 +57,8 @@ export default function Home() {
       >
         <div className="mx-auto max-w-page">
           <Title id="cas-usage-title" stacked className="max-w-[22ch]" {...casUsage.title} />
-          <p className="t-lede mt-8 max-w-[38rem]">{casUsage.intro}</p>
+          <p className="t-lede mt-8 max-w-[38rem] text-ink">{casUsage.definition}</p>
+          <p className="mt-4 max-w-[38rem] text-mist">{casUsage.intro}</p>
         </div>
       </section>
 
@@ -126,8 +128,13 @@ export default function Home() {
         </Button>
       </Section>
 
-      {/* 4 — Appel final */}
-      <FinalCta {...finalCta} />
+      {/* 4 — Notre écosystème */}
+      <Section labelledBy="ecosystem-title">
+        <Ecosystem {...ecosystem} />
+      </Section>
+
+      {/* 5 — Appel final */}
+      <FinalCta tone="deep" {...finalCta} />
     </>
   )
 }

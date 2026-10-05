@@ -14,7 +14,9 @@ export const metadata: Metadata = pageMetadata(methode)
 
 const schemas = [
   breadcrumbSchema(methode),
-  ...methode.offers.map((offer) => ({
+  ...methode.offers
+    .filter((offer) => offer.paid)
+    .map((offer) => ({
     '@context': 'https://schema.org',
     '@type': 'Service',
     name: offer.name,
@@ -107,14 +109,14 @@ export default function MethodePage() {
         </Section>
       ))}
 
-      <Section tone="deep" labelledBy="faq-title">
+      <Section labelledBy="faq-title">
         <div className="grid gap-12 lg:grid-cols-[4fr_8fr] lg:gap-20">
           <Title id="faq-title" stacked {...methode.faq.title} />
           <Faq items={methode.faq.items} />
         </div>
       </Section>
 
-      <FinalCta {...methode.closing} />
+      <FinalCta tone="deep" {...methode.closing} />
     </>
   )
 }

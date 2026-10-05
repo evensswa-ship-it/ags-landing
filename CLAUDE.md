@@ -11,8 +11,11 @@
 
 - AGS transforme des processus métier en opérations augmentées et automatisées par l'IA. On vend une capacité opérationnelle avec des résultats mesurables, pas un agent.
 - Cibles : PME et ETI, de façon transversale. **Pas de segmentation par secteur** : on segmente par situation, processus, capacité, résultat. Les secteurs n'apparaissent que dans des cas clients.
-- Offre : Audit (forfait) → Setup initial (projet) → Abonnement mensuel avec 4 revues trimestrielles incluses (feuille de route remplie par le client avant chaque revue).
-- AGS est basé à Rouen (Normandie). Premier échange : https://calendly.com/evens-agsandco/30min
+- Message principal : « AGS & Co aide les entreprises à récupérer du temps et à augmenter leur capacité opérationnelle grâce à des collaborateurs IA. » On parle de temps gagné, de tâches manuelles réduites, de capacité, de rapidité, d’opportunités commerciales, de croissance sans hausse proportionnelle des charges.
+- Offre, dans cet ordre : Diagnostic initial (gratuit, 45 min) → Audit AGS (650 € HT) → Mise en place (sur devis) → AGS Care (550 € HT / mois : supervision, suivi des performances, évolutions, 4 revues par an).
+- Le diagnostic gratuit ne s’appelle jamais « audit » : l’Audit AGS est la prestation payante qui vient ensuite.
+- AGS est basé à Rouen (Normandie). Diagnostic initial : https://calendly.com/evens-agsandco/30min (l’événement doit durer 45 minutes).
+- Ne rien présenter comme déployé, mesuré ou obtenu chez un client si ce n’est pas le cas.
 
 ## Wording — règles éditoriales
 
@@ -87,7 +90,8 @@ Classes Tailwind : `bg-night`, `text-mist`, `border-line`, `rounded-pill`, `roun
 
 ### Composants
 
-- `ui/Button` : pilule. `primary` (fond `signal`, texte `night`), `secondary` (contour), `link`. Un seul CTA principal sur le site : « Parler d’un processus ».
+- `ui/Button` : pilule. `primary` (fond `signal`, texte `night`), `secondary` (contour), `link`. Un seul CTA principal sur le site : « Réserver un diagnostic ».
+- `visuals/Ecosystem` : section « Notre écosystème » de l’accueil. Réseaux dont AGS est membre, logos officiels cliquables, pris sur le site de chaque réseau (sources dans `brand/ecosysteme/`, versions servies dans `public/ecosysteme/`). Ajouter un réseau = une ligne dans `ecosystem.members` (`src/data/home.ts`) et un fichier logo.
 - `ui/Title`, `ui/Section` (fond `night` ou `deep`, sans dégradé), `ui/Tag` (« Exemple illustratif », obligatoire sur tout chiffre non issu d’un vrai cas).
 - `visuals/Flow` : étapes numérotées reliées par une ligne ; l’étape marquée `human` est en couleur `human` avec halo. Horizontal dès 1024 px, vertical en dessous.
 - `visuals/BeforeAfter`, `visuals/PersonCard`, `visuals/Results` (masqué par `results.enabled`).
@@ -117,7 +121,7 @@ Logo : `/brand`, ne jamais le recréer en texte ou le redessiner. Navigation et 
 
 ### Interdits visuels
 
-Robot, cerveau, main robotique, circuit, globe, particules, réseau neuronal décoratif, néons, photos stock, logos d’outils ou de fournisseurs d’IA, faux logos clients, faux témoignages. Les avatars des collaborateurs IA sont la seule exception (voir « Avatars des collaborateurs IA »).
+Robot, cerveau, main robotique, circuit, globe, particules, réseau neuronal décoratif, néons, photos stock, logos d’outils ou de fournisseurs d’IA, faux logos clients, faux témoignages. Deux exceptions seulement : les avatars des collaborateurs IA (voir « Avatars des collaborateurs IA ») et les logos des réseaux dont AGS est membre, dans la section « Notre écosystème ». Ces logos ne sont ni recolorés, ni déformés, ni redessinés ; ces réseaux sont des adhésions, jamais des « partenaires », et rien ne doit laisser entendre qu’ils recommandent ou sponsorisent AGS.
 
 ## Stack technique
 

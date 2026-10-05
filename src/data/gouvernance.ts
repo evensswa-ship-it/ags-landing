@@ -9,7 +9,7 @@ export const gouvernance = {
       'Ce que voit chaque agent IA, ce qu’il peut faire, qui valide et où vont vos données. La gouvernance IA appliquée aux PME et ETI.',
   },
   title: {
-    lead: 'Un agent capable de tout faire',
+    lead: 'Un collaborateur IA capable de tout faire',
     rest: 'ne doit pas avoir le droit de tout faire.',
   },
   intro:

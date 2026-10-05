@@ -7,8 +7,8 @@ export const site = {
 }
 
 export const cta = {
-  primary: { label: "Parler d’un processus", href: site.calendly },
-  method: { label: 'Voir comment ça marche', href: '/methode' },
+  primary: { label: 'Réserver un diagnostic', href: site.calendly },
+  savings: { label: "Voir où l’IA vous fait gagner du temps", href: '/#cas-usage' },
   useCases: { label: "Voir les cas d’usage", href: '/#cas-usage' },
   governance: { label: 'Comment vos données sont protégées', href: '/gouvernance' },
   write: { label: 'Ou décrivez-le par écrit', href: '/contact' },
@@ -60,6 +60,7 @@ export const seo = {
   skipLabel: 'Aller au contenu',
   serviceType: "Intégration de l’IA et automatisation des processus",
   keywords: [
+    'collaborateur IA',
     'intégration IA',
     'agents IA',
     'automatisation des processus',
@@ -68,8 +69,8 @@ export const seo = {
     'gouvernance IA',
   ],
   home: {
-    title: "AGS & Co · Intégration de l’IA et automatisation des processus pour PME et ETI",
+    title: "AGS & Co · Collaborateurs IA et automatisation des processus pour PME et ETI",
     description:
-      "AGS & Co connecte l’IA à vos outils pour prendre en charge les tâches répétitives : dix cas d’usage par fonction, agents IA, automatisation des processus, gouvernance IA. Pour PME et ETI, depuis Rouen.",
+      "AGS & Co aide les PME et ETI à récupérer du temps et à augmenter leur capacité opérationnelle grâce à des collaborateurs IA (agents IA). Dix cas d’usage par fonction, diagnostic initial gratuit. Depuis Rouen.",
   },
 }

@@ -43,6 +43,9 @@ Où sont les choses :
 5. Le logo mobile fait 24 px de haut ; « & CO » y est fin. Il peut vouloir 28 px.
 6. `src/lib/analytics.ts` : ancien code commenté, jamais utilisé, laissé en l'état.
 
+7. Calendly : le site annonce un diagnostic initial gratuit de 45 minutes. Evens doit passer l'événement Calendly (lien `/30min`) à 45 minutes, ou fournir un nouveau lien à mettre dans `src/data/site.ts`.
+8. Audit AGS à 650 € HT : le contenu affiché (test sur un vrai cas avec 2 à 5 utilisateurs) n'a pas été revalidé par Evens au regard de ce prix.
+
 ## Règles de contenu à ne pas enfreindre
 
 - « Collaborateur IA » dans les textes commerciaux ; « agent IA » pour expliquer ou pour le SEO. Jamais « copilote » ni « assistant ».

@@ -4,15 +4,15 @@ export const contact = {
   path: '/contact',
   breadcrumb: 'Contact',
   meta: {
-    title: "Contact : parlez-nous d’un processus · AGS & Co",
+    title: "Contact : réservez un diagnostic gratuit · AGS & Co",
     description:
-      '30 minutes offertes pour parler du processus qui vous fait perdre du temps. Sans engagement.',
+      'Un diagnostic initial gratuit de 45 minutes pour parler du processus qui vous fait perdre du temps. Sans engagement.',
   },
   title: { lead: 'Quel processus vous fait perdre du temps aujourd’hui ?' },
-  intro: '30 minutes pour en parler, sans engagement.',
+  intro: "Diagnostic initial gratuit : 45 minutes pour comprendre votre besoin, repérer ce qui vous freine et voir s’il y a un sujet à creuser.",
   booking: {
-    title: 'Réserver un échange',
-    text: "Choisissez un créneau de 30 minutes. C’est offert.",
+    title: 'Réserver un diagnostic',
+    text: "Choisissez un créneau de 45 minutes. C’est gratuit et sans engagement.",
     button: cta.primary,
   },
   form: {

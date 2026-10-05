@@ -1,13 +1,13 @@
 import { cta } from './site'
 
 export const hero = {
-  eyebrow: "Intégration de l’IA · PME & ETI · Rouen",
+  eyebrow: "Collaborateurs IA · PME & ETI · Rouen",
   title: { lead: "L’IA au travail.", rest: 'Sous contrôle.' },
   subtitle:
-    "Nous connectons l’IA à vos outils pour prendre en charge les tâches répétitives. Vos équipes gardent les décisions. Chaque gain est mesuré.",
+    "AGS & Co aide les entreprises à récupérer du temps et à augmenter leur capacité opérationnelle grâce à des collaborateurs IA. Vos équipes gardent les décisions. Chaque gain est mesuré.",
   primary: cta.primary,
-  secondary: cta.method,
-  note: 'Premier échange offert · 30 min · sans engagement',
+  secondary: cta.savings,
+  note: 'Diagnostic initial gratuit · 45 min · sans engagement',
   flowLabel: "Exemple : un client demande un devis par email",
   flow: [
     { label: 'Le client demande un devis' },
@@ -46,9 +46,33 @@ export const about = {
   link: { label: "En savoir plus", href: "/a-propos" },
 }
 
+export const ecosystem = {
+  title: { lead: 'Notre écosystème.' },
+  paragraphs: [
+    'AGS & Co s’inscrit dans un écosystème économique et entrepreneurial actif en Normandie.',
+    'Nous participons à des réseaux qui nous permettent de rester au plus près des dirigeants, des entreprises et des enjeux du territoire.',
+  ],
+  /** Adhésions uniquement. Logos officiels, pris sur le site de chaque réseau (sources dans brand/ecosysteme). */
+  members: [
+    {
+      name: 'Rouen Normandie Rugby',
+      href: 'https://rouennormandierugby.fr/',
+      linkLabel: 'Rouen Normandie Rugby, site officiel (nouvel onglet)',
+      logo: { src: '/ecosysteme/rouen-normandie-rugby.webp', width: 259, height: 320, display: 120 },
+    },
+    {
+      name: 'Rouen Business & Audace',
+      href: 'https://rouenbusinessapp.fr/',
+      linkLabel: 'Rouen Business & Audace, site officiel (nouvel onglet)',
+      logo: { src: '/ecosysteme/rouen-business-audace.webp', width: 616, height: 320, display: 88 },
+    },
+  ],
+  note: 'AGS & Co est membre de ces réseaux.',
+}
+
 export const finalCta = {
   title: { lead: 'Quel processus vous fait perdre du temps aujourd’hui ?' },
-  text: '30 minutes pour en parler, sans engagement.',
+  text: "Diagnostic initial gratuit : 45 minutes pour comprendre votre besoin, repérer ce qui vous freine et voir s’il y a un sujet à creuser.",
   primary: cta.primary,
   secondary: cta.write,
 }
