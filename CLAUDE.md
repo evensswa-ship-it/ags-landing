@@ -12,7 +12,7 @@
 - AGS transforme des processus métier en opérations augmentées et automatisées par l'IA. On vend une capacité opérationnelle avec des résultats mesurables, pas un agent.
 - Cibles : PME et ETI, de façon transversale. **Pas de segmentation par secteur** : on segmente par situation, processus, capacité, résultat. Les secteurs n'apparaissent que dans des cas clients.
 - Message principal : « AGS & Co aide les entreprises à récupérer du temps et à augmenter leur capacité opérationnelle grâce à des collaborateurs IA. » On parle de temps gagné, de tâches manuelles réduites, de capacité, de rapidité, d’opportunités commerciales, de croissance sans hausse proportionnelle des charges.
-- Offre, dans cet ordre : Diagnostic initial (gratuit, 45 min) → Audit AGS (650 € HT) → Mise en place (sur devis) → AGS Care (550 € HT / mois : supervision, suivi des performances, évolutions, 4 revues par an).
+- Offre, dans cet ordre : Diagnostic initial (gratuit, 45 min) → Audit AGS (650 € HT) → Mise en place (sur devis) → AGS Care (550 € HT / mois : supervision, suivi des performances, évolutions, 4 revues par an, sensibilisation à la cybersécurité sous forme de bonnes pratiques ; les interventions d’experts cyber sont annoncées « à venir », pas comme existantes).
 - Le diagnostic gratuit ne s’appelle jamais « audit » : l’Audit AGS est la prestation payante qui vient ensuite.
 - AGS est basé à Rouen (Normandie). Diagnostic initial : https://calendly.com/evens-agsandco/30min (l’événement doit durer 45 minutes).
 - Ne rien présenter comme déployé, mesuré ou obtenu chez un client si ce n’est pas le cas.

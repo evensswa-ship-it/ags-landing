@@ -80,8 +80,9 @@ export const methode = {
         'Le suivi des performances et des gains',
         'Les évolutions et la prise en compte de vos nouveaux besoins',
         '4 revues par an',
+        'Une sensibilisation à la cybersécurité : les bonnes pratiques pour vos équipes',
       ],
-      note: '',
+      note: 'À venir : des interventions d’experts en cybersécurité.',
     },
   ],
   faq: {
