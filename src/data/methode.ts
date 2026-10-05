@@ -14,7 +14,7 @@ export const methode = {
       { name: 'Découvrir', text: '45 minutes, gratuites, pour comprendre votre activité.' },
       { name: 'Cartographier', text: 'Comment le travail se fait vraiment, étape par étape.' },
       { name: 'Prioriser', text: 'Les cas qui rapportent le plus, pas les plus spectaculaires.' },
-      { name: 'Tester', text: 'Un vrai cas, avec vos équipes.' },
+      { name: 'Cadrer', text: 'Le premier cas, avec vos équipes : qui fait quoi, qui valide.' },
       { name: 'Déployer', text: 'Branché à vos outils, équipe par équipe.' },
       { name: 'Mesurer', text: 'Volume traité, temps gagné, erreurs évitées.' },
       { name: 'Faire évoluer', text: 'Un point chaque trimestre.' },
@@ -41,8 +41,8 @@ export const methode = {
       name: 'Audit AGS',
       format: 'Forfait · 650 € HT',
       paid: true,
-      title: { lead: "Savoir où l’IA vous fait gagner du temps,", rest: "preuve à l’appui." },
-      text: 'On regarde comment vous travaillez, on choisit le cas le plus rentable et on le teste sur le terrain.',
+      title: { lead: "Savoir où l’IA vous fait gagner du temps,", rest: "avant d’investir." },
+      text: 'On regarde comment vous travaillez, on choisit le cas le plus rentable et on estime ce que vous pouvez y gagner.',
       includes: [
         'Vos processus décrits étape par étape',
         "L’état de vos données, prêtes ou à préparer",
@@ -57,7 +57,7 @@ export const methode = {
       format: 'Projet · sur devis',
       paid: true,
       title: { lead: 'Vos collaborateurs IA au travail,', rest: 'dans vos outils.' },
-      text: 'Le test a fait ses preuves. On passe en conditions réelles, sans bousculer ce qui marche.',
+      text: 'L’audit a désigné le bon cas. On le met en place en conditions réelles, sans bousculer ce qui marche.',
       includes: [
         'Une vérification technique et sécurité, puis la connexion à vos logiciels',
         "Des règles claires : ce que l’IA fait seule, ce qu’une personne valide",
