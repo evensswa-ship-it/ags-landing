@@ -47,7 +47,6 @@ export const methode = {
         'Vos processus décrits étape par étape',
         "L’état de vos données, prêtes ou à préparer",
         "Vos cas d’usage classés par gain attendu",
-        'Un test sur un vrai cas, avec 2 à 5 utilisateurs',
         'Une recommandation claire : on continue ou non',
       ],
       note: "L’audit vous appartient. Vous pouvez l’utiliser avec ou sans nous.",
