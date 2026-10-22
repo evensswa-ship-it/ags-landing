@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, type FormEvent } from 'react'
+import { useEffect, useRef, useState, type FormEvent } from 'react'
 import Button from '@/components/ui/Button'
 import { calculateur } from '@/data/calculateur'
 
@@ -125,6 +125,22 @@ export default function ProcessCalculator() {
   const r = compute(inputs)
   const f = form.fields
   const l = results.labels
+  const money = r.ready && r.hasCost
+  const pending = results.pending
+
+  // La barre du bas ne s’affiche que tant que le bloc résultat est encore plus bas dans la page.
+  const resultRef = useRef<HTMLDivElement>(null)
+  const [resultBelow, setResultBelow] = useState(true)
+  useEffect(() => {
+    const node = resultRef.current
+    if (!node) return
+    const observer = new IntersectionObserver(([entry]) => {
+      setResultBelow(!entry.isIntersecting && entry.boundingClientRect.top > 0)
+    })
+    observer.observe(node)
+    return () => observer.disconnect()
+  }, [])
+  const showBar = r.ready && resultBelow
 
   function set<K extends keyof Inputs>(key: K) {
     return (value: Inputs[K]) => setInputs((prev) => ({ ...prev, [key]: value }))
@@ -266,70 +282,69 @@ export default function ProcessCalculator() {
         </fieldset>
       </div>
 
-      {/* Résultat */}
-      <div className="lg:sticky lg:top-28 lg:self-start">
-        <div className="rounded-card border border-line bg-deep p-6 sm:p-8" aria-live="polite">
-          <h2 className="t-h3">{results.title}</h2>
-          {r.ready ? (
-            <>
-              <dl className="mt-6 grid gap-5">
-                <div className="flex items-baseline justify-between gap-4 border-b border-line pb-4">
-                  <dt className="t-small text-mist">{l.hoursMonth}</dt>
-                  <dd className="t-num font-display text-[1.5rem] font-semibold tracking-[-0.03em]">
-                    {hours.format(r.hoursMonth)} h
-                  </dd>
-                </div>
-                {r.hasCost ? (
-                  <>
-                    <div className="flex items-baseline justify-between gap-4 border-b border-line pb-4">
-                      <dt className="t-small text-mist">{l.costMonth}</dt>
-                      <dd className="t-num font-display text-[1.5rem] font-semibold tracking-[-0.03em]">
-                        {euro.format(r.costMonth)}
-                      </dd>
-                    </div>
-                    <div className="flex items-baseline justify-between gap-4 border-b border-line pb-4">
-                      <dt className="t-small text-ink">{l.costYear}</dt>
-                      <dd className="t-num font-display text-[2.25rem] font-semibold leading-none tracking-[-0.03em] text-signal">
-                        {euro.format(r.costYear)}
-                      </dd>
-                    </div>
-                    <div className="flex items-baseline justify-between gap-4 border-b border-line pb-4">
-                      <dt className="t-small text-mist">
-                        {l.invisible}
-                        <span className="block">{l.invisibleHint}</span>
-                      </dt>
-                      <dd className="t-num font-display text-[1.5rem] font-semibold tracking-[-0.03em]">
-                        {percent.format(r.invisible)}
-                      </dd>
-                    </div>
-                    <div className="flex items-baseline justify-between gap-4 border-b border-line pb-4">
-                      <dt className="t-small text-mist">{l.perItem}</dt>
-                      <dd className="t-num font-display text-[1.5rem] font-semibold tracking-[-0.03em]">
-                        {euroCents.format(r.perItem)}
-                      </dd>
-                    </div>
-                    <div className="flex items-baseline justify-between gap-4">
-                      <dt className="t-small text-ink">
-                        {l.recoverable} ({percent.format(inputs.reduction)})
-                        <span className="block text-mist">{l.recoverableHint}</span>
-                      </dt>
-                      <dd className="t-num font-display text-[1.5rem] font-semibold tracking-[-0.03em]">
-                        {euro.format(r.recoverableYear)}
-                      </dd>
-                    </div>
-                  </>
-                ) : null}
-              </dl>
-              {!r.hasCost ? <p className="t-small mt-5 text-mist">{results.needSalary}</p> : null}
-              <p className="mt-6 font-medium text-ink">{r.above ? results.above : results.below}</p>
-              <p className="t-small mt-4 text-mist">{results.tag}</p>
-            </>
-          ) : (
-            <p className="mt-6 text-mist">{results.empty}</p>
-          )}
+      {/* Résultat : structure fixe, « — » tant qu’une donnée manque, pour que rien ne saute pendant la saisie. */}
+      <div id="resultat" ref={resultRef} className="scroll-mt-24 lg:sticky lg:top-24 lg:self-start">
+        <div className="rounded-card border border-line bg-deep p-6 sm:p-7" aria-live="polite">
+          <h2 className="t-small font-semibold text-mist">{results.title}</h2>
+          <p className="t-small mt-5 text-ink">{l.costYear}</p>
+          <p className="t-num mt-2 font-display text-[clamp(2.5rem,4.2vw,3.25rem)] font-semibold leading-none tracking-[-0.035em] text-signal">
+            {money ? euro.format(r.costYear) : pending}
+          </p>
+          <p className="t-small t-num mt-3 text-mist">
+            {money ? euro.format(r.costMonth) : pending} {l.perMonth} · {r.ready ? hours.format(r.hoursMonth) : pending} h{' '}
+            {l.perMonth}
+          </p>
+          <dl className="mt-6 grid grid-cols-2 gap-x-6 gap-y-5 border-t border-line pt-5">
+            <div>
+              <dt className="t-small text-mist">{l.invisible}</dt>
+              <dd className="t-num mt-1 font-display text-[1.375rem] font-semibold tracking-[-0.03em] text-ink">
+                {money ? percent.format(r.invisible) : pending}
+              </dd>
+            </div>
+            <div>
+              <dt className="t-small text-mist">{l.perItem}</dt>
+              <dd className="t-num mt-1 font-display text-[1.375rem] font-semibold tracking-[-0.03em] text-ink">
+                {money ? euroCents.format(r.perItem) : pending}
+              </dd>
+            </div>
+            <div className="col-span-2">
+              <dt className="t-small text-mist">
+                {l.recoverable} ({percent.format(inputs.reduction)})
+              </dt>
+              <dd className="t-num mt-1 font-display text-[1.375rem] font-semibold tracking-[-0.03em] text-ink">
+                {money ? euro.format(r.recoverableYear) : pending}
+              </dd>
+            </div>
+          </dl>
+          <p className="t-small mt-6 min-h-[3.75rem] border-t border-line pt-5 font-medium text-ink">
+            {!r.ready ? results.empty : !r.hasCost ? results.needSalary : r.above ? results.above : results.below}
+          </p>
         </div>
-        <p className="t-small mt-5 text-mist">{results.limits}</p>
+        <div className="t-small mt-4 grid gap-2 text-mist">
+          <p>
+            {results.tag}. {l.invisibleHint} {l.recoverableHint}
+          </p>
+          <p>{results.limits}</p>
+        </div>
       </div>
+
+      {/* Téléphone : le coût par an reste visible pendant la saisie, jusqu’à ce que le bloc complet arrive à l’écran. */}
+      {showBar ? (
+        // pl-20 : laisse la place au bouton du bandeau cookies, en bas à gauche.
+        <div className="fixed inset-x-0 bottom-0 z-40 border-t border-line bg-deep/95 py-3 pl-20 pr-5 backdrop-blur-md lg:hidden">
+          <div className="mx-auto flex max-w-page items-center justify-between gap-4">
+            <p className="t-small text-mist">
+              {money ? l.costYear : l.hoursMonth}
+              <span className="t-num block font-display text-[1.375rem] font-semibold leading-tight tracking-[-0.03em] text-signal">
+                {money ? euro.format(r.costYear) : `${hours.format(r.hoursMonth)} h`}
+              </span>
+            </p>
+            <a href="#resultat" className="t-small shrink-0 font-medium text-signal underline decoration-signal/40 underline-offset-4">
+              {results.mobileDetail}
+            </a>
+          </div>
+        </div>
+      ) : null}
 
       {/* Envoi de l’estimation */}
       <div className="border-t border-line pt-12 lg:col-span-2">
