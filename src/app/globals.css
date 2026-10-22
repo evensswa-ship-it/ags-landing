@@ -229,6 +229,100 @@
     }
   }
 
+  /* ——— Échelle des offres : mêmes nœuds et même ligne que le flux, sans impulsion ——— */
+  .ladder {
+    --ladder-pad: 1.25rem;
+    display: grid;
+  }
+
+  .ladder-step {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.75rem 1fr;
+    column-gap: 0.75rem;
+    padding-bottom: 1rem;
+  }
+
+  .ladder-step[data-last] {
+    padding-bottom: 0;
+  }
+
+  /* Ligne verticale jusqu'au nœud suivant (mobile). */
+  .ladder-step:not([data-last])::before {
+    content: '';
+    position: absolute;
+    left: calc(0.875rem - 0.5px);
+    top: calc(var(--ladder-pad) + 1.75rem);
+    bottom: calc(-1 * var(--ladder-pad));
+    width: 1px;
+    background: var(--color-line);
+  }
+
+  .ladder-node {
+    position: relative;
+    z-index: 1;
+    margin-top: var(--ladder-pad);
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 999px;
+    border: 1px solid var(--color-line);
+    background: var(--color-deep);
+    display: grid;
+    place-items: center;
+  }
+
+  .ladder-node::after {
+    content: '';
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 999px;
+    background: var(--color-signal);
+    opacity: 0.55;
+  }
+
+  .ladder-step[data-entry] .ladder-node {
+    border-color: var(--color-signal);
+    box-shadow: 0 0 0 6px color-mix(in srgb, var(--color-signal) 14%, transparent);
+  }
+
+  .ladder-step[data-entry] .ladder-node::after {
+    opacity: 1;
+  }
+
+  .ladder-body {
+    padding: var(--ladder-pad);
+  }
+
+  @media (min-width: 64rem) {
+    .ladder {
+      --ladder-pad: 1.5rem;
+      grid-template-columns: repeat(var(--ladder-count), minmax(0, 1fr));
+      column-gap: 0.75rem;
+    }
+
+    .ladder-step {
+      grid-template-columns: 1fr;
+      align-content: start;
+      row-gap: 1rem;
+      padding-bottom: 0;
+    }
+
+    .ladder-node {
+      margin-top: 0;
+      margin-left: var(--ladder-pad);
+    }
+
+    /* Ligne horizontale du nœud jusqu'au nœud suivant (gouttière comprise). */
+    .ladder-step:not([data-last])::before {
+      left: calc(var(--ladder-pad) + 1.75rem);
+      right: calc(-1 * (var(--ladder-pad) + 0.75rem));
+      top: calc(0.875rem - 0.5px);
+      bottom: auto;
+      width: auto;
+      height: 1px;
+    }
+  }
+
   /* ——— Avant / après ——— */
   .ba-cut {
     position: relative;

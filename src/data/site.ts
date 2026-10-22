@@ -10,6 +10,7 @@ export const cta = {
   primary: { label: 'Réserver un diagnostic', href: site.calendly },
   savings: { label: "Voir où l’IA vous fait gagner du temps", href: '/#cas-usage' },
   useCases: { label: "Voir les cas d’usage", href: '/#cas-usage' },
+  offers: { label: 'Voir les offres', href: '/offres' },
   governance: { label: 'Comment vos données sont protégées', href: '/gouvernance' },
   write: { label: 'Ou décrivez-le par écrit', href: '/contact' },
 }
@@ -20,7 +21,7 @@ export const nav = {
   menuLabel: 'Menu',
   closeLabel: 'Fermer le menu',
   links: [
-    { label: 'Méthode & offres', href: '/methode' },
+    { label: 'Offres', href: '/offres' },
     { label: 'Gouvernance', href: '/gouvernance' },
     { label: 'À propos', href: '/a-propos' },
   ],
@@ -35,7 +36,7 @@ export const footer = {
   contactLabel: 'Contact',
   pages: [
     { label: 'Accueil', href: '/' },
-    { label: 'Méthode & offres', href: '/methode' },
+    { label: 'Offres', href: '/offres' },
     { label: 'Gouvernance', href: '/gouvernance' },
     { label: 'À propos', href: '/a-propos' },
     { label: 'Contact', href: '/contact' },
@@ -59,6 +60,10 @@ export const illustrativeTag = 'Exemple illustratif'
 export const seo = {
   skipLabel: 'Aller au contenu',
   serviceType: "Intégration de l’IA et automatisation des processus",
+  areaServed: [
+    { '@type': 'AdministrativeArea', name: 'Normandie' },
+    { '@type': 'AdministrativeArea', name: 'Île-de-France' },
+  ],
   keywords: [
     'collaborateur IA',
     'intégration IA',

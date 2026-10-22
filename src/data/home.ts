@@ -22,10 +22,7 @@ export const hero = {
   ],
 }
 
-export const links = [
-  { label: 'Voir la méthode et les offres', href: '/methode' },
-  cta.governance,
-]
+export const links = [cta.governance]
 
 export const about = {
   title: { lead: "Comprendre votre terrain", rest: "avant de parler technologie." },

@@ -6,11 +6,13 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
-      { source: '/offres/audit', destination: '/methode#audit', permanent: true },
-      { source: '/offres/deploiement', destination: '/methode#setup', permanent: true },
-      { source: '/offres/accompagnement', destination: '/methode#abonnement', permanent: true },
-      { source: '/accompagnement', destination: '/methode#abonnement', permanent: true },
-      { source: '/formation', destination: '/methode#setup', permanent: true },
+      // Sources exactes : `/offres` reste une vraie page, seules ses anciennes sous-pages redirigent.
+      { source: '/methode', destination: '/offres', permanent: true },
+      { source: '/offres/audit', destination: '/offres#audit', permanent: true },
+      { source: '/offres/deploiement', destination: '/offres#setup', permanent: true },
+      { source: '/offres/accompagnement', destination: '/offres#abonnement', permanent: true },
+      { source: '/accompagnement', destination: '/offres#abonnement', permanent: true },
+      { source: '/formation', destination: '/offres#setup', permanent: true },
       { source: '/secteurs/:slug', destination: '/#cas-usage', permanent: true },
       { source: '/cas-usage', destination: '/#cas-usage', permanent: true },
     ]
