@@ -183,148 +183,150 @@ export default function ProcessCalculator() {
   }
 
   return (
-    <div className="grid gap-14 lg:grid-cols-[7fr_5fr] lg:gap-16">
-      {/* Saisie */}
-      <div className="grid gap-12">
-        <fieldset className="grid gap-5">
-          <legend className="t-h3 mb-5">{form.sections.process}</legend>
-          <div className="grid gap-5 sm:grid-cols-2">
-            <label className={labelClass}>
-              {f.name.label}
-              <input
-                className={fieldClass}
-                placeholder={f.name.placeholder}
-                value={inputs.name}
-                onChange={(event) => set('name')(event.target.value)}
-              />
-            </label>
-            <label className={labelClass}>
-              {f.fonction.label}
-              <select
-                className={fieldClass}
-                value={inputs.fonction}
-                onChange={(event) => set('fonction')(event.target.value)}
-              >
-                <option value="" disabled>
-                  {form.placeholder}
-                </option>
-                {form.fonctions.map((option) => (
-                  <option key={option} value={option}>
-                    {option}
-                  </option>
-                ))}
-              </select>
-            </label>
-          </div>
-          <div className="grid gap-5 sm:grid-cols-[2fr_1fr] sm:items-end">
-            <NumberField label={f.volume.label} hint={f.volume.hint} value={inputs.volume} onChange={set('volume')} />
-            <label className={labelClass}>
-              {f.period.label}
-              <select
-                className={fieldClass}
-                value={inputs.period}
-                onChange={(event) => set('period')(event.target.value)}
-              >
-                {form.periods.map((option) => (
-                  <option key={option.value} value={option.value}>
-                    {option.label}
-                  </option>
-                ))}
-              </select>
-            </label>
-          </div>
-        </fieldset>
-
-        <fieldset className="grid gap-5">
-          <legend className="t-h3 mb-5">{form.sections.time}</legend>
-          <NumberField {...f.direct} value={inputs.direct} onChange={set('direct')} />
-          <NumberField {...f.indirect} value={inputs.indirect} onChange={set('indirect')} />
-        </fieldset>
-
-        <fieldset className="grid gap-5">
-          <legend className="t-h3 mb-5">{form.sections.errors}</legend>
-          <div className="grid gap-5 sm:grid-cols-2">
-            <NumberField {...f.errorRate} value={inputs.errorRate} onChange={set('errorRate')} />
-            <NumberField {...f.errorTime} value={inputs.errorTime} onChange={set('errorTime')} />
-          </div>
-          <NumberField {...f.errorCost} value={inputs.errorCost} onChange={set('errorCost')} />
-        </fieldset>
-
-        <fieldset className="grid gap-5">
-          <legend className="t-h3 mb-5">{form.sections.cost}</legend>
-          <NumberField {...f.salary} value={inputs.salary} onChange={set('salary')} />
-          <NumberField {...f.manual} value={inputs.manual} onChange={set('manual')} />
-          <div className="grid gap-3">
-            <p className="t-small font-medium text-ink" id="reduction-label">
-              {f.reduction.label}
-            </p>
-            <div role="radiogroup" aria-labelledby="reduction-label" className="flex flex-wrap gap-3">
-              {form.reductions.map((value) => (
-                <label
-                  key={value}
-                  className={`t-num inline-flex min-h-11 cursor-pointer items-center rounded-pill border px-5 font-medium transition-colors duration-200 has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-signal ${
-                    inputs.reduction === value ? 'border-signal bg-signal text-night' : 'border-mist/40 text-ink hover:border-ink'
-                  }`}
+    <div className="grid gap-14">
+      {/* Saisie + résultat dans leur propre grille : le bloc collant s’arrête à la fin du formulaire. */}
+      <div className="grid gap-14 lg:grid-cols-[7fr_5fr] lg:gap-16">
+        <div className="grid gap-12">
+          <fieldset className="grid gap-5">
+            <legend className="t-h3 mb-5">{form.sections.process}</legend>
+            <div className="grid gap-5 sm:grid-cols-2">
+              <label className={labelClass}>
+                {f.name.label}
+                <input
+                  className={fieldClass}
+                  placeholder={f.name.placeholder}
+                  value={inputs.name}
+                  onChange={(event) => set('name')(event.target.value)}
+                />
+              </label>
+              <label className={labelClass}>
+                {f.fonction.label}
+                <select
+                  className={fieldClass}
+                  value={inputs.fonction}
+                  onChange={(event) => set('fonction')(event.target.value)}
                 >
-                  <input
-                    type="radio"
-                    name="reduction"
-                    value={value}
-                    checked={inputs.reduction === value}
-                    onChange={() => set('reduction')(value)}
-                    className="sr-only"
-                  />
-                  {percent.format(value)}
-                </label>
-              ))}
+                  <option value="" disabled>
+                    {form.placeholder}
+                  </option>
+                  {form.fonctions.map((option) => (
+                    <option key={option} value={option}>
+                      {option}
+                    </option>
+                  ))}
+                </select>
+              </label>
             </div>
-          </div>
-        </fieldset>
-      </div>
+            <div className="grid gap-5 sm:grid-cols-[2fr_1fr] sm:items-end">
+              <NumberField label={f.volume.label} hint={f.volume.hint} value={inputs.volume} onChange={set('volume')} />
+              <label className={labelClass}>
+                {f.period.label}
+                <select
+                  className={fieldClass}
+                  value={inputs.period}
+                  onChange={(event) => set('period')(event.target.value)}
+                >
+                  {form.periods.map((option) => (
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
+              </label>
+            </div>
+          </fieldset>
 
-      {/* Résultat : structure fixe, « — » tant qu’une donnée manque, pour que rien ne saute pendant la saisie. */}
-      <div id="resultat" ref={resultRef} className="scroll-mt-24 lg:sticky lg:top-24 lg:self-start">
-        <div className="rounded-card border border-line bg-deep p-6 sm:p-7" aria-live="polite">
-          <h2 className="t-small font-semibold text-mist">{results.title}</h2>
-          <p className="t-small mt-5 text-ink">{l.costYear}</p>
-          <p className="t-num mt-2 font-display text-[clamp(2.5rem,4.2vw,3.25rem)] font-semibold leading-none tracking-[-0.035em] text-signal">
-            {money ? euro.format(r.costYear) : pending}
-          </p>
-          <p className="t-small t-num mt-3 text-mist">
-            {money ? euro.format(r.costMonth) : pending} {l.perMonth} · {r.ready ? hours.format(r.hoursMonth) : pending} h{' '}
-            {l.perMonth}
-          </p>
-          <dl className="mt-6 grid grid-cols-2 gap-x-6 gap-y-5 border-t border-line pt-5">
-            <div>
-              <dt className="t-small text-mist">{l.invisible}</dt>
-              <dd className="t-num mt-1 font-display text-[1.375rem] font-semibold tracking-[-0.03em] text-ink">
-                {money ? percent.format(r.invisible) : pending}
-              </dd>
+          <fieldset className="grid gap-5">
+            <legend className="t-h3 mb-5">{form.sections.time}</legend>
+            <NumberField {...f.direct} value={inputs.direct} onChange={set('direct')} />
+            <NumberField {...f.indirect} value={inputs.indirect} onChange={set('indirect')} />
+          </fieldset>
+
+          <fieldset className="grid gap-5">
+            <legend className="t-h3 mb-5">{form.sections.errors}</legend>
+            <div className="grid gap-5 sm:grid-cols-2">
+              <NumberField {...f.errorRate} value={inputs.errorRate} onChange={set('errorRate')} />
+              <NumberField {...f.errorTime} value={inputs.errorTime} onChange={set('errorTime')} />
             </div>
-            <div>
-              <dt className="t-small text-mist">{l.perItem}</dt>
-              <dd className="t-num mt-1 font-display text-[1.375rem] font-semibold tracking-[-0.03em] text-ink">
-                {money ? euroCents.format(r.perItem) : pending}
-              </dd>
+            <NumberField {...f.errorCost} value={inputs.errorCost} onChange={set('errorCost')} />
+          </fieldset>
+
+          <fieldset className="grid gap-5">
+            <legend className="t-h3 mb-5">{form.sections.cost}</legend>
+            <NumberField {...f.salary} value={inputs.salary} onChange={set('salary')} />
+            <NumberField {...f.manual} value={inputs.manual} onChange={set('manual')} />
+            <div className="grid gap-3">
+              <p className="t-small font-medium text-ink" id="reduction-label">
+                {f.reduction.label}
+              </p>
+              <div role="radiogroup" aria-labelledby="reduction-label" className="flex flex-wrap gap-3">
+                {form.reductions.map((value) => (
+                  <label
+                    key={value}
+                    className={`t-num inline-flex min-h-11 cursor-pointer items-center rounded-pill border px-5 font-medium transition-colors duration-200 has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-signal ${
+                      inputs.reduction === value ? 'border-signal bg-signal text-night' : 'border-mist/40 text-ink hover:border-ink'
+                    }`}
+                  >
+                    <input
+                      type="radio"
+                      name="reduction"
+                      value={value}
+                      checked={inputs.reduction === value}
+                      onChange={() => set('reduction')(value)}
+                      className="sr-only"
+                    />
+                    {percent.format(value)}
+                  </label>
+                ))}
+              </div>
             </div>
-            <div className="col-span-2">
-              <dt className="t-small text-mist">
-                {l.recoverable} ({percent.format(inputs.reduction)})
-              </dt>
-              <dd className="t-num mt-1 font-display text-[1.375rem] font-semibold tracking-[-0.03em] text-ink">
-                {money ? euro.format(r.recoverableYear) : pending}
-              </dd>
-            </div>
-          </dl>
-          <p className="t-small mt-6 min-h-[3.75rem] border-t border-line pt-5 font-medium text-ink">
-            {!r.ready ? results.empty : !r.hasCost ? results.needSalary : r.above ? results.above : results.below}
-          </p>
+          </fieldset>
         </div>
-        <div className="t-small mt-4 grid gap-2 text-mist">
-          <p>
-            {results.tag}. {l.invisibleHint} {l.recoverableHint}
-          </p>
-          <p>{results.limits}</p>
+
+        {/* Résultat : structure fixe, « — » tant qu’une donnée manque, pour que rien ne saute pendant la saisie. */}
+        <div id="resultat" ref={resultRef} className="scroll-mt-24 lg:sticky lg:top-24 lg:self-start">
+          <div className="rounded-card border border-line bg-deep p-6 sm:p-7" aria-live="polite">
+            <h2 className="t-small font-semibold text-mist">{results.title}</h2>
+            <p className="t-small mt-5 text-ink">{l.costYear}</p>
+            <p className="t-num mt-2 font-display text-[clamp(2.5rem,4.2vw,3.25rem)] font-semibold leading-none tracking-[-0.035em] text-signal">
+              {money ? euro.format(r.costYear) : pending}
+            </p>
+            <p className="t-small t-num mt-3 text-mist">
+              {money ? euro.format(r.costMonth) : pending} {l.perMonth} · {r.ready ? hours.format(r.hoursMonth) : pending} h{' '}
+              {l.perMonth}
+            </p>
+            <dl className="mt-6 grid grid-cols-2 gap-x-6 gap-y-5 border-t border-line pt-5">
+              <div>
+                <dt className="t-small text-mist">{l.invisible}</dt>
+                <dd className="t-num mt-1 font-display text-[1.375rem] font-semibold tracking-[-0.03em] text-ink">
+                  {money ? percent.format(r.invisible) : pending}
+                </dd>
+              </div>
+              <div>
+                <dt className="t-small text-mist">{l.perItem}</dt>
+                <dd className="t-num mt-1 font-display text-[1.375rem] font-semibold tracking-[-0.03em] text-ink">
+                  {money ? euroCents.format(r.perItem) : pending}
+                </dd>
+              </div>
+              <div className="col-span-2">
+                <dt className="t-small text-mist">
+                  {l.recoverable} ({percent.format(inputs.reduction)})
+                </dt>
+                <dd className="t-num mt-1 font-display text-[1.375rem] font-semibold tracking-[-0.03em] text-ink">
+                  {money ? euro.format(r.recoverableYear) : pending}
+                </dd>
+              </div>
+            </dl>
+            <p className="t-small mt-6 min-h-[3.75rem] border-t border-line pt-5 font-medium text-ink">
+              {!r.ready ? results.empty : !r.hasCost ? results.needSalary : r.above ? results.above : results.below}
+            </p>
+          </div>
+          <div className="t-small mt-4 grid gap-2 text-mist">
+            <p>
+              {results.tag}. {l.invisibleHint} {l.recoverableHint}
+            </p>
+            <p>{results.limits}</p>
+          </div>
         </div>
       </div>
 
@@ -347,7 +349,7 @@ export default function ProcessCalculator() {
       ) : null}
 
       {/* Envoi de l’estimation */}
-      <div className="border-t border-line pt-12 lg:col-span-2">
+      <div className="border-t border-line pt-12">
         <div className="grid gap-12 lg:grid-cols-[5fr_7fr] lg:gap-20">
           <div>
             <h2 className="t-h3">{lead.title}</h2>
