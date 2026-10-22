@@ -4,7 +4,9 @@
 
 ## Statut : refonte complète en cours (branche `refonte-complete`)
 
-- Design system « Flux » en place (voir plus bas). Architecture : Accueil (Hero, cas d’usage, équipe, appel final), Méthode & offres, Gouvernance, À propos, Contact. Les cas d’usage sont une section de l’accueil (`/#cas-usage`), pas une page : l’accueil montre ce qu’AGS fait, le détail du processus vit sur Méthode & offres.
+- Design system « Flux » en place (voir plus bas). Architecture : Accueil (Hero, cas d’usage, bande « Nos offres », équipe, écosystème, appel final), Offres (`/offres`), Gouvernance, À propos, Contact, et deux pages locales (`/ia-entreprise-normandie`, `/ia-entreprise-paris`). Les cas d’usage sont une section de l’accueil (`/#cas-usage`), pas une page.
+- `/offres` est courte : échelle des 4 offres visible en un écran, « Par où commencer ? », 3 temps, confiance, FAQ. `/methode` redirige vers `/offres` ; les anciennes URL pointent directement vers `/offres#diagnostic|audit|setup|abonnement` (ancres à conserver).
+- Pages locales : même trame (`components/layout/LocalPage`, données dans `src/data/local.ts`), mais des textes réellement différents d’une page à l’autre, sinon Google les traite comme des pages satellites. Aucun client, chiffre ou témoignage local inventé. AGS ne propose pas d’accompagnement au financement : n’en parler nulle part.
 - Ne pousse rien, ne déploie rien, ne merge rien sans validation explicite d'Evens.
 
 ## Positionnement (référence pour tout texte)
@@ -14,7 +16,10 @@
 - Message principal : « AGS & Co aide les entreprises à récupérer du temps et à augmenter leur capacité opérationnelle grâce à des collaborateurs IA. » On parle de temps gagné, de tâches manuelles réduites, de capacité, de rapidité, d’opportunités commerciales, de croissance sans hausse proportionnelle des charges.
 - Offre, dans cet ordre : Diagnostic initial (gratuit, 45 min) → Audit AGS (650 € HT) → Mise en place (sur devis) → AGS Care (550 € HT / mois : supervision, suivi des performances, évolutions, 4 revues par an, sensibilisation à la cybersécurité sous forme de bonnes pratiques ; les interventions d’experts cyber sont annoncées « à venir », pas comme existantes).
 - Le diagnostic gratuit ne s’appelle jamais « audit » : l’Audit AGS est la prestation payante qui vient ensuite.
-- AGS est basé à Rouen (Normandie). Diagnostic initial : https://calendly.com/evens-agsandco/30min (l’événement doit durer 45 minutes).
+- Géographie : « Rouen · Paris » partout. Siège au 59 rue de Ponthieu (Paris 8e), activité à Rouen. Cibles locales : Normandie (Rouen, Caen, Le Havre, Évreux) et Paris / Île-de-France ; rendez-vous sur site ou à distance.
+- Réseaux dont AGS est membre (jamais « partenaire ») : Normandie Numérique, Hub France IA, Rouen Business & Audace, Rouen Normandie Rugby.
+- SEO : « agent IA » dans les titres et descriptions de page (environ 60 caractères, avec le lieu) ; « collaborateur IA » reste dans les textes commerciaux. Le sitemap porte des dates fixes : les mettre à jour quand une page change.
+- Diagnostic initial : https://calendly.com/evens-agsandco/30min (l’événement doit durer 45 minutes).
 - Ne rien présenter comme déployé, mesuré ou obtenu chez un client si ce n’est pas le cas.
 
 ## Wording — règles éditoriales
@@ -91,9 +96,10 @@ Classes Tailwind : `bg-night`, `text-mist`, `border-line`, `rounded-pill`, `roun
 ### Composants
 
 - `ui/Button` : pilule. `primary` (fond `signal`, texte `night`), `secondary` (contour), `link`. Un seul CTA principal sur le site : « Réserver un diagnostic ».
-- `visuals/Ecosystem` : section « Notre écosystème » de l’accueil. Réseaux dont AGS est membre, logos officiels cliquables, pris sur le site de chaque réseau (sources dans `brand/ecosysteme/`, versions servies dans `public/ecosysteme/`). Ajouter un réseau = une ligne dans `ecosystem.members` (`src/data/home.ts`) et un fichier logo.
+- `visuals/Ecosystem` : section « Notre écosystème » de l’accueil. Réseaux dont AGS est membre, logos officiels cliquables, pris sur le site de chaque réseau (sources dans `brand/ecosysteme/`, versions servies dans `public/ecosysteme/`). Ajouter un réseau = une ligne dans `ecosystem.members` (`src/data/home.ts`) et un fichier logo. Un logo sombre (texte foncé, comme le Hub France IA) reçoit `plate: true` : il est posé sur une plaque claire, jamais recoloré.
 - `ui/Title`, `ui/Section` (fond `night` ou `deep`, sans dégradé), `ui/Tag` (« Exemple illustratif », obligatoire sur tout chiffre non issu d’un vrai cas).
 - `visuals/Flow` : étapes numérotées reliées par une ligne ; l’étape marquée `human` est en couleur `human` avec halo. Horizontal dès 1024 px, vertical en dessous.
+- `visuals/OfferLadder` : l’échelle des 4 offres (données `offers` dans `src/data/offres.ts`, source unique des prix), mêmes nœuds et même ligne que `Flow`, sans impulsion ; le Diagnostic est le point d’entrée (accent `signal`). Variante `full` sur `/offres` (ancres, pour qui, 3 puces max) ; variante `compact` sur l’accueil et les pages locales.
 - `visuals/BeforeAfter`, `visuals/PersonCard`, `visuals/Results` (masqué par `results.enabled`).
 - `layout/Nav` et `layout/Footer` sont rendus par `app/layout.tsx` : ne pas les répéter dans les pages.
 - `visuals/AgentAvatar` : portrait rond d’un collaborateur IA, avec la mention « Collaborateur IA · métier ». Il identifie un collaborateur IA : ce n’est pas une icône décorative.

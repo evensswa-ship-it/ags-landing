@@ -23,9 +23,13 @@ Evens Augustin, fondateur d'AGS & Co. Il n'est pas technique : c'est un profil c
 
 ## État actuel
 
-Refonte terminée et commitée : design system « Flux », 5 pages (`/`, `/methode`, `/gouvernance`, `/a-propos`, `/contact` ; les cas d'usage sont une section de l'accueil, `/#cas-usage`), 4 pages légales, redirections permanentes des anciennes URL, logo SVG, deux fondateurs (Evens et Naomie).
+Refonte terminée et commitée : design system « Flux », 7 pages (`/`, `/offres`, `/gouvernance`, `/a-propos`, `/contact`, `/ia-entreprise-normandie`, `/ia-entreprise-paris` ; les cas d'usage sont une section de l'accueil, `/#cas-usage`), 4 pages légales, redirections permanentes des anciennes URL (`/methode` → `/offres`), logo SVG, deux fondateurs (Evens et Naomie).
 
-Build et lint verts. Lighthouse mobile : performance 91-95, accessibilité 100, SEO 100.
+Octobre 2026 (adhésion à Normandie Numérique et au Hub France IA) : page Offres raccourcie autour de l'échelle des 4 offres, bande d'offres sur l'accueil, deux pages locales, « Rouen · Paris » partout, balisage Organization avec zones servies Normandie et Île-de-France, prix HT dans le balisage des offres.
+
+Build et lint verts. Lighthouse mobile (22 octobre 2026) : accessibilité 100 et SEO 100 partout ; performance 92 sur `/offres`, 91 sur la page Normandie, 86 à 89 sur l'accueil (mesures bruitées sur cette machine : `/gouvernance`, inchangée, a donné 84 au même moment).
+
+Hors site, à faire par Evens : compléter la fiche dans l'annuaire Normandie Numérique (catégorie « IA, data, IoT », ville Rouen) avec un lien vers `/ia-entreprise-normandie`, et le profil membre du Hub France IA avec un lien vers `/ia-entreprise-paris`. Utiliser des liens suivis, par exemple `?utm_source=normandie-numerique&utm_medium=annuaire`, pour mesurer chaque réseau dans GA4. Piste : proposer un webinaire « Osez l'IA » au Hub sur un cas concret.
 
 Où sont les choses :
 
@@ -44,6 +48,8 @@ Où sont les choses :
 6. `src/lib/analytics.ts` : ancien code commenté, jamais utilisé, laissé en l'état.
 
 7. Calendly : le site annonce un diagnostic initial gratuit de 45 minutes. Evens doit passer l'événement Calendly (lien `/30min`) à 45 minutes, ou fournir un nouveau lien à mettre dans `src/data/site.ts`.
+8. Calculateur du coût d'un processus : travail commencé par une autre session et non terminé (`src/components/ProcessCalculator.tsx`, `src/data/calculateur.ts`, ligne `cta.calculator` dans `src/data/site.ts`). Rien n'est commité, aucune page `/calculateur` n'existe encore.
+9. Hub France IA : son logo (texte bleu nuit) est affiché sur une plaque claire. Si le rendu déplaît, demander au Hub sa version blanche (« négative »).
 
 ## Règles de contenu à ne pas enfreindre
 
