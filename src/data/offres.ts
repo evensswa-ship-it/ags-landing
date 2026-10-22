@@ -50,7 +50,7 @@ export const offers: Offer[] = [
     name: 'Mise en place',
     price: { label: 'Sur devis', amount: null },
     format: 'Projet',
-    promise: 'Vos collaborateurs IA au travail, dans vos outils.',
+    promise: 'Des experts métiers augmentés, formés à vos règles, au travail dans vos outils.',
     audience: 'Le cas est validé, vous voulez le mettre en place.',
     includes: [
       'La connexion à vos logiciels, après vérification technique et sécurité',

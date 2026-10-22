@@ -53,12 +53,12 @@ export const normandie: LocalPageData = {
     eyebrow: 'Rouen · Caen · Le Havre · Évreux',
     title: { lead: 'Agents IA pour les PME et ETI normandes.', rest: 'Depuis Rouen, au plus près du terrain.' },
     intro:
-      'AGS & Co est basé à Rouen. Nous aidons les entreprises normandes à récupérer du temps grâce à des collaborateurs IA, branchés à leurs outils et validés par leurs équipes.',
+      'AGS & Co est basé à Rouen. Nous aidons les entreprises normandes à récupérer du temps grâce à des collaborateurs IA : des experts métiers augmentés, formés à leurs processus, branchés à leurs outils et validés par leurs équipes.',
   },
   context: {
     title: { lead: 'Un cabinet normand,', rest: 'qui vient vous voir.' },
     paragraphs: [
-      'Dans une PME ou une ETI, quelques personnes portent souvent les devis, les relances, la saisie et le reporting. C’est là qu’un collaborateur IA fait gagner du temps.',
+      'Dans une PME ou une ETI, quelques personnes portent souvent les devis, les relances, la saisie et le reporting. C’est là qu’un collaborateur IA, formé à ce métier, fait gagner du temps.',
       'Nous venons dans vos locaux, à Rouen, Caen, Le Havre ou Évreux, pour comprendre comment le travail se fait vraiment. Le suivi se fait ensuite sur place ou à distance, selon ce qui vous arrange.',
       'Evens a mené des projets pour des acteurs normands, dont deux ans en mission au sein d’un grand acteur de l’assurance en Normandie. AGS & Co est membre de Normandie Numérique.',
     ],
@@ -99,7 +99,7 @@ export const paris: LocalPageData = {
     eyebrow: 'Paris · Île-de-France',
     title: { lead: 'Agents IA pour les PME et ETI parisiennes.', rest: 'Sur site quand il le faut, à distance le reste du temps.' },
     intro:
-      'AGS & Co a son siège à Paris, dans le 8e arrondissement. Nous mettons en place des collaborateurs IA dans les entreprises d’Île-de-France, branchés à leurs outils et sous le contrôle de leurs équipes.',
+      'AGS & Co a son siège à Paris, dans le 8e arrondissement. Nous mettons en place des collaborateurs IA dans les entreprises d’Île-de-France : des experts métiers augmentés, branchés à leurs outils et sous le contrôle de leurs équipes.',
   },
   context: {
     title: { lead: 'Un format hybride,', rest: 'qui suit votre agenda.' },

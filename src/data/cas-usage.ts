@@ -1,7 +1,7 @@
 export const casUsage = {
   title: { lead: "Ce qu’un collaborateur IA peut prendre en charge", rest: 'chez vous.' },
   definition:
-    "Un collaborateur IA est une capacité opérationnelle déployée dans votre entreprise pour prendre en charge ou assister certaines tâches répétitives, chronophages ou à faible valeur ajoutée.",
+    "Un collaborateur IA est un expert métier augmenté, pas un chatbot. Formé à vos processus, à vos règles et à vos outils, il prend en charge le travail répétitif d’une fonction, du début à la fin, et passe la main à une personne quand une décision compte.",
   intro:
     "Dix situations courantes, classées par fonction. Pour chacune : ce qui se passe aujourd’hui, ce que fait le collaborateur IA, ce que vous gardez, ce qu’on mesure.",
   labels: {
@@ -45,9 +45,9 @@ export const casUsage = {
           metric: 'Délai de première réponse',
         },
         {
-          title: 'Répondre aux questions récurrentes',
-          problem: 'Les mêmes questions reviennent chaque jour et occupent vos équipes.',
-          agent: "Il prépare la réponse à partir de vos documents et de l’historique du client.",
+          title: 'Traiter les demandes récurrentes',
+          problem: 'Les mêmes demandes reviennent chaque jour et occupent vos équipes.',
+          agent: "Il traite la demande comme votre équipe : il vérifie le dossier du client, applique vos règles et prépare la réponse.",
           human: 'Une personne valide les réponses sensibles.',
           metric: 'Demandes traitées, délai de réponse',
         },
@@ -87,7 +87,7 @@ export const casUsage = {
         {
           title: 'Retrouver une information interne',
           problem: 'La réponse existe, dans un document que personne ne retrouve.',
-          agent: 'Il cherche dans vos documents et répond en citant sa source.',
+          agent: 'Comme un collègue qui connaît tous vos dossiers, il retrouve l’information et cite sa source.',
           human: "Vous vérifiez la source quand l’enjeu est important.",
           metric: 'Temps de recherche',
         },

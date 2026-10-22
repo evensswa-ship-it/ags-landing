@@ -33,6 +33,7 @@
 
 **Vocabulaire** :
 - « Collaborateur IA » dans les textes commerciaux ; « agent IA » pour expliquer et pour le SEO. Jamais « copilote » ni « assistant ».
+- Un collaborateur IA se présente comme un **expert métier augmenté**, jamais comme un chatbot : formé aux processus, aux règles et aux outils d’une fonction, il traite un travail de bout en bout (il vérifie, prépare, relance, met à jour) et passe la main à une personne pour les décisions. Éviter les formulations de conversation (« répond aux questions », « discute », « posez-lui une question »).
 - Résultats dans cet ordre : volume traité, temps gagné, erreurs évitées, ventes récupérées, puis le coût.
 
 **Interdits** :
