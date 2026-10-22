@@ -60,7 +60,7 @@ export const normandie: LocalPageData = {
     paragraphs: [
       'Dans une PME ou une ETI, quelques personnes portent souvent les devis, les relances, la saisie et le reporting. C’est là qu’un collaborateur IA, formé à ce métier, fait gagner du temps.',
       'Nous venons dans vos locaux, à Rouen, Caen, Le Havre ou Évreux, pour comprendre comment le travail se fait vraiment. Le suivi se fait ensuite sur place ou à distance, selon ce qui vous arrange.',
-      'Evens a mené des projets pour des acteurs normands, dont deux ans en mission au sein d’un grand acteur de l’assurance en Normandie. AGS & Co est membre de Normandie Numérique.',
+      'Evens a été PMO sur des projets pour des acteurs normands, puis a passé deux ans en mission au sein d’un grand acteur de l’assurance en Normandie. AGS & Co est membre de Normandie Numérique.',
     ],
   },
   cases: pickCases(['Relancer devis et prospects', 'Traiter factures et documents', 'Repérer les dossiers incomplets']),
@@ -106,7 +106,7 @@ export const paris: LocalPageData = {
     paragraphs: [
       'Les rendez-vous clés se font dans vos locaux, avec les personnes qui font le travail au quotidien. Le reste avance à distance, sans vous faire perdre de temps en déplacements.',
       'Dans une ETI, la question est souvent moins « est-ce possible ? » que « qui valide, qui voit quoi, comment c’est tracé ? ». C’est par là que nous commençons : chaque collaborateur IA a ses droits, ses limites et son historique.',
-      'Evens a conduit des projets de migration cloud et de télécoms pour des acteurs normands et parisiens. AGS & Co est membre du Hub France IA.',
+      'Evens a été PMO sur des projets de migration cloud et de télécoms pour des acteurs normands et parisiens. AGS & Co est membre du Hub France IA.',
     ],
     link: cta.governance,
   },

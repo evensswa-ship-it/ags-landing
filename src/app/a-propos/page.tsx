@@ -50,11 +50,24 @@ export default function AProposPage() {
 
       <Section tone="deep" labelledBy="partners-title">
         <Title id="partners-title" stacked className="max-w-[26ch]" {...partners.title} />
-        <ul className="mt-14 grid gap-10 lg:grid-cols-3 lg:gap-14">
-          {partners.items.map((item) => (
+        <p className="t-lede mt-8 max-w-[40rem] text-ink">{partners.intro}</p>
+
+        <h3 className="t-small mt-14 font-semibold text-signal">{partners.gainsLabel}</h3>
+        <ul className="mt-6 grid gap-10 lg:grid-cols-3 lg:gap-14">
+          {partners.gains.map((item) => (
             <li key={item.title} className="border-t border-line pt-7">
-              <h3 className="t-h3">{item.title}</h3>
+              <h4 className="t-h3">{item.title}</h4>
               <p className="t-lede mt-3">{item.text}</p>
+            </li>
+          ))}
+        </ul>
+
+        <h3 className="t-small mt-16 font-semibold text-mist">{partners.itemsLabel}</h3>
+        <ul className="mt-6 grid gap-x-14 gap-y-6 lg:grid-cols-3">
+          {partners.items.map((item) => (
+            <li key={item.title} className="border-t border-line pt-5">
+              <h4 className="font-display text-[1.125rem] font-semibold tracking-[-0.02em] text-ink">{item.title}</h4>
+              <p className="mt-2 text-mist">{item.text}</p>
             </li>
           ))}
         </ul>
