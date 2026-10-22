@@ -4,9 +4,9 @@ export const gouvernance = {
   path: '/gouvernance',
   breadcrumb: 'Gouvernance',
   meta: {
-    title: 'Gouvernance IA : accès, validation humaine, traçabilité · AGS & Co',
+    title: 'IA de confiance et AI Act : notre gouvernance · AGS & Co',
     description:
-      'Ce que voit chaque agent IA, ce qu’il peut faire, qui valide et où vont vos données. La gouvernance IA appliquée aux PME et ETI.',
+      'Ce que voit chaque agent IA, ce qu’il peut faire, qui valide, où vont vos données et comment l’AI Act est pris en compte. Une IA de confiance pour PME et ETI.',
   },
   title: {
     lead: 'Un collaborateur IA capable de tout faire',

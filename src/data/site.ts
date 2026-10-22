@@ -76,8 +76,8 @@ export const seo = {
     'gouvernance IA',
   ],
   home: {
-    title: "AGS & Co · Collaborateurs IA et automatisation des processus pour PME et ETI",
+    title: 'Agents IA pour PME et ETI · Normandie & Paris · AGS & Co',
     description:
-      "AGS & Co aide les PME et ETI à récupérer du temps et à augmenter leur capacité opérationnelle grâce à des collaborateurs IA (agents IA). Dix cas d’usage par fonction, diagnostic initial gratuit. Depuis Rouen.",
+      'AGS & Co aide les PME et ETI de Normandie et de Paris à récupérer du temps grâce à des collaborateurs IA (agents IA). Diagnostic initial gratuit de 45 min.',
   },
 }

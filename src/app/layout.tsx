@@ -5,7 +5,7 @@ import { Inter, Inter_Tight } from 'next/font/google'
 import ThirdParties from '@/components/ThirdParties'
 import Nav from '@/components/layout/Nav'
 import Footer from '@/components/layout/Footer'
-import { seo } from '@/data/site'
+import { seo, site } from '@/data/site'
 import './globals.css'
 
 const inter = Inter({
@@ -61,7 +61,19 @@ const siteSchemas = [
       postalCode: '75008',
       addressCountry: 'FR',
     },
-    areaServed: 'FR',
+    // Siège à Paris, activité à Rouen.
+    location: {
+      '@type': 'Place',
+      name: 'AGS & Co Rouen',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Rouen',
+        addressRegion: 'Normandie',
+        addressCountry: 'FR',
+      },
+    },
+    areaServed: seo.areaServed,
+    sameAs: [site.linkedin.split('?')[0]],
     serviceType: seo.serviceType,
     description: seo.home.description,
   },

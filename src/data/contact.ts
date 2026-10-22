@@ -6,7 +6,7 @@ export const contact = {
   meta: {
     title: "Contact : réservez un diagnostic gratuit · AGS & Co",
     description:
-      'Un diagnostic initial gratuit de 45 minutes pour parler du processus qui vous fait perdre du temps. Sans engagement.',
+      'Un diagnostic initial gratuit de 45 minutes pour parler du processus qui vous fait perdre du temps. Sans engagement, à Rouen, à Paris ou à distance.',
   },
   title: { lead: 'Quel processus vous fait perdre du temps aujourd’hui ?' },
   intro: "Diagnostic initial gratuit : 45 minutes pour comprendre votre besoin, repérer ce qui vous freine et voir s’il y a un sujet à creuser.",

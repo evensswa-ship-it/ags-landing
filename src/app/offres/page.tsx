@@ -31,17 +31,14 @@ const schemas = [
               '@type': 'Offer',
               price: offer.price.amount,
               priceCurrency: 'EUR',
-              ...(offer.price.unit
-                ? {
-                    priceSpecification: {
-                      '@type': 'UnitPriceSpecification',
-                      price: offer.price.amount,
-                      priceCurrency: 'EUR',
-                      unitCode: 'MON',
-                      valueAddedTaxIncluded: false,
-                    },
-                  }
-                : {}),
+              // Prix affichés hors taxes ; AGS Care est facturé au mois.
+              priceSpecification: {
+                '@type': 'UnitPriceSpecification',
+                price: offer.price.amount,
+                priceCurrency: 'EUR',
+                valueAddedTaxIncluded: false,
+                ...(offer.price.unit ? { unitCode: 'MON' } : {}),
+              },
             },
           }
         : {}),
