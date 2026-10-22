@@ -54,18 +54,49 @@ export const gouvernance = {
   ],
   sheet: {
     title: { lead: 'Chaque collaborateur IA a sa fiche,', rest: 'validée avec vous.' },
+    intro:
+      'Avant la mise en place, on écrit ensemble ce que le collaborateur IA voit, ce qu’il fait, ce qu’il n’a pas le droit de faire et qui décide. Voici la fiche d’un collaborateur IA commercial qui relance vos devis.',
     kind: 'Fiche de gouvernance',
-    name: 'Collaborateur IA',
+    name: 'Collaborateur IA · Commercial',
+    mission: 'Relance des devis et des prospects',
     rows: [
-      { label: 'Mission' },
-      { label: 'Responsable chez vous' },
-      { label: 'Données visibles' },
-      { label: 'Données interdites' },
-      { label: 'Actions autorisées' },
-      { label: 'Actions interdites' },
-      { label: 'Passage de relais à une personne', human: true },
-      { label: 'Traçabilité' },
-      { label: 'Revue trimestrielle' },
+      {
+        label: 'Mission',
+        value: 'Repérer chaque devis resté sans réponse après 7 jours, préparer une relance adaptée au client et la proposer au commercial qui suit le dossier.',
+      },
+      {
+        label: 'Responsable chez vous',
+        value: 'Votre responsable commercial. Il fixe les règles de relance et tranche les cas particuliers.',
+      },
+      {
+        label: 'Données visibles',
+        value: 'Devis envoyés, fiches clients et historique des échanges dans votre CRM, grille tarifaire en vigueur.',
+      },
+      {
+        label: 'Données interdites',
+        value: 'Paie, dossiers RH, comptabilité, coordonnées bancaires des clients.',
+      },
+      {
+        label: 'Actions autorisées',
+        value: 'Lire les devis et les fiches clients, rédiger un brouillon de relance, créer une tâche de rappel dans le CRM.',
+      },
+      {
+        label: 'Actions interdites',
+        value: 'Envoyer un email sans validation, modifier un prix ou une remise, supprimer une fiche client.',
+      },
+      {
+        label: 'Passage de relais à une personne',
+        value: 'Chaque relance est validée par le commercial avant l’envoi. Un client mécontent, une demande de remise ou un devis de plus de 10 000 € HT passent directement à une personne.',
+        human: true,
+      },
+      {
+        label: 'Traçabilité',
+        value: 'Chaque relance proposée, validée, modifiée ou refusée est enregistrée : qui, quand, sur quelle base.',
+      },
+      {
+        label: 'Revue trimestrielle',
+        value: 'Devis relancés, relances validées sans retouche, ventes récupérées. On ajuste les règles avec vous.',
+      },
     ],
   },
   notes: [
