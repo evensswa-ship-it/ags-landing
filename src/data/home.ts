@@ -1,7 +1,7 @@
 import { cta } from './site'
 
 export const hero = {
-  eyebrow: "Collaborateurs IA · PME & ETI · Rouen",
+  eyebrow: "Collaborateurs IA · PME & ETI · Rouen & Paris",
   title: { lead: "L’IA au travail.", rest: 'Sous contrôle.' },
   subtitle:
     "AGS & Co aide les entreprises à récupérer du temps et à augmenter leur capacité opérationnelle grâce à des collaborateurs IA. Vos équipes gardent les décisions. Chaque gain est mesuré.",
@@ -46,11 +46,27 @@ export const about = {
 export const ecosystem = {
   title: { lead: 'Notre écosystème.' },
   paragraphs: [
-    'AGS & Co s’inscrit dans un écosystème économique et entrepreneurial actif en Normandie.',
-    'Nous participons à des réseaux qui nous permettent de rester au plus près des dirigeants, des entreprises et des enjeux du territoire.',
+    'AGS & Co s’inscrit dans un écosystème économique et numérique actif, en Normandie et autour de l’IA en France.',
+    'Nous participons à des réseaux qui nous permettent de rester au plus près des dirigeants, des enjeux du territoire et des usages concrets de l’IA.',
   ],
-  /** Adhésions uniquement. Logos officiels, pris sur le site de chaque réseau (sources dans brand/ecosysteme). */
+  /**
+   * Adhésions uniquement. Logos officiels (sources dans brand/ecosysteme). `plate` : logo sombre,
+   * posé sur une plaque claire plutôt que recoloré.
+   */
   members: [
+    {
+      name: 'Normandie Numérique',
+      href: 'https://normandie-numerique.fr/',
+      linkLabel: 'Normandie Numérique, site officiel (nouvel onglet)',
+      logo: { src: '/ecosysteme/normandie-numerique.webp', width: 1065, height: 249, display: 44 },
+    },
+    {
+      name: 'Hub France IA',
+      href: 'https://www.hub-franceia.fr/',
+      linkLabel: 'Hub France IA, site officiel (nouvel onglet)',
+      logo: { src: '/ecosysteme/hub-france-ia.webp', width: 640, height: 263, display: 56 },
+      plate: true,
+    },
     {
       name: 'Rouen Normandie Rugby',
       href: 'https://rouennormandierugby.fr/',

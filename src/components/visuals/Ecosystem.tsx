@@ -7,6 +7,8 @@ export type EcosystemMember = {
   linkLabel: string
   /** `display` : hauteur affichée en px, réglée par logo pour un poids visuel homogène. */
   logo: { src: string; width: number; height: number; display: number }
+  /** Logo sombre : affiché sur une plaque claire, jamais recoloré. */
+  plate?: boolean
 }
 
 /**
@@ -43,7 +45,7 @@ export default function Ecosystem({
                 target="_blank"
                 rel="noopener"
                 aria-label={member.linkLabel}
-                className="block rounded-sm transition-transform duration-200 hover:-translate-y-0.5 motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+                className={`block transition-transform duration-200 hover:-translate-y-0.5 motion-reduce:transition-none motion-reduce:hover:translate-y-0 ${member.plate ? 'rounded-card bg-ink px-5 py-3' : 'rounded-sm'}`}
               >
                 <Image
                   src={member.logo.src}

@@ -7,9 +7,11 @@ import AgentAvatar from '@/components/visuals/AgentAvatar'
 import Ecosystem from '@/components/visuals/Ecosystem'
 import PersonCard from '@/components/visuals/PersonCard'
 import Flow from '@/components/visuals/Flow'
+import OfferLadder from '@/components/visuals/OfferLadder'
 import Results from '@/components/visuals/Results'
 import { casUsage } from '@/data/cas-usage'
 import { about, ecosystem, finalCta, hero, links, results } from '@/data/home'
+import { ladderLabels, offers, offersTeaser } from '@/data/offres'
 
 export default function Home() {
   const { labels } = casUsage
@@ -115,8 +117,20 @@ export default function Home() {
 
       {results.enabled ? <Results {...results} /> : null}
 
-      {/* 3 — Derrière AGS */}
-      <Section tone="deep" labelledBy="about-title">
+      {/* 3 — Nos offres, en version courte */}
+      <Section tone="deep" labelledBy="offers-title">
+        <Title id="offers-title" stacked {...offersTeaser.title} />
+        <p className="t-lede mt-6 max-w-[38rem]">{offersTeaser.text}</p>
+        <div className="mt-12">
+          <OfferLadder offers={offers} labels={ladderLabels} variant="compact" headingLevel="h3" />
+        </div>
+        <Button href={offersTeaser.link.href} variant="link" className="mt-10">
+          {offersTeaser.link.label}
+        </Button>
+      </Section>
+
+      {/* 4 — Derrière AGS */}
+      <Section labelledBy="about-title">
         <Title id="about-title" stacked {...about.title} />
         <div className="mt-14 grid max-w-[54rem] gap-6 md:grid-cols-2">
           {about.people.map((person) => (
@@ -128,13 +142,13 @@ export default function Home() {
         </Button>
       </Section>
 
-      {/* 4 — Notre écosystème */}
-      <Section labelledBy="ecosystem-title">
+      {/* 5 — Notre écosystème */}
+      <Section tone="deep" labelledBy="ecosystem-title">
         <Ecosystem {...ecosystem} />
       </Section>
 
-      {/* 5 — Appel final */}
-      <FinalCta tone="deep" {...finalCta} />
+      {/* 6 — Appel final */}
+      <FinalCta {...finalCta} />
     </>
   )
 }
