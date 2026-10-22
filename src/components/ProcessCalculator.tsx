@@ -22,6 +22,7 @@ type Inputs = {
   errorTime: string
   errorCost: string
   salary: string
+  manual: string
   reduction: number
 }
 
@@ -36,6 +37,7 @@ const initial: Inputs = {
   errorTime: '',
   errorCost: '',
   salary: '',
+  manual: '100',
   reduction: form.defaultReduction,
 }
 
@@ -53,13 +55,15 @@ function compute(inputs: Inputs) {
   const indirect = num(inputs.indirect)
   const hourly = num(inputs.salary) / form.hoursPerYear
   const errorRate = Math.min(num(inputs.errorRate), 100) / 100
+  // Case vide : 100 %, comme IF(N(C61)>0, C61, 1) dans le classeur.
+  const manual = num(inputs.manual) > 0 ? Math.min(num(inputs.manual), 100) / 100 : 1
 
   const hoursMonth = (volumeMonth * (direct + indirect)) / 60
   const directCost = ((volumeMonth * direct) / 60) * hourly
   const indirectCost = ((volumeMonth * indirect) / 60) * hourly
   const errorCost = volumeMonth * errorRate * ((num(inputs.errorTime) / 60) * hourly + num(inputs.errorCost))
   const costMonth = directCost + indirectCost + errorCost
-  const recoverableMonth = hoursMonth * inputs.reduction * hourly + errorCost * inputs.reduction
+  const recoverableMonth = hoursMonth * manual * inputs.reduction * hourly + errorCost * inputs.reduction
 
   return {
     ready: volumeMonth > 0 && direct + indirect > 0,
@@ -142,6 +146,7 @@ export default function ProcessCalculator() {
       tempsIndirect: `${inputs.indirect} min`,
       erreurs: `${inputs.errorRate} % · ${inputs.errorTime} min · ${inputs.errorCost} €`,
       coutAnnuelCharge: `${inputs.salary} €`,
+      partManuelle: `${inputs.manual || '100'} %`,
       reductionVisee: percent.format(inputs.reduction),
       heuresParMois: hours.format(r.hoursMonth),
       coutParMois: euro.format(r.costMonth),
@@ -232,6 +237,7 @@ export default function ProcessCalculator() {
         <fieldset className="grid gap-5">
           <legend className="t-h3 mb-5">{form.sections.cost}</legend>
           <NumberField {...f.salary} value={inputs.salary} onChange={set('salary')} />
+          <NumberField {...f.manual} value={inputs.manual} onChange={set('manual')} />
           <div className="grid gap-3">
             <p className="t-small font-medium text-ink" id="reduction-label">
               {f.reduction.label}
