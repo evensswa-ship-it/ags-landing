@@ -80,6 +80,9 @@ export default function OffresPage() {
                 <Button href={hero.primary.href}>{hero.primary.label}</Button>
                 <p className="t-small text-mist">{hero.place}</p>
               </div>
+              <Button href={hero.calculator.href} variant="link" className="mt-5">
+                {hero.calculator.label}
+              </Button>
             </div>
           </div>
           <div className="mt-12 lg:mt-14">

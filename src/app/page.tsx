@@ -124,9 +124,14 @@ export default function Home() {
         <div className="mt-12">
           <OfferLadder offers={offers} labels={ladderLabels} variant="compact" headingLevel="h3" />
         </div>
-        <Button href={offersTeaser.link.href} variant="link" className="mt-10">
-          {offersTeaser.link.label}
-        </Button>
+        <div className="mt-10 flex flex-col gap-5 sm:flex-row sm:gap-10">
+          <Button href={offersTeaser.link.href} variant="link">
+            {offersTeaser.link.label}
+          </Button>
+          <Button href={offersTeaser.calculator.href} variant="link">
+            {offersTeaser.calculator.label}
+          </Button>
+        </div>
       </Section>
 
       {/* 4 — Derrière AGS */}

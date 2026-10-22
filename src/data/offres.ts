@@ -85,6 +85,7 @@ export const offersTeaser = {
   title: { lead: 'Nos offres.', rest: 'Un prix affiché à chaque étape.' },
   text: 'On part d’un échange gratuit. On n’avance que si le gain est réel.',
   link: { label: 'Voir le détail des offres', href: '/offres' },
+  calculator: cta.calculator,
 }
 
 export const offres = {
@@ -99,6 +100,7 @@ export const offres = {
     title: { lead: 'Nos offres IA pour PME et ETI.', rest: 'Un prix affiché à chaque étape.' },
     text: 'On part d’un échange gratuit. On n’avance à l’étape suivante que si le gain est réel.',
     primary: cta.primary,
+    calculator: cta.calculator,
     place: 'Rouen · Paris · à distance',
   },
   start: {

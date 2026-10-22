@@ -11,6 +11,7 @@ export const cta = {
   savings: { label: "Voir où l’IA vous fait gagner du temps", href: '/#cas-usage' },
   useCases: { label: "Voir les cas d’usage", href: '/#cas-usage' },
   offers: { label: 'Voir les offres', href: '/offres' },
+  calculator: { label: 'Combien coûte mon processus ?', href: '/calculateur' },
   governance: { label: 'Comment vos données sont protégées', href: '/gouvernance' },
   write: { label: 'Ou décrivez-le par écrit', href: '/contact' },
 }
@@ -22,6 +23,7 @@ export const nav = {
   closeLabel: 'Fermer le menu',
   links: [
     { label: 'Offres', href: '/offres' },
+    { label: 'Calculateur', href: '/calculateur' },
     { label: 'Gouvernance', href: '/gouvernance' },
     { label: 'À propos', href: '/a-propos' },
   ],
@@ -37,6 +39,7 @@ export const footer = {
   pages: [
     { label: 'Accueil', href: '/' },
     { label: 'Offres', href: '/offres' },
+    { label: 'Calculateur', href: '/calculateur' },
     { label: 'Gouvernance', href: '/gouvernance' },
     { label: 'À propos', href: '/a-propos' },
     { label: 'Contact', href: '/contact' },

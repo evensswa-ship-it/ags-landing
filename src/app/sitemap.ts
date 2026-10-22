@@ -7,6 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: base, lastModified: '2026-10-22', changeFrequency: 'monthly', priority: 1 },
     { url: `${base}/offres`, lastModified: '2026-10-22', changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${base}/calculateur`, lastModified: '2026-10-22', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/ia-entreprise-normandie`, lastModified: '2026-10-22', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/ia-entreprise-paris`, lastModified: '2026-10-22', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/gouvernance`, lastModified: '2026-10-22', changeFrequency: 'monthly', priority: 0.8 },

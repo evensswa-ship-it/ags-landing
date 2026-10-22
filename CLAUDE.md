@@ -4,7 +4,7 @@
 
 ## Statut : refonte complète en cours (branche `refonte-complete`)
 
-- Design system « Flux » en place (voir plus bas). Architecture : Accueil (Hero, cas d’usage, bande « Nos offres », équipe, écosystème, appel final), Offres (`/offres`), Gouvernance, À propos, Contact, et deux pages locales (`/ia-entreprise-normandie`, `/ia-entreprise-paris`). Les cas d’usage sont une section de l’accueil (`/#cas-usage`), pas une page.
+- Design system « Flux » en place (voir plus bas). Architecture : Accueil (Hero, cas d’usage, bande « Nos offres », équipe, écosystème, appel final), Offres (`/offres`), Calculateur (`/calculateur`), Gouvernance, À propos, Contact, et deux pages locales (`/ia-entreprise-normandie`, `/ia-entreprise-paris`). Les cas d’usage sont une section de l’accueil (`/#cas-usage`), pas une page.
 - `/offres` est courte : échelle des 4 offres visible en un écran, « Par où commencer ? », 3 temps, confiance, FAQ. `/methode` redirige vers `/offres` ; les anciennes URL pointent directement vers `/offres#diagnostic|audit|setup|abonnement` (ancres à conserver).
 - Pages locales : même trame (`components/layout/LocalPage`, données dans `src/data/local.ts`), mais des textes réellement différents d’une page à l’autre, sinon Google les traite comme des pages satellites. Aucun client, chiffre ou témoignage local inventé. AGS ne propose pas d’accompagnement au financement : n’en parler nulle part.
 - Ne pousse rien, ne déploie rien, ne merge rien sans validation explicite d'Evens.

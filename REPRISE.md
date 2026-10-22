@@ -48,7 +48,7 @@ Où sont les choses :
 6. `src/lib/analytics.ts` : ancien code commenté, jamais utilisé, laissé en l'état.
 
 7. Calendly : le site annonce un diagnostic initial gratuit de 45 minutes. Evens doit passer l'événement Calendly (lien `/30min`) à 45 minutes, ou fournir un nouveau lien à mettre dans `src/data/site.ts`.
-8. Calculateur du coût d'un processus : travail commencé par une autre session et non terminé (`src/components/ProcessCalculator.tsx`, `src/data/calculateur.ts`, ligne `cta.calculator` dans `src/data/site.ts`). Rien n'est commité, aucune page `/calculateur` n'existe encore.
+8. Calculateur (`/calculateur`) : version web du classeur Google Sheets « AGS_Calculateur_Cout_Processus ». Mêmes formules que l'onglet « Calculateur » (12 mois d'activité, 100 % du travail fait à la main par défaut) ; avec les mêmes saisies, il redonne exactement l'onglet « Exemple fictif » si l'on y applique 11 mois et 80 % à la main, deux champs absents de la version web. À décider par Evens : ajouter ou non ces deux champs. L'envoi de l'estimation passe par Formspree, comme le contact, jamais testé en réel.
 9. Hub France IA : son logo (texte bleu nuit) est affiché sur une plaque claire. Si le rendu déplaît, demander au Hub sa version blanche (« négative »).
 
 ## Règles de contenu à ne pas enfreindre
