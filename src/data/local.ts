@@ -60,7 +60,7 @@ export const normandie: LocalPageData = {
     paragraphs: [
       'Dans une PME ou une ETI, quelques personnes portent souvent les devis, les relances, la saisie et le reporting. C’est là qu’un collaborateur IA fait gagner du temps.',
       'Nous venons dans vos locaux, à Rouen, Caen, Le Havre ou Évreux, pour comprendre comment le travail se fait vraiment. Le suivi se fait ensuite sur place ou à distance, selon ce qui vous arrange.',
-      'Evens a mené des projets pour des acteurs normands, dont deux ans en mission au sein d’un grand acteur de l’assurance en Normandie. AGS & Co est membre de Normandie Numérique et de Rouen Business & Audace.',
+      'Evens a mené des projets pour des acteurs normands, dont deux ans en mission au sein d’un grand acteur de l’assurance en Normandie. AGS & Co est membre de Normandie Numérique.',
     ],
   },
   cases: pickCases(['Relancer devis et prospects', 'Traiter factures et documents', 'Repérer les dossiers incomplets']),

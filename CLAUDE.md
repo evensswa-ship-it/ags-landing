@@ -17,7 +17,7 @@
 - Offre, dans cet ordre : Diagnostic initial (gratuit, 45 min) → Audit AGS (650 € HT) → Mise en place (sur devis) → AGS Care (550 € HT / mois : supervision, suivi des performances, évolutions, 4 revues par an, sensibilisation à la cybersécurité sous forme de bonnes pratiques ; les interventions d’experts cyber sont annoncées « à venir », pas comme existantes).
 - Le diagnostic gratuit ne s’appelle jamais « audit » : l’Audit AGS est la prestation payante qui vient ensuite.
 - Géographie : « Rouen · Paris » partout. Siège au 59 rue de Ponthieu (Paris 8e), activité à Rouen. Cibles locales : Normandie (Rouen, Caen, Le Havre, Évreux) et Paris / Île-de-France ; rendez-vous sur site ou à distance.
-- Réseaux dont AGS est membre (jamais « partenaire ») : Normandie Numérique, Hub France IA, Rouen Business & Audace, Rouen Normandie Rugby.
+- Réseaux dont AGS est membre (jamais « partenaire ») : Normandie Numérique, Hub France IA, Rouen Normandie Rugby.
 - SEO : « agent IA » dans les titres et descriptions de page (environ 60 caractères, avec le lieu) ; « collaborateur IA » reste dans les textes commerciaux. Le sitemap porte des dates fixes : les mettre à jour quand une page change.
 - Diagnostic initial : https://calendly.com/evens-agsandco/30min (l’événement doit durer 45 minutes).
 - Ne rien présenter comme déployé, mesuré ou obtenu chez un client si ce n’est pas le cas.

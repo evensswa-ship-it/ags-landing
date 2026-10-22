@@ -73,12 +73,6 @@ export const ecosystem = {
       linkLabel: 'Rouen Normandie Rugby, site officiel (nouvel onglet)',
       logo: { src: '/ecosysteme/rouen-normandie-rugby.webp', width: 259, height: 320, display: 120 },
     },
-    {
-      name: 'Rouen Business & Audace',
-      href: 'https://rouenbusinessapp.fr/',
-      linkLabel: 'Rouen Business & Audace, site officiel (nouvel onglet)',
-      logo: { src: '/ecosysteme/rouen-business-audace.webp', width: 616, height: 320, display: 88 },
-    },
   ],
   note: 'AGS & Co est membre de ces réseaux.',
 }
