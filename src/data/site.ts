@@ -29,7 +29,7 @@ export const nav = {
 
 export const footer = {
   tagline: { lead: "L’IA au travail.", rest: 'Sous contrôle.' },
-  place: 'Rouen, Normandie',
+  place: 'Rouen · Paris',
   linkedinLabel: 'LinkedIn',
   pagesLabel: 'Pages',
   legalLabel: 'Informations légales',
@@ -40,6 +40,8 @@ export const footer = {
     { label: 'Gouvernance', href: '/gouvernance' },
     { label: 'À propos', href: '/a-propos' },
     { label: 'Contact', href: '/contact' },
+    { label: 'IA en Normandie', href: '/ia-entreprise-normandie' },
+    { label: 'IA à Paris', href: '/ia-entreprise-paris' },
   ],
   legal: [
     { label: 'Mentions légales', href: '/legal/mentions-legales' },
