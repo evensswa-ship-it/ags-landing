@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import FinalCta from '@/components/layout/FinalCta'
 import Button from '@/components/ui/Button'
 import Section from '@/components/ui/Section'
@@ -12,6 +13,9 @@ import Results from '@/components/visuals/Results'
 import { casUsage } from '@/data/cas-usage'
 import { about, ecosystem, finalCta, hero, links, results } from '@/data/home'
 import { ladderLabels, offers, offersTeaser } from '@/data/offres'
+
+/** Canonique propre à l’accueil : le layout n’en déclare pas, pour qu’aucune page n’hérite de « / ». */
+export const metadata: Metadata = { alternates: { canonical: '/' } }
 
 export default function Home() {
   const { labels } = casUsage

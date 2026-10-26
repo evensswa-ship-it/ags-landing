@@ -32,7 +32,6 @@ export const metadata: Metadata = {
   keywords: seo.keywords,
   authors: [{ name: 'Evens Augustin', url: 'https://www.agsandco.fr' }],
   robots: { index: true, follow: true },
-  alternates: { canonical: '/' },
   verification: {
     google: 'xHZl6-yn5BBwQAYaLuoMN-TlhrWJx2fK8Yxn9ktorQU',
   },
