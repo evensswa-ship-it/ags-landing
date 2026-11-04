@@ -1,6 +1,7 @@
+import Image from 'next/image'
 import Button from '@/components/ui/Button'
 import Tag from '@/components/ui/Tag'
-import type { ArticleBlock } from '@/data/blog'
+import { blog, type ArticleBlock } from '@/data/blog'
 
 /** Corps d’un article : une colonne de lecture, des blocs typés venus de `src/data/articles/`. */
 export default function ArticleBody({ blocks }: { blocks: ArticleBlock[] }) {
@@ -61,6 +62,24 @@ export default function ArticleBody({ blocks }: { blocks: ArticleBlock[] }) {
                   ))}
                 </dl>
                 {block.note ? <p className="mt-4 text-ink">{block.note}</p> : null}
+              </figure>
+            )
+          case 'image':
+            return (
+              <figure key={i} className="my-4">
+                <Image
+                  src={block.src}
+                  alt={block.alt}
+                  width={block.width}
+                  height={block.height}
+                  sizes="(min-width: 768px) 44rem, 100vw"
+                  priority={i === 0}
+                  className="h-auto w-full rounded-card border border-line"
+                />
+                <figcaption className="t-small mt-3 text-mist">
+                  {block.caption ? `${block.caption} · ` : ''}
+                  {blog.labels.aiImage}
+                </figcaption>
               </figure>
             )
           case 'cta':

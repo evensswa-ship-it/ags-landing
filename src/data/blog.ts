@@ -11,6 +11,8 @@ export type ArticleBlock =
   /** Exemple chiffré : toujours étiqueté « Exemple illustratif ». */
   | { type: 'example'; title: string; rows: { label: string; value: string }[]; note?: string }
   | { type: 'cta'; text: string; link: { label: string; href: string } }
+  /** Illustration générée par IA : fichier dans `public/blog/<slug>/`, mention « Image générée par IA » affichée. */
+  | { type: 'image'; src: string; width: number; height: number; alt: string; caption?: string }
 
 export type Article = {
   slug: string
@@ -44,6 +46,7 @@ export const blog = {
     published: 'Publié le',
     readingTime: 'min de lecture',
     readMore: 'Lire l’article',
+    aiImage: 'Image générée par IA',
     back: 'Tous les articles',
   },
   closing: {
@@ -69,6 +72,8 @@ export function readingTime(article: Article) {
           return `${block.title} ${block.text}`
         case 'example':
           return block.rows.map((row) => `${row.label} ${row.value}`).join(' ')
+        case 'image':
+          return ''
         default:
           return block.text
       }

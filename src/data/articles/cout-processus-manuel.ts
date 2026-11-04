@@ -13,6 +13,14 @@ export const coutProcessusManuel: Article = {
   published: '2026-11-04',
   updated: '2026-11-04',
   blocks: [
+    {
+      type: 'image',
+      src: '/blog/cout-processus-manuel/en-tete.webp',
+      width: 1280,
+      height: 720,
+      alt: 'Un devis au centre, entouré de documents empilés, d’un email, d’une horloge et de flèches de passage de main : le travail invisible autour d’une tâche.',
+      caption: 'Autour du devis, tout ce qui ne se voit pas dans un planning',
+    },
     { type: 'h2', text: 'Pourquoi on sous-estime presque toujours ce chiffre' },
     {
       type: 'p',
@@ -31,6 +39,14 @@ export const coutProcessusManuel: Article = {
         'Le temps perdu autour : les interruptions, la reprise d’un dossier qui passe d’une personne à une autre, la coordination (« tu as vu mon mail ? »), les dossiers à reprendre parce qu’ils étaient incomplets.',
         'Les erreurs : le temps pour les corriger, plus ce qu’elles coûtent à l’extérieur (avoir, geste commercial, envoi refait).',
       ],
+    },
+    {
+      type: 'image',
+      src: '/blog/cout-processus-manuel/trois-couches.webp',
+      width: 1280,
+      height: 720,
+      alt: 'Trois plaques superposées : en haut, les documents traités ; au milieu, des documents qui passent de main en main avec une horloge ; en bas, un document marqué d’une erreur.',
+      caption: 'Le travail visible, le temps perdu autour, les erreurs',
     },
     {
       type: 'p',
