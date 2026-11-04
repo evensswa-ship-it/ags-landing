@@ -1,4 +1,5 @@
 import type { MetadataRoute } from 'next'
+import { articles, blog } from '@/data/blog'
 
 /** Dates de dernière modification réelle du contenu : à mettre à jour quand une page change. */
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -10,6 +11,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/calculateur`, lastModified: '2026-10-22', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/ia-entreprise-normandie`, lastModified: '2026-10-22', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/ia-entreprise-paris`, lastModified: '2026-10-22', changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${base}${blog.path}`, lastModified: articles[0].published, changeFrequency: 'weekly', priority: 0.8 },
+    ...articles.map((article) => ({
+      url: `${base}${blog.path}/${article.slug}`,
+      lastModified: article.updated,
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    })),
     { url: `${base}/gouvernance`, lastModified: '2026-10-22', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/a-propos`, lastModified: '2026-10-22', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${base}/contact`, lastModified: '2026-10-22', changeFrequency: 'monthly', priority: 0.7 },

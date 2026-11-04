@@ -40,6 +40,7 @@ export const footer = {
     { label: 'Accueil', href: '/' },
     { label: 'Offres', href: '/offres' },
     { label: 'Calculateur', href: '/calculateur' },
+    { label: 'Blog', href: '/blog' },
     { label: 'Gouvernance', href: '/gouvernance' },
     { label: 'À propos', href: '/a-propos' },
     { label: 'Contact', href: '/contact' },
