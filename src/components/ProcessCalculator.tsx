@@ -128,6 +128,10 @@ export default function ProcessCalculator() {
   const l = results.labels
   const money = r.ready && r.hasCost
   const pending = results.pending
+  const { locked } = results
+  const unlocked = status === 'success'
+  /** « — » tant qu’il manque une donnée, « ••• » tant que l’email n’est pas envoyé, puis la vraie valeur. */
+  const reveal = (format: () => string) => (!money ? pending : unlocked ? format() : locked.mask)
 
   // La barre du bas ne s’affiche que tant que le bloc résultat est encore plus bas dans la page.
   const resultRef = useRef<HTMLDivElement>(null)
@@ -299,23 +303,23 @@ export default function ProcessCalculator() {
             <h2 className="t-small font-semibold text-mist">{results.title}</h2>
             <p className="t-small mt-5 text-ink">{l.costYear}</p>
             <p className="t-num mt-2 font-display text-[clamp(2.5rem,4.2vw,3.25rem)] font-semibold leading-none tracking-[-0.035em] text-signal">
-              {money ? euro.format(r.costYear) : pending}
+              {reveal(() => euro.format(r.costYear))}
             </p>
             <p className="t-small t-num mt-3 text-mist">
-              {money ? euro.format(r.costMonth) : pending} {l.perMonth} · {r.ready ? hours.format(r.hoursMonth) : pending} h{' '}
+              {reveal(() => euro.format(r.costMonth))} {l.perMonth} · {reveal(() => hours.format(r.hoursMonth))} h{' '}
               {l.perMonth}
             </p>
             <dl className="mt-6 grid grid-cols-2 gap-x-6 gap-y-5 border-t border-line pt-5">
               <div>
                 <dt className="t-small text-mist">{l.invisible}</dt>
                 <dd className="t-num mt-1 font-display text-[1.375rem] font-semibold tracking-[-0.03em] text-ink">
-                  {money ? percent.format(r.invisible) : pending}
+                  {reveal(() => percent.format(r.invisible))}
                 </dd>
               </div>
               <div>
                 <dt className="t-small text-mist">{l.perItem}</dt>
                 <dd className="t-num mt-1 font-display text-[1.375rem] font-semibold tracking-[-0.03em] text-ink">
-                  {money ? euroCents.format(r.perItem) : pending}
+                  {reveal(() => euroCents.format(r.perItem))}
                 </dd>
               </div>
               <div className="col-span-2">
@@ -323,13 +327,59 @@ export default function ProcessCalculator() {
                   {l.recoverable} ({percent.format(inputs.reduction)})
                 </dt>
                 <dd className="t-num mt-1 font-display text-[1.375rem] font-semibold tracking-[-0.03em] text-ink">
-                  {money ? euro.format(r.recoverableYear) : pending}
+                  {reveal(() => euro.format(r.recoverableYear))}
                 </dd>
               </div>
             </dl>
-            <p className="t-small mt-6 min-h-[3.75rem] border-t border-line pt-5 font-medium text-ink">
-              {!r.ready ? results.empty : !r.hasCost ? results.needSalary : r.above ? results.above : results.below}
-            </p>
+
+            {unlocked ? (
+              <>
+                <p className="t-small mt-6 border-t border-line pt-5 font-medium text-ink">
+                  {r.above ? results.above : results.below}
+                </p>
+                <p role="status" className="t-small mt-3 text-signal">
+                  {lead.success}
+                </p>
+              </>
+            ) : (
+              // Les montants ne sont écrits dans la page qu’après l’envoi : rien à lire en contournant le formulaire.
+              <form onSubmit={handleSubmit} className="mt-6 grid gap-4 border-t border-line pt-5">
+                <p className="t-small font-medium text-ink">
+                  {!r.ready ? results.empty : !r.hasCost ? results.needSalary : locked.ready}
+                </p>
+                <p className="t-small text-mist">{money ? locked.text : locked.waiting}</p>
+                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+                  <label className={labelClass}>
+                    {lead.fields.firstName}
+                    <input className={fieldClass} name="firstName" autoComplete="given-name" required />
+                  </label>
+                  <label className={labelClass}>
+                    {lead.fields.email}
+                    <input className={fieldClass} type="email" name="email" autoComplete="email" required />
+                  </label>
+                </div>
+                <label className={labelClass}>
+                  {lead.fields.company}
+                  <input className={fieldClass} name="company" autoComplete="organization" />
+                </label>
+                <label className="t-small flex items-start gap-3 text-mist">
+                  <input type="checkbox" name="rgpd" required className="mt-1 h-4 w-4 accent-signal" />
+                  <span>{lead.rgpd}</span>
+                </label>
+                {status === 'error' ? (
+                  <p role="alert" className="t-small font-medium text-human">
+                    {lead.error}
+                  </p>
+                ) : null}
+                <button
+                  type="submit"
+                  disabled={status === 'sending' || !money}
+                  className="inline-flex min-h-12 items-center justify-center rounded-pill bg-signal px-6 font-semibold text-night transition-[filter] duration-200 hover:brightness-110 disabled:opacity-50"
+                >
+                  {status === 'sending' ? lead.sending : lead.submit}
+                </button>
+              </form>
+            )}
           </div>
           <div className="t-small mt-4 grid gap-2 text-mist">
             <p>
@@ -345,68 +395,30 @@ export default function ProcessCalculator() {
         // pl-20 : laisse la place au bouton du bandeau cookies, en bas à gauche.
         <div className="fixed inset-x-0 bottom-0 z-40 border-t border-line bg-deep/95 py-3 pl-20 pr-5 backdrop-blur-md lg:hidden">
           <div className="mx-auto flex max-w-page items-center justify-between gap-4">
-            <p className="t-small text-mist">
-              {money ? l.costYear : l.hoursMonth}
-              <span className="t-num block font-display text-[1.375rem] font-semibold leading-tight tracking-[-0.03em] text-signal">
-                {money ? euro.format(r.costYear) : `${hours.format(r.hoursMonth)} h`}
-              </span>
-            </p>
+            {unlocked ? (
+              <p className="t-small text-mist">
+                {l.costYear}
+                <span className="t-num block font-display text-[1.375rem] font-semibold leading-tight tracking-[-0.03em] text-signal">
+                  {euro.format(r.costYear)}
+                </span>
+              </p>
+            ) : (
+              <p className="t-small font-medium text-ink">{money ? locked.mobile : results.needSalary}</p>
+            )}
             <a href="#resultat" className="t-small shrink-0 font-medium text-signal underline decoration-signal/40 underline-offset-4">
-              {results.mobileDetail}
+              {unlocked ? results.mobileDetail : locked.mobileLink}
             </a>
           </div>
         </div>
       ) : null}
 
-      {/* Envoi de l’estimation */}
+      {/* Après le résultat : le rendez-vous */}
       <div className="border-t border-line pt-12">
-        <div className="grid gap-12 lg:grid-cols-[5fr_7fr] lg:gap-20">
-          <div>
-            <h2 className="t-h3">{lead.title}</h2>
-            <p className="t-lede mt-3">{lead.text}</p>
-            <Button href={lead.primary.href} className="mt-7">
-              {lead.primary.label}
-            </Button>
-          </div>
-          {status === 'success' ? (
-            <p role="status" className="t-h3 text-signal">
-              {lead.success}
-            </p>
-          ) : (
-            <form onSubmit={handleSubmit} className="grid gap-5">
-              <div className="grid gap-5 sm:grid-cols-3">
-                <label className={labelClass}>
-                  {lead.fields.firstName}
-                  <input className={fieldClass} name="firstName" autoComplete="given-name" required />
-                </label>
-                <label className={labelClass}>
-                  {lead.fields.email}
-                  <input className={fieldClass} type="email" name="email" autoComplete="email" required />
-                </label>
-                <label className={labelClass}>
-                  {lead.fields.company}
-                  <input className={fieldClass} name="company" autoComplete="organization" required />
-                </label>
-              </div>
-              <label className="t-small flex items-start gap-3 text-mist">
-                <input type="checkbox" name="rgpd" required className="mt-1 h-4 w-4 accent-signal" />
-                <span>{lead.rgpd}</span>
-              </label>
-              {status === 'error' ? (
-                <p role="alert" className="t-small font-medium text-human">
-                  {lead.error}
-                </p>
-              ) : null}
-              <button
-                type="submit"
-                disabled={status === 'sending' || !r.ready}
-                className="inline-flex min-h-12 items-center justify-center justify-self-start rounded-pill border border-mist/40 px-6 font-medium text-ink transition-colors duration-200 hover:border-ink disabled:opacity-60"
-              >
-                {status === 'sending' ? lead.sending : lead.submit}
-              </button>
-            </form>
-          )}
-        </div>
+        <h2 className="t-h3">{lead.title}</h2>
+        <p className="t-lede mt-3 max-w-[38rem]">{lead.text}</p>
+        <Button href={lead.primary.href} className="mt-7">
+          {lead.primary.label}
+        </Button>
       </div>
     </div>
   )

@@ -100,7 +100,7 @@ export const coutProcessusManuel: Article = {
     },
     {
       type: 'cta',
-      text: 'Faites le calcul sur un de vos processus : c’est gratuit, sans inscription, et les formules sont celles de cet article.',
+      text: 'Faites le calcul sur un de vos processus : c’est gratuit, sans engagement, et les formules sont celles de cet article.',
       link: { label: 'Combien coûte mon processus ?', href: '/calculateur' },
     },
   ],

@@ -11,12 +11,12 @@ export const calculateur = {
   meta: {
     title: 'Combien coûte votre processus ? Calculateur · AGS & Co',
     description:
-      'Calculez en 2 minutes ce que coûte réellement un processus manuel : temps direct, temps perdu autour, erreurs. Gratuit, sans inscription.',
+      'Calculez en 2 minutes ce que coûte réellement un processus manuel : temps direct, temps perdu autour, erreurs. Gratuit et sans engagement.',
   },
   hero: {
     title: { lead: 'Combien coûte votre processus ?', rest: 'Le vrai chiffre, en 2 minutes.' },
     text: 'Un processus coûte ce que coûtent ses répétitions, ses passages de main et ses erreurs. Pas seulement le temps × le salaire.',
-    note: 'Gratuit · sans inscription · le calcul se fait dans votre navigateur',
+    note: 'Gratuit · 2 minutes · résultat affiché et envoyé par email',
   },
   form: {
     sections: {
@@ -84,14 +84,23 @@ export const calculateur = {
     needSalary: 'Ajoutez le coût annuel chargé (étape 4) pour voir les montants en euros.',
     pending: '—',
     mobileDetail: 'Voir le détail',
+    /** Les montants ne s’affichent qu’après l’envoi de l’email (formulaire dans le bloc résultat). */
+    locked: {
+      mask: '•••',
+      ready: 'Votre résultat est prêt.',
+      text: 'Indiquez votre email pour l’afficher. On vous envoie aussi le détail du calcul sous 24 h.',
+      waiting: 'Complétez les étapes 1, 2 et 4 : le formulaire s’active dès que le calcul est possible.',
+      mobile: 'Votre résultat est prêt',
+      mobileLink: 'L’afficher',
+    },
     above: 'Votre processus dépasse 20 heures ou 1 000 € par mois : il mérite probablement une analyse plus approfondie.',
     below: 'Sous 20 heures et 1 000 € par mois : gardez-le en observation et comparez-le à vos autres processus.',
     limits:
       'Les résultats ne valent que ce que valent vos chiffres : mesurez-les sur une à deux semaines plutôt que de mémoire. La valeur récupérable n’est pas une économie de salaire : le temps libéré devient une valeur s’il est réalloué.',
   },
   lead: {
-    title: 'Recevez votre estimation et parlons-en.',
-    text: 'On vous renvoie le calcul et on regarde ensemble ce qui est vraiment récupérable. Ou réservez directement un diagnostic gratuit de 45 minutes.',
+    title: 'Parlons de ce résultat.',
+    text: 'En 45 minutes, on regarde ensemble ce qui est vraiment récupérable sur ce processus. Gratuit et sans engagement.',
     primary: cta.primary,
     endpoint: contact.form.endpoint,
     subject: 'Calculateur — estimation du coût d’un processus',
@@ -101,9 +110,9 @@ export const calculateur = {
       company: 'Entreprise',
     },
     rgpd: contact.form.rgpd,
-    submit: 'Recevoir mon estimation',
-    sending: 'Envoi en cours…',
-    success: 'C’est envoyé. On vous répond sous 24 h avec votre estimation.',
+    submit: 'Voir mon résultat',
+    sending: 'Calcul en cours…',
+    success: 'Merci. Le détail du calcul vous sera envoyé sous 24 h.',
     error: contact.form.error,
   },
   sheet: {
