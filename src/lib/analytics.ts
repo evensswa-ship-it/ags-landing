@@ -4,7 +4,7 @@
  */
 export type TrackEvent =
   | { name: 'diagnostic_click'; params: { from: string } }
-  | { name: 'calculator_result'; params: { fonction: string } }
+  | { name: 'calculator_result'; params: { processus: string } }
   | { name: 'generate_lead'; params: { form: 'calculateur' | 'contact' } }
 
 export function track({ name, params }: TrackEvent) {

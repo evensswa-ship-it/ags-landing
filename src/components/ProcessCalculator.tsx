@@ -14,33 +14,14 @@ const hintClass = 't-small font-normal text-mist'
 
 type Inputs = {
   name: string
-  fonction: string
   volume: string
-  period: string
   direct: string
-  indirect: string
-  errorRate: string
-  errorTime: string
-  errorCost: string
+  around: string
+  redo: string
   salary: string
-  manual: string
-  reduction: number
 }
 
-const initial: Inputs = {
-  name: '',
-  fonction: '',
-  volume: '',
-  period: 'week',
-  direct: '',
-  indirect: '',
-  errorRate: '',
-  errorTime: '',
-  errorCost: '',
-  salary: '',
-  manual: '100',
-  reduction: form.defaultReduction,
-}
+const initial: Inputs = { name: '', volume: '', direct: '', around: '', redo: '', salary: '' }
 
 /** Champ vide ou invalide : 0, comme la fonction N() du classeur. */
 function num(value: string) {
@@ -48,33 +29,30 @@ function num(value: string) {
   return Number.isFinite(parsed) && parsed > 0 ? parsed : 0
 }
 
-/** Mêmes formules que l’onglet « Calculateur » du classeur, sur 12 mois d’activité. */
+/**
+ * Un dossier coûte son temps de travail, le temps perdu autour, et la part des dossiers
+ * repris (un dossier repris = son travail refait). Une heure coûte le salaire brut chargé.
+ */
 function compute(inputs: Inputs) {
-  const perMonth = form.periods.find((p) => p.value === inputs.period)?.perMonth ?? 1
-  const volumeMonth = num(inputs.volume) * perMonth
+  const volumeMonth = num(inputs.volume) * form.weeksPerMonth
   const direct = num(inputs.direct)
-  const indirect = num(inputs.indirect)
-  const hourly = num(inputs.salary) / form.hoursPerYear
-  const errorRate = Math.min(num(inputs.errorRate), 100) / 100
-  // Case vide : 100 %, comme IF(N(C61)>0, C61, 1) dans le classeur.
-  const manual = num(inputs.manual) > 0 ? Math.min(num(inputs.manual), 100) / 100 : 1
+  const around = num(inputs.around)
+  const redo = (Math.min(num(inputs.redo), 100) / 100) * direct
+  const minutesPerItem = direct + around + redo
+  const hourly = (num(inputs.salary) * 12 * (1 + form.employerCharges)) / form.hoursPerYear
 
-  const hoursMonth = (volumeMonth * (direct + indirect)) / 60
-  const directCost = ((volumeMonth * direct) / 60) * hourly
-  const indirectCost = ((volumeMonth * indirect) / 60) * hourly
-  const errorCost = volumeMonth * errorRate * ((num(inputs.errorTime) / 60) * hourly + num(inputs.errorCost))
-  const costMonth = directCost + indirectCost + errorCost
-  const recoverableMonth = hoursMonth * manual * inputs.reduction * hourly + errorCost * inputs.reduction
+  const hoursMonth = (volumeMonth * minutesPerItem) / 60
+  const costMonth = hoursMonth * hourly
 
   return {
-    ready: volumeMonth > 0 && direct + indirect > 0,
+    ready: volumeMonth > 0 && direct + around > 0,
     hasCost: hourly > 0,
     hoursMonth,
     costMonth,
     costYear: costMonth * 12,
-    invisible: costMonth > 0 ? (indirectCost + errorCost) / costMonth : 0,
+    invisible: minutesPerItem > 0 ? (around + redo) / minutesPerItem : 0,
     perItem: volumeMonth > 0 ? costMonth / volumeMonth : 0,
-    recoverableYear: recoverableMonth * 12,
+    recoverableYear: costMonth * 12 * form.recoverableShare,
     above: hoursMonth >= 20 || costMonth >= 1000,
   }
 }
@@ -152,8 +130,8 @@ export default function ProcessCalculator() {
   useEffect(() => {
     if (!r.ready || resultTracked.current) return
     resultTracked.current = true
-    track({ name: 'calculator_result', params: { fonction: inputs.fonction || 'non renseignée' } })
-  }, [r.ready, inputs.fonction])
+    track({ name: 'calculator_result', params: { processus: inputs.name || 'non renseigné' } })
+  }, [r.ready, inputs.name])
 
   function set<K extends keyof Inputs>(key: K) {
     return (value: Inputs[K]) => setInputs((prev) => ({ ...prev, [key]: value }))
@@ -166,22 +144,18 @@ export default function ProcessCalculator() {
     new FormData(event.currentTarget).forEach((value, key) => {
       data[key] = String(value)
     })
-    const period = form.periods.find((p) => p.value === inputs.period)?.label ?? ''
     Object.assign(data, {
       processus: inputs.name,
-      fonction: inputs.fonction,
-      volume: `${inputs.volume} par ${period}`,
-      tempsDirect: `${inputs.direct} min`,
-      tempsIndirect: `${inputs.indirect} min`,
-      erreurs: `${inputs.errorRate} % · ${inputs.errorTime} min · ${inputs.errorCost} €`,
-      coutAnnuelCharge: `${inputs.salary} €`,
-      partManuelle: `${inputs.manual || '100'} %`,
-      reductionVisee: percent.format(inputs.reduction),
+      dossiersParSemaine: inputs.volume,
+      minutesParDossier: `${inputs.direct} min`,
+      minutesPerduesAutour: `${inputs.around} min`,
+      reprisSur100: inputs.redo || '0',
+      salaireBrutMensuel: `${inputs.salary} €`,
       heuresParMois: hours.format(r.hoursMonth),
       coutParMois: euro.format(r.costMonth),
       coutParAn: euro.format(r.costYear),
       partInvisible: percent.format(r.invisible),
-      valeurRecuperableParAn: euro.format(r.recoverableYear),
+      recuperableParAn: euro.format(r.recoverableYear),
     })
     try {
       const response = await fetch(lead.endpoint, {
@@ -203,97 +177,32 @@ export default function ProcessCalculator() {
         <div className="grid gap-12">
           <fieldset className="grid gap-5">
             <legend className="t-h3 mb-5">{form.sections.process}</legend>
-            <div className="grid gap-5 sm:grid-cols-2">
-              <label className={labelClass}>
-                {f.name.label}
-                <input
-                  className={fieldClass}
-                  placeholder={f.name.placeholder}
-                  value={inputs.name}
-                  onChange={(event) => set('name')(event.target.value)}
-                />
-              </label>
-              <label className={labelClass}>
-                {f.fonction.label}
-                <select
-                  className={fieldClass}
-                  value={inputs.fonction}
-                  onChange={(event) => set('fonction')(event.target.value)}
-                >
-                  <option value="" disabled>
-                    {form.placeholder}
-                  </option>
-                  {form.fonctions.map((option) => (
-                    <option key={option} value={option}>
-                      {option}
-                    </option>
-                  ))}
-                </select>
-              </label>
-            </div>
-            <div className="grid gap-5 sm:grid-cols-[2fr_1fr] sm:items-end">
-              <NumberField label={f.volume.label} hint={f.volume.hint} value={inputs.volume} onChange={set('volume')} />
-              <label className={labelClass}>
-                {f.period.label}
-                <select
-                  className={fieldClass}
-                  value={inputs.period}
-                  onChange={(event) => set('period')(event.target.value)}
-                >
-                  {form.periods.map((option) => (
-                    <option key={option.value} value={option.value}>
-                      {option.label}
-                    </option>
-                  ))}
-                </select>
-              </label>
-            </div>
+            <label className={labelClass}>
+              {f.name.label}
+              <input
+                className={fieldClass}
+                placeholder={f.name.placeholder}
+                value={inputs.name}
+                onChange={(event) => set('name')(event.target.value)}
+              />
+            </label>
+            <NumberField {...f.volume} value={inputs.volume} onChange={set('volume')} />
           </fieldset>
 
           <fieldset className="grid gap-5">
             <legend className="t-h3 mb-5">{form.sections.time}</legend>
             <NumberField {...f.direct} value={inputs.direct} onChange={set('direct')} />
-            <NumberField {...f.indirect} value={inputs.indirect} onChange={set('indirect')} />
+            <NumberField {...f.around} value={inputs.around} onChange={set('around')} />
           </fieldset>
 
           <fieldset className="grid gap-5">
             <legend className="t-h3 mb-5">{form.sections.errors}</legend>
-            <div className="grid gap-5 sm:grid-cols-2">
-              <NumberField {...f.errorRate} value={inputs.errorRate} onChange={set('errorRate')} />
-              <NumberField {...f.errorTime} value={inputs.errorTime} onChange={set('errorTime')} />
-            </div>
-            <NumberField {...f.errorCost} value={inputs.errorCost} onChange={set('errorCost')} />
+            <NumberField {...f.redo} value={inputs.redo} onChange={set('redo')} />
           </fieldset>
 
           <fieldset className="grid gap-5">
             <legend className="t-h3 mb-5">{form.sections.cost}</legend>
             <NumberField {...f.salary} value={inputs.salary} onChange={set('salary')} />
-            <NumberField {...f.manual} value={inputs.manual} onChange={set('manual')} />
-            <div className="grid gap-3">
-              <p className="t-small font-medium text-ink" id="reduction-label">
-                {f.reduction.label}
-              </p>
-              <div role="radiogroup" aria-labelledby="reduction-label" className="flex flex-wrap gap-3">
-                {form.reductions.map((value) => (
-                  <label
-                    key={value}
-                    className={`t-num inline-flex min-h-11 cursor-pointer items-center rounded-pill border px-5 font-medium transition-colors duration-200 has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-signal ${
-                      inputs.reduction === value ? 'border-signal bg-signal text-night' : 'border-mist/40 text-ink hover:border-ink'
-                    }`}
-                  >
-                    <input
-                      type="radio"
-                      name="reduction"
-                      value={value}
-                      checked={inputs.reduction === value}
-                      onChange={() => set('reduction')(value)}
-                      className="sr-only"
-                    />
-                    {percent.format(value)}
-                  </label>
-                ))}
-              </div>
-            </div>
           </fieldset>
         </div>
 
@@ -323,9 +232,7 @@ export default function ProcessCalculator() {
                 </dd>
               </div>
               <div className="col-span-2">
-                <dt className="t-small text-mist">
-                  {l.recoverable} ({percent.format(inputs.reduction)})
-                </dt>
+                <dt className="t-small text-mist">{l.recoverable}</dt>
                 <dd className="t-num mt-1 font-display text-[1.375rem] font-semibold tracking-[-0.03em] text-ink">
                   {reveal(() => euro.format(r.recoverableYear))}
                 </dd>
@@ -382,9 +289,10 @@ export default function ProcessCalculator() {
             )}
           </div>
           <div className="t-small mt-4 grid gap-2 text-mist">
-            <p>
-              {results.tag}. {l.invisibleHint} {l.recoverableHint}
-            </p>
+            <p>{results.tag}.</p>
+            {results.method.map((line) => (
+              <p key={line}>{line}</p>
+            ))}
             <p>{results.limits}</p>
           </div>
         </div>
