@@ -2,6 +2,7 @@
 
 import { useState, type FormEvent } from 'react'
 import { contact } from '@/data/contact'
+import { track } from '@/lib/analytics'
 
 const { form } = contact
 
@@ -28,6 +29,7 @@ export default function ContactForm() {
         body: JSON.stringify(data),
       })
       setStatus(response.ok ? 'success' : 'error')
+      if (response.ok) track({ name: 'generate_lead', params: { form: 'contact' } })
     } catch {
       setStatus('error')
     }

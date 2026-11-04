@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState, type FormEvent } from 'react'
 import Button from '@/components/ui/Button'
 import { calculateur } from '@/data/calculateur'
+import { track } from '@/lib/analytics'
 
 const { form, results, lead } = calculateur
 
@@ -142,6 +143,14 @@ export default function ProcessCalculator() {
   }, [])
   const showBar = r.ready && resultBelow
 
+  // Un seul événement par visite : le premier résultat affiché.
+  const resultTracked = useRef(false)
+  useEffect(() => {
+    if (!r.ready || resultTracked.current) return
+    resultTracked.current = true
+    track({ name: 'calculator_result', params: { fonction: inputs.fonction || 'non renseignée' } })
+  }, [r.ready, inputs.fonction])
+
   function set<K extends keyof Inputs>(key: K) {
     return (value: Inputs[K]) => setInputs((prev) => ({ ...prev, [key]: value }))
   }
@@ -177,6 +186,7 @@ export default function ProcessCalculator() {
         body: JSON.stringify(data),
       })
       setStatus(response.ok ? 'success' : 'error')
+      if (response.ok) track({ name: 'generate_lead', params: { form: 'calculateur' } })
     } catch {
       setStatus('error')
     }

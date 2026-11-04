@@ -4,9 +4,22 @@ import Script from 'next/script'
 import { useEffect, useState } from 'react'
 import { GoogleAnalytics } from '@/components/GoogleAnalytics'
 import { MicrosoftClarity } from '@/components/MicrosoftClarity'
+import { site } from '@/data/site'
+import { track } from '@/lib/analytics'
 
 const WAKE_EVENTS = ['pointerdown', 'keydown', 'scroll', 'touchstart', 'mousemove'] as const
 const FALLBACK_DELAY_MS = 8000
+/** Nom du service Clarity dans la configuration Axeptio (choix du visiteur). */
+const AXEPTIO_CLARITY_VENDOR = 'clarity'
+
+type AxeptioChoices = Record<string, boolean>
+type AxeptioSdk = { on: (event: 'cookies:complete', callback: (choices: AxeptioChoices) => void) => void }
+
+declare global {
+  interface Window {
+    _axcb?: ((sdk: AxeptioSdk) => void)[]
+  }
+}
 
 /**
  * Bandeau de consentement, mesure d'audience et Clarity se chargent à la première interaction
@@ -23,6 +36,29 @@ export default function ThirdParties({
   axeptioId?: string
 }) {
   const [ready, setReady] = useState(false)
+  // Sans bandeau de consentement configuré (développement), Clarity se charge comme avant.
+  const [clarityAllowed, setClarityAllowed] = useState(!axeptioId)
+
+  // Clarity dépose des cookies : il n'est chargé qu'après l'accord du visiteur dans Axeptio.
+  useEffect(() => {
+    if (!axeptioId) return
+    window._axcb = window._axcb || []
+    window._axcb.push((sdk) => {
+      sdk.on('cookies:complete', (choices) => setClarityAllowed(Boolean(choices[AXEPTIO_CLARITY_VENDOR])))
+    })
+  }, [axeptioId])
+
+  // Clic vers la prise de rendez-vous, où qu'il soit sur le site.
+  useEffect(() => {
+    const onClick = (event: MouseEvent) => {
+      const link = (event.target as Element | null)?.closest?.('a[href]')
+      if (link instanceof HTMLAnchorElement && link.href.startsWith(site.calendly)) {
+        track({ name: 'diagnostic_click', params: { from: window.location.pathname } })
+      }
+    }
+    document.addEventListener('click', onClick)
+    return () => document.removeEventListener('click', onClick)
+  }, [])
 
   useEffect(() => {
     const wake = () => setReady(true)
@@ -41,7 +77,7 @@ export default function ThirdParties({
   return (
     <>
       {gaId ? <GoogleAnalytics gaId={gaId} /> : null}
-      {clarityId ? <MicrosoftClarity clarityId={clarityId} /> : null}
+      {clarityId && clarityAllowed ? <MicrosoftClarity clarityId={clarityId} /> : null}
       {axeptioId ? (
         <>
           <Script id="axeptio-init" strategy="afterInteractive">{`
