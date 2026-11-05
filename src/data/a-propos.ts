@@ -22,7 +22,7 @@ export const aPropos = {
     },
     {
       name: 'Naomie',
-      role: 'Co-fondatrice · Développement commercial & stratégie de marque',
+      role: 'Développement commercial & stratégie de marque',
       photo: { src: '/team/naomie.jpg', alt: 'Portrait de Naomie' },
       paragraphs: [
         "Naomie accompagne le développement commercial d’AGS & Co avec une double expertise : la communication et l’entrepreneuriat.",

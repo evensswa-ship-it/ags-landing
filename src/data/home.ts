@@ -35,7 +35,7 @@ export const about = {
     },
     {
       name: "Naomie",
-      role: "Co-fondatrice · Développement commercial & stratégie de marque",
+      role: "Développement commercial & stratégie de marque",
       bio: "Ancienne dirigeante de l’agence de communication DesignByNao, aujourd’hui entrepreneure dans la beauté. Elle mène les premiers échanges avec les entreprises pour comprendre le terrain avant de parler de solution.",
       photo: { src: "/team/naomie.jpg", alt: "Portrait de Naomie" },
     },
