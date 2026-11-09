@@ -1,4 +1,5 @@
 import { cta } from './site'
+import { agentIaPme } from './articles/agent-ia-pme'
 import { coutProcessusManuel } from './articles/cout-processus-manuel'
 
 /** Blocs d’un article. Le texte reste dans les données, les composants ne font que le mettre en forme. */
@@ -27,7 +28,7 @@ export type Article = {
 }
 
 /** Du plus récent au plus ancien. */
-export const articles: Article[] = [coutProcessusManuel]
+export const articles: Article[] = [agentIaPme, coutProcessusManuel]
 
 export const blog = {
   path: '/blog',
