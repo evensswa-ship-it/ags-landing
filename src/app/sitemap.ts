@@ -21,9 +21,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/gouvernance`, lastModified: '2026-10-22', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/a-propos`, lastModified: '2026-11-05', changeFrequency: 'monthly', priority: 0.7 },
     { url: `${base}/contact`, lastModified: '2026-10-22', changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${base}/legal/mentions-legales`, lastModified: '2026-10-04', changeFrequency: 'yearly', priority: 0.3 },
-    { url: `${base}/legal/confidentialite`, lastModified: '2026-10-04', changeFrequency: 'yearly', priority: 0.3 },
-    { url: `${base}/legal/rgpd`, lastModified: '2026-10-04', changeFrequency: 'yearly', priority: 0.3 },
-    { url: `${base}/legal/cookies`, lastModified: '2026-10-04', changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${base}/legal/mentions-legales`, lastModified: '2026-11-10', changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${base}/legal/confidentialite`, lastModified: '2026-11-10', changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${base}/legal/rgpd`, lastModified: '2026-11-10', changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${base}/legal/cookies`, lastModified: '2026-11-10', changeFrequency: 'yearly', priority: 0.3 },
   ]
 }

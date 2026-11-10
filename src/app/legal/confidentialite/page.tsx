@@ -8,7 +8,7 @@ const data = legalPages['confidentialite']
 export const metadata: Metadata = pageMetadata({
   path: '/legal/confidentialite',
   breadcrumb: data.title,
-  meta: { title: `${data.title} — AGS & Co.`, description: data.subtitle },
+  meta: { title: `${data.title} — AGS & Co`, description: data.subtitle },
 })
 
 export default function ConfidentialitePage() {

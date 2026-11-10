@@ -6,7 +6,7 @@ export type LegalPageData = {
   sections: LegalSection[]
 }
 
-export const lastUpdated = '4 octobre 2026'
+export const lastUpdated = '10 novembre 2026'
 
 export const legalChrome = {
   eyebrow: 'Informations légales',
@@ -20,41 +20,45 @@ export const legalPages: Record<string, LegalPageData> = {
     sections: [
       {
         heading: 'Éditeur du site',
-        content: "AGS & Co. est une entreprise individuelle enregistrée sous le numéro SIRET 91206657800028.\n\nDirecteur de publication : Evens Augustin\nAdresse : 59 rue de Ponthieu, Bureau 326, 75008 Paris\nContact : evens@agsandco.fr",
+        content: "Evens Augustin EI, nom commercial AGS & Co\nEntreprise individuelle, SIREN 912 066 578 (SIRET 912 066 578 00028)\nTVA intracommunautaire : FR78 912066578\nAdresse : 59 rue de Ponthieu, Bureau 326, 75008 Paris\nTéléphone : 07 49 21 35 05\nEmail : evens@agsandco.fr\nDirecteur de la publication : Evens Augustin",
       },
       {
         heading: 'Hébergement',
-        content: "Ce site est hébergé par Vercel Inc.\n340 Pine Street Suite 701, San Francisco, CA 94104, États-Unis\nSite : vercel.com",
+        content: "Vercel Inc., 340 Pine Street, Suite 701, San Francisco, CA 94104, États-Unis – vercel.com",
       },
       {
         heading: 'Propriété intellectuelle',
-        content: "L'ensemble des contenus présents sur ce site (textes, visuels, logo, structure) sont la propriété exclusive d'AGS & Co. Toute reproduction, représentation ou utilisation sans autorisation préalable est interdite.",
+        content: "Les contenus de ce site (textes, visuels, logo, structure) appartiennent à Evens Augustin EI (AGS & Co), sauf mention contraire. Toute reproduction sans autorisation écrite est interdite.",
       },
       {
-        heading: 'Liens hypertextes',
-        content: "La création de liens hypertextes vers le site agsandco.fr est soumise à autorisation préalable. AGS & Co. décline toute responsabilité quant aux contenus des sites tiers vers lesquels des liens pourraient être établis.",
+        heading: 'Liens',
+        content: "Les liens vers des sites tiers sont fournis à titre informatif. AGS & Co n'est pas responsable de leur contenu.",
       },
       {
-        heading: 'Limitation de responsabilité',
-        content: "AGS & Co. s'efforce d'assurer l'exactitude et la mise à jour des informations publiées sur ce site. Toutefois, AGS & Co. ne saurait être tenu responsable des erreurs, omissions ou indisponibilités du site.",
+        heading: 'Responsabilité',
+        content: "AGS & Co veille à l'exactitude des informations publiées, sans pouvoir garantir l'absence d'erreur ou d'interruption du site.",
+      },
+      {
+        heading: 'Données personnelles et cookies',
+        content: "Voir la politique de confidentialité (/legal/confidentialite) et la politique cookies (/legal/cookies).",
       },
       {
         heading: 'Droit applicable',
-        content: "Les présentes mentions légales sont soumises au droit français. Tout litige relatif à l'utilisation du site sera soumis à la compétence exclusive des tribunaux de Paris.",
+        content: "Droit français. Tribunaux compétents : ceux du ressort du siège de l'éditeur.",
       },
     ],
   },
   confidentialite: {
     title: 'Politique de confidentialité',
-    subtitle: 'Comment AGS & Co. collecte, utilise et protège vos données personnelles',
+    subtitle: 'Comment AGS & Co collecte, utilise et protège vos données personnelles',
     sections: [
       {
         heading: '1. Introduction',
-        content: "La présente politique de confidentialité décrit la manière dont AGS & Co. collecte et utilise vos données personnelles dans le cadre de l'utilisation du site agsandco.fr. AGS & Co. s'engage à protéger la vie privée de ses visiteurs conformément au Règlement Général sur la Protection des Données (RGPD).",
+        content: "La présente politique de confidentialité décrit la manière dont AGS & Co collecte et utilise vos données personnelles dans le cadre de l'utilisation du site agsandco.fr. AGS & Co s'engage à protéger la vie privée de ses visiteurs conformément au Règlement Général sur la Protection des Données (RGPD).",
       },
       {
         heading: '2. Responsable du traitement',
-        content: "AGS & Co., entreprise individuelle\nSIRET : 91206657800028\n59 rue de Ponthieu, Bureau 326, 75008 Paris\nContact : evens@agsandco.fr",
+        content: "Evens Augustin EI (AGS & Co), entreprise individuelle\nSIRET : 91206657800028\n59 rue de Ponthieu, Bureau 326, 75008 Paris\nContact : evens@agsandco.fr",
       },
       {
         heading: '3. Délégué à la protection des données',
@@ -66,7 +70,7 @@ export const legalPages: Record<string, LegalPageData> = {
       },
       {
         heading: '5. Finalités et bases légales',
-        content: "Formulaire de contact : traitement basé sur l'intérêt légitime d'AGS & Co. à répondre aux demandes entrantes.\n\nAnalytics Google Analytics 4 : traitement basé sur votre consentement, recueilli via notre bandeau Axeptio.\n\nLes messages reçus par email ou via le formulaire de contact peuvent être lus, classés et préparés par un collaborateur IA d'AGS & Co. Chaque réponse est relue et validée par une personne avant envoi. Aucune décision vous concernant n'est prise de façon entièrement automatisée.",
+        content: "Formulaire de contact : traitement basé sur l'intérêt légitime d'AGS & Co à répondre aux demandes entrantes.\n\nAnalytics Google Analytics 4 : traitement basé sur votre consentement, recueilli via notre bandeau Axeptio.\n\nLes messages reçus par email ou via le formulaire de contact peuvent être lus, classés et préparés par un collaborateur IA d'AGS & Co. Chaque réponse est relue et validée par une personne avant envoi. Aucune décision vous concernant n'est prise de façon entièrement automatisée.",
       },
       {
         heading: '6. Sous-traitants et hébergeurs',
@@ -100,7 +104,7 @@ export const legalPages: Record<string, LegalPageData> = {
     sections: [
       {
         heading: 'Responsable du traitement',
-        content: "Evens Augustin, AGS & Co.\nSIRET : 91206657800028\n59 rue de Ponthieu, Bureau 326, 75008 Paris\nevens@agsandco.fr",
+        content: "Evens Augustin EI (AGS & Co)\nSIRET : 91206657800028\n59 rue de Ponthieu, Bureau 326, 75008 Paris\nevens@agsandco.fr",
       },
       {
         heading: 'Catégories de données traitées',
@@ -133,7 +137,7 @@ export const legalPages: Record<string, LegalPageData> = {
         content: "Un cookie est un petit fichier texte déposé sur votre terminal (ordinateur, smartphone, tablette) lors de la visite d'un site web. Il permet au site de mémoriser certaines informations sur votre navigation.",
       },
       {
-        heading: 'Cookies utilisés par AGS & Co.',
+        heading: 'Cookies utilisés par AGS & Co',
         content: "Cookies analytiques (Google Analytics 4) :\n_ga (Google) : distinguer les utilisateurs, conservé 13 mois.\n_gid (Google) : distinguer les utilisateurs, conservé 24 heures.\nCes cookies ne sont déposés qu'après votre consentement.\n\nCookies de consentement (Axeptio) :\naxeptio_cookies (Axeptio) : mémoriser vos préférences de consentement, conservé 13 mois.\nCes cookies sont nécessaires au fonctionnement du bandeau de consentement.",
       },
       {
