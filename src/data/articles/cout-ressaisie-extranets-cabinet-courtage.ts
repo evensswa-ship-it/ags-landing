@@ -18,6 +18,14 @@ export const coutRessaisieExtranets: Article = {
   updated: '2026-11-10',
   readingMinutes: 6,
   blocks: [
+    {
+      type: 'image',
+      src: '/blog/cout-ressaisie-extranets-cabinet-courtage/en-tete.webp',
+      width: 1280,
+      height: 720,
+      alt: 'Une fiche unique à gauche, reliée par des lignes fines à cinq fenêtres de formulaires différents, qui convergent vers un tableau comparatif à droite.',
+      caption: 'Une seule fiche, cinq extranets, un comparatif',
+    },
     { type: 'h2', text: 'La scène que tout courtier connaît' },
     {
       type: 'p',
