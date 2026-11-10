@@ -3,7 +3,7 @@ import Link from 'next/link'
 import PageHero from '@/components/layout/PageHero'
 import JsonLd from '@/components/ui/JsonLd'
 import Section from '@/components/ui/Section'
-import { articles, blog, formatDate, readingTime } from '@/data/blog'
+import { articles, blog, formatDate, fullTitle, readingTime } from '@/data/blog'
 import { site } from '@/data/site'
 import { breadcrumbSchema, pageMetadata } from '@/lib/seo'
 
@@ -20,7 +20,7 @@ const schemas = [
     publisher: { '@id': `${site.url}/#organization` },
     blogPost: articles.map((article) => ({
       '@type': 'BlogPosting',
-      headline: article.title.lead,
+      headline: fullTitle(article),
       url: `${site.url}${blog.path}/${article.slug}`,
       datePublished: article.published,
     })),
@@ -41,12 +41,15 @@ export default function BlogPage() {
                 href={`${blog.path}/${article.slug}`}
                 className="group grid gap-3 py-8 lg:grid-cols-[3fr_9fr] lg:gap-12"
               >
-                <p className="t-small t-num text-mist">
-                  {formatDate(article.published)} · {readingTime(article)} {labels.readingTime}
-                </p>
+                <div className="t-small t-num text-mist">
+                  {article.category ? <p className="font-medium text-signal">{article.category}</p> : null}
+                  <p className={article.category ? 'mt-1' : ''}>
+                    {formatDate(article.published)} · {readingTime(article)} {labels.readingTime}
+                  </p>
+                </div>
                 <div>
                   <h2 className="t-h3 transition-colors duration-200 group-hover:text-signal">
-                    {article.title.lead}
+                    {fullTitle(article)}
                   </h2>
                   <p className="mt-3 max-w-[44rem] text-mist">{article.meta.description}</p>
                   <p className="t-small mt-4 font-medium text-signal">{labels.readMore}</p>

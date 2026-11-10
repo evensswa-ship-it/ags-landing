@@ -6,7 +6,7 @@ import Button from '@/components/ui/Button'
 import JsonLd from '@/components/ui/JsonLd'
 import Section from '@/components/ui/Section'
 import Title from '@/components/ui/Title'
-import { articles, blog, formatDate, getArticle, readingTime } from '@/data/blog'
+import { articles, blog, formatDate, fullTitle, getArticle, readingTime } from '@/data/blog'
 import { site } from '@/data/site'
 import { pageMetadata } from '@/lib/seo'
 
@@ -50,13 +50,14 @@ export default async function ArticlePage({ params }: Props) {
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Accueil', item: site.url },
         { '@type': 'ListItem', position: 2, name: blog.breadcrumb, item: `${site.url}${blog.path}` },
-        { '@type': 'ListItem', position: 3, name: article.title.lead, item: url },
+        { '@type': 'ListItem', position: 3, name: fullTitle(article), item: url },
       ],
     },
     {
       '@context': 'https://schema.org',
       '@type': 'BlogPosting',
-      headline: article.title.lead,
+      headline: fullTitle(article),
+      ...(article.category ? { articleSection: article.category } : {}),
       description: article.meta.description,
       url,
       mainEntityOfPage: url,
@@ -77,7 +78,14 @@ export default async function ArticlePage({ params }: Props) {
             <Button href={blog.path} variant="link">
               {labels.back}
             </Button>
-            <Title as="h1" size="h2" stacked className="mt-8 max-w-[24ch]" {...article.title} />
+            {article.category ? <p className="t-small mt-8 font-medium text-signal">{article.category}</p> : null}
+            <Title
+              as="h1"
+              size="h2"
+              stacked
+              className={`${article.category ? 'mt-3' : 'mt-8'} max-w-[24ch]`}
+              {...article.title}
+            />
             <p className="t-lede mt-8 max-w-[44rem] text-ink">{article.lede}</p>
             <p className="t-small t-num mt-6 text-mist">
               {labels.author}, {labels.authorRole} · {labels.published} {formatDate(article.published)} ·{' '}
@@ -89,7 +97,15 @@ export default async function ArticlePage({ params }: Props) {
           <ArticleBody blocks={article.blocks} />
         </Section>
       </article>
-      <FinalCta {...blog.closing} />
+      {article.closing ? (
+        <FinalCta
+          title={{ lead: article.closing.title }}
+          text={article.closing.text}
+          primary={{ label: article.closing.label, href: blog.closing.primary.href }}
+        />
+      ) : (
+        <FinalCta {...blog.closing} />
+      )}
     </>
   )
 }
