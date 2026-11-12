@@ -49,6 +49,7 @@ export function fullTitle(article: Article) {
 
 export const blog = {
   path: '/blog',
+  rss: '/blog/rss.xml',
   breadcrumb: 'Blog',
   meta: {
     title: 'Blog : agents IA et processus des PME · AGS & Co',
@@ -66,6 +67,7 @@ export const blog = {
     readMore: 'Lire l’article',
     aiImage: 'Image générée par IA',
     back: 'Tous les articles',
+    related: 'À lire aussi',
   },
   closing: {
     title: { lead: 'Quel processus vous fait perdre du temps aujourd’hui ?' },

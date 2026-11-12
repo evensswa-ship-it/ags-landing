@@ -7,7 +7,12 @@ import { articles, blog, formatDate, fullTitle, readingTime } from '@/data/blog'
 import { site } from '@/data/site'
 import { breadcrumbSchema, pageMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = pageMetadata(blog)
+const base = pageMetadata(blog)
+
+export const metadata: Metadata = {
+  ...base,
+  alternates: { ...base.alternates, types: { 'application/rss+xml': blog.rss } },
+}
 
 const schemas = [
   breadcrumbSchema(blog),

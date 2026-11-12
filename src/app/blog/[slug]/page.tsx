@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import ArticleBody from '@/components/blog/ArticleBody'
 import FinalCta from '@/components/layout/FinalCta'
+import Link from 'next/link'
 import Button from '@/components/ui/Button'
 import JsonLd from '@/components/ui/JsonLd'
 import Section from '@/components/ui/Section'
@@ -26,6 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const base = pageMetadata({ path, breadcrumb: article.title.lead, meta: article.meta })
   return {
     ...base,
+    alternates: { ...base.alternates, types: { 'application/rss+xml': blog.rss } },
     authors: [{ name: blog.labels.author, url: `${site.url}/a-propos` }],
     openGraph: {
       ...base.openGraph,
@@ -43,6 +45,7 @@ export default async function ArticlePage({ params }: Props) {
 
   const url = `${site.url}${blog.path}/${article.slug}`
   const { labels } = blog
+  const others = articles.filter((other) => other.slug !== article.slug).slice(0, 3)
   const schemas = [
     {
       '@context': 'https://schema.org',
@@ -97,6 +100,27 @@ export default async function ArticlePage({ params }: Props) {
           <ArticleBody blocks={article.blocks} />
         </Section>
       </article>
+      {others.length > 0 ? (
+        <Section tone="deep" className="!pt-0" labelledBy="related-title">
+          <h2 id="related-title" className="t-h3">
+            {labels.related}
+          </h2>
+          <ul className="mt-6 max-w-[44rem] border-t border-line">
+            {others.map((other) => (
+              <li key={other.slug} className="border-b border-line">
+                <Link href={`${blog.path}/${other.slug}`} className="group block py-5">
+                  <span className="font-display font-semibold text-ink transition-colors duration-200 group-hover:text-signal">
+                    {fullTitle(other)}
+                  </span>
+                  <span className="t-small t-num mt-1 block text-mist">
+                    {formatDate(other.published)} · {readingTime(other)} {labels.readingTime}
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </Section>
+      ) : null}
       {article.closing ? (
         <FinalCta
           title={{ lead: article.closing.title }}
