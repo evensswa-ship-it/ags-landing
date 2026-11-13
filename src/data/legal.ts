@@ -6,7 +6,7 @@ export type LegalPageData = {
   sections: LegalSection[]
 }
 
-export const lastUpdated = '10 novembre 2026'
+export const lastUpdated = '13 novembre 2026'
 
 export const legalChrome = {
   eyebrow: 'Informations légales',
@@ -95,6 +95,10 @@ export const legalPages: Record<string, LegalPageData> = {
       {
         heading: '11. Réclamation',
         content: "Vous avez le droit de déposer une réclamation auprès de la CNIL : cnil.fr, 3 place de Fontenoy, TSA 80715, 75334 Paris Cedex 07.",
+      },
+      {
+        heading: '12. Fiche offerte et page Rencontre',
+        content: "Responsable du traitement : Evens Augustin, EI, AGS & Co, 59 rue de Ponthieu, Bureau 326, 75008 Paris.\n\nFinalité : vous envoyer la fiche demandée sur la page Rencontre, puis deux e-mails de suivi.\nBase légale : votre consentement, donné en cochant la case du formulaire.\nDonnées : prénom, adresse e-mail professionnelle, entreprise (facultatif) et provenance de la visite (par exemple « carte »).\n\nDestinataire : AGS & Co uniquement. Outils techniques utilisés : l'hébergeur du site, n8n (envoi et suivi des e-mails) et Google Workspace (messagerie et tableau de suivi). Vos données ne sont ni vendues ni partagées.\nDurée de conservation : 3 ans après notre dernier contact.\n\nLes visites de la page Rencontre sont comptées sans cookie et sans donnée personnelle : seules la date et la provenance sont enregistrées.\n\nVos droits : accès, rectification, effacement, opposition et retrait du consentement à tout moment, en écrivant à evens@agsandco.fr ou en cliquant sur « Ne plus recevoir ces e-mails » en bas de chaque e-mail. Vous pouvez aussi adresser une réclamation à la CNIL (cnil.fr).",
       },
     ],
   },
