@@ -13,7 +13,7 @@ export const iaPromoteurParOuCommencer: Article = {
     rest: 'par quoi commencer, et à quoi ça ressemble en vrai',
   },
   lede:
-    'Quand on parle d’IA avec un promoteur, le premier sujet qui sort est presque toujours le même : trouver de nouveaux CGP. Chez un promoteur constructeur régional, nous avons pris le temps de regarder tout le reste. À la fin de l’échange, c’est lui qui a reclassé ses priorités. Et pour que ce ne reste pas abstrait, nous vous montrons plus bas un agent au travail, écran par écran.',
+    'Quand on parle d’IA avec un promoteur, le premier sujet qui sort est presque toujours le même : trouver de nouveaux CGP. Chez un promoteur de la région bordelaise, nous avons pris le temps de regarder tout le reste. À la fin de l’échange, c’est lui qui a reclassé ses priorités. Et pour que ce ne reste pas abstrait, nous vous montrons plus bas un agent au travail, écran par écran.',
   published: '2026-11-13',
   updated: '2026-11-13',
   blocks: [
@@ -37,11 +37,11 @@ export const iaPromoteurParOuCommencer: Article = {
     { type: 'h2', text: 'Le cas le plus visible n’est pas toujours le plus rentable' },
     {
       type: 'p',
-      text: 'Trouver des CGP, c’est la douleur qu’on sent le soir. Un commercialisateur avec vingt-cinq ans de métier nous racontait ses soirées sur internet et LinkedIn à chercher quels cabinets vendent vraiment ses dispositifs. Il y en a des milliers en France ; une poignée seulement en font réellement.',
+      text: 'Trouver des CGP, c’est la douleur qu’on sent le soir. Un commercialisateur avec vingt-cinq ans de métier nous racontait ses soirées sur Internet et sur LinkedIn à chercher quels cabinets vendent vraiment ses dispositifs. Il y en a des milliers en France ; une poignée seulement en vendent réellement.',
     },
     {
       type: 'p',
-      text: 'Mais quand on regarde où part le temps de l’équipe, la photo change. Chez le promoteur constructeur régional, l’animation du réseau et le suivi des ventes mobilisent **l’équivalent de deux personnes à temps plein**. La recherche de nouveaux conseillers, environ **un jour par semaine**. Le calcul est simple, refaites-le avec vos chiffres.',
+      text: 'Mais quand on regarde où part le temps de l’équipe, la photo change. Chez ce promoteur, l’animation du réseau et le suivi des ventes mobilisent **l’équivalent de deux personnes à temps plein**. La recherche de nouveaux conseillers, elle, prend environ **un jour par semaine**. Le calcul est simple, refaites-le avec vos chiffres.',
     },
     {
       type: 'example',
@@ -62,7 +62,7 @@ export const iaPromoteurParOuCommencer: Article = {
     { type: 'h2', text: 'Ce que nous avons appris sur le terrain' },
     {
       type: 'p',
-      text: '**Le promoteur ne manque pas d’outils, il manque de visibilité.** Le promoteur constructeur régional compte entre 60 et 100 CGP actifs sur le papier. Personne ne sait vraiment qui vend encore et qui dort. Le suivi des ventes vit dans un Excel, à côté d’un CRM qui existe mais que l’équipe juge mal paramétré.',
+      text: '**Le promoteur ne manque pas d’outils, il manque de visibilité.** Celui que nous avons rencontré compte entre 60 et 100 CGP actifs sur le papier. Personne ne sait vraiment qui vend encore et qui dort. Le suivi des ventes vit dans un Excel, à côté d’un CRM qui existe mais que l’équipe juge mal paramétré.',
     },
     {
       type: 'p',
@@ -88,7 +88,7 @@ export const iaPromoteurParOuCommencer: Article = {
     },
     {
       type: 'p',
-      text: 'En haut, l’essentiel en une ligne : les cabinets qualifiés, ceux qui attendent une décision, les messages partis, les rendez-vous pris. Au milieu, les cinq étapes que l’agent a faites pour vous : **trouver, prouver, vérifier, noter, préparer**.',
+      text: 'En haut, l’essentiel en une ligne : les cabinets qualifiés, ceux qui attendent une décision, les messages partis, les rendez-vous pris. Au milieu, les cinq étapes que l’agent a menées pour vous : **trouver, prouver, vérifier, noter, préparer**.',
     },
     {
       type: 'p',
@@ -123,7 +123,7 @@ export const iaPromoteurParOuCommencer: Article = {
     { type: 'h2', text: 'Par quoi commencer, et par quoi ne pas commencer' },
     {
       type: 'p',
-      text: 'Le Chasseur est le plus spectaculaire, pas forcément le premier à installer. L’ordre retenu par le promoteur constructeur régional n’est pas une règle universelle, mais il revient souvent, parce qu’il suit l’argent :',
+      text: 'Le Chasseur est le plus spectaculaire, pas forcément le premier à installer. L’ordre retenu par ce promoteur n’est pas une règle universelle, mais il revient souvent, parce qu’il suit l’argent :',
     },
     {
       type: 'list',
@@ -145,7 +145,7 @@ export const iaPromoteurParOuCommencer: Article = {
     },
     {
       type: 'p',
-      text: 'Pour le promoteur constructeur régional, la toute première étape n’était d’ailleurs pas un agent : c’était de remettre les données du CRM au propre. Si l’IA n’est pas la bonne réponse à un moment donné, il vaut mieux le dire.',
+      text: 'Pour lui, la toute première étape n’était d’ailleurs pas un agent : c’était de remettre les données du CRM au propre. Si l’IA n’est pas la bonne réponse à un moment donné, il vaut mieux le dire.',
     },
     { type: 'h2', text: 'Les 3 questions à vous poser' },
     {
