@@ -1,5 +1,6 @@
 import { cta } from './site'
 import { agentIaPme } from './articles/agent-ia-pme'
+import { iaPromoteurParOuCommencer } from './articles/ia-promoteur-par-ou-commencer'
 import { coutProcessusManuel } from './articles/cout-processus-manuel'
 import { coutRessaisieExtranets } from './articles/cout-ressaisie-extranets-cabinet-courtage'
 
@@ -16,8 +17,11 @@ export type ArticleBlock =
   /** Exemple chiffré : toujours étiqueté « Exemple illustratif ». `strong` met une ligne de résultat en avant. */
   | { type: 'example'; title: string; rows: { label: string; value: string; strong?: boolean }[]; note?: string }
   | { type: 'cta'; text: string; link: { label: string; href: string } }
-  /** Illustration générée par IA : fichier dans `public/blog/<slug>/`, mention « Image générée par IA » affichée. */
-  | { type: 'image'; src: string; width: number; height: number; alt: string; caption?: string }
+  /**
+   * Image : fichier dans `public/blog/<slug>/`. Par défaut illustration générée par IA (mention « Image générée par IA »).
+   * `kind: 'capture'` : capture d’écran d’interface, toujours anonymisée (mention « Capture anonymisée »).
+   */
+  | { type: 'image'; src: string; width: number; height: number; alt: string; caption?: string; kind?: 'ai' | 'capture' }
   /** Signature de fin d’article. */
   | { type: 'signature'; text: string }
   /** Questions fréquentes : affichées en accordéon et déclarées à Google (FAQPage). */
@@ -44,7 +48,7 @@ export type Article = {
 }
 
 /** Du plus récent au plus ancien. */
-export const articles: Article[] = [coutRessaisieExtranets, agentIaPme, coutProcessusManuel]
+export const articles: Article[] = [iaPromoteurParOuCommencer, coutRessaisieExtranets, agentIaPme, coutProcessusManuel]
 
 /** Titre complet d’un article, en une ligne (liste du blog, fil d’Ariane, balisage). */
 export function fullTitle(article: Article) {
@@ -70,6 +74,7 @@ export const blog = {
     readingTime: 'min de lecture',
     readMore: 'Lire l’article',
     aiImage: 'Image générée par IA',
+    capture: 'Capture anonymisée',
     back: 'Tous les articles',
     related: 'À lire aussi',
   },

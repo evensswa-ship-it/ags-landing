@@ -96,7 +96,7 @@ export default function ArticleBody({ blocks }: { blocks: ArticleBlock[] }) {
                 />
                 <figcaption className="t-small mt-3 text-mist">
                   {block.caption ? `${block.caption} · ` : ''}
-                  {blog.labels.aiImage}
+                  {block.kind === 'capture' ? blog.labels.capture : blog.labels.aiImage}
                 </figcaption>
               </figure>
             )
