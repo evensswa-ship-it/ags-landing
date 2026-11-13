@@ -126,6 +126,7 @@ export const coutRessaisieExtranets: Article = {
       text: 'Evens Augustin, fondateur d’AGS & Co. AGS & Co installe des collaborateurs IA dans les cabinets de courtage en assurance et chez les acteurs de l’immobilier d’investissement, avec validation humaine et traçabilité à chaque étape. L’IA au travail. Sous contrôle.',
     },
   ],
+  landing: { label: 'Agents IA pour courtiers et CGP', href: '/courtiers' },
   closing: {
     title: 'Combien d’heures votre cabinet passe-t-il sur les extranets ?',
     text: 'En 45 minutes, nous chiffrons avec vous le temps perdu en ressaisie et ce qu’il est réaliste de récupérer. Gratuit, sans engagement.',

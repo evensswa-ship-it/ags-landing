@@ -47,6 +47,7 @@ export const footer = {
     { label: 'Contact', href: '/contact' },
     { label: 'IA en Normandie', href: '/ia-entreprise-normandie' },
     { label: 'IA à Paris', href: '/ia-entreprise-paris' },
+    { label: 'Courtiers et CGP', href: '/courtiers' },
   ],
   legal: [
     { label: 'Mentions légales', href: '/legal/mentions-legales' },

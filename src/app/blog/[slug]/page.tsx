@@ -112,6 +112,11 @@ export default async function ArticlePage({ params }: Props) {
         </header>
         <Section tone="deep" className="!pt-14">
           <ArticleBody blocks={article.blocks} />
+          {article.landing ? (
+            <Button href={article.landing.href} variant="link" className="mt-10">
+              {article.landing.label}
+            </Button>
+          ) : null}
         </Section>
       </article>
       {others.length > 0 ? (

@@ -37,6 +37,8 @@ export type Article = {
   blocks: ArticleBlock[]
   /** Temps de lecture imposé, en minutes ; sinon il est estimé à 200 mots par minute. */
   readingMinutes?: number
+  /** Lien vers la page de la cible (ex. /courtiers), affiché sous le corps de l'article. */
+  landing?: { label: string; href: string }
   /** Appel final propre à l’article ; sinon celui du blog. Le bouton mène toujours au diagnostic. */
   closing?: { title: string; text: string; label: string }
 }

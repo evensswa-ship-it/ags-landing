@@ -1,22 +1,9 @@
 import Image from 'next/image'
-import { Fragment } from 'react'
 import Button from '@/components/ui/Button'
 import Faq from '@/components/ui/Faq'
+import Rich from '@/components/ui/Rich'
 import Tag from '@/components/ui/Tag'
 import { blog, type ArticleBlock } from '@/data/blog'
-
-/** Texte d’un bloc : `**passage**` est affiché en gras, le reste tel quel. */
-function Rich({ text }: { text: string }) {
-  return text.split(/\*\*(.+?)\*\*/g).map((part, n) =>
-    n % 2 === 1 ? (
-      <strong key={n} className="font-semibold text-ink">
-        {part}
-      </strong>
-    ) : (
-      <Fragment key={n}>{part}</Fragment>
-    ),
-  )
-}
 
 function Items({ items, ordered = false, className = '' }: { items: string[]; ordered?: boolean; className?: string }) {
   const List = ordered ? 'ol' : 'ul'
