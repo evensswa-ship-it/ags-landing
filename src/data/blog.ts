@@ -20,6 +20,8 @@ export type ArticleBlock =
   | { type: 'image'; src: string; width: number; height: number; alt: string; caption?: string }
   /** Signature de fin d’article. */
   | { type: 'signature'; text: string }
+  /** Questions fréquentes : affichées en accordéon et déclarées à Google (FAQPage). */
+  | { type: 'faq'; title: string; items: { question: string; answer: string }[] }
 
 export type Article = {
   slug: string
@@ -93,6 +95,8 @@ export function readingTime(article: Article) {
           return [block.title, block.text ?? '', ...(block.items ?? [])].join(' ')
         case 'example':
           return block.rows.map((row) => `${row.label} ${row.value}`).join(' ')
+        case 'faq':
+          return [block.title, ...block.items.map((item) => `${item.question} ${item.answer}`)].join(' ')
         case 'image':
           return ''
         default:

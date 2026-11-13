@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { Fragment } from 'react'
 import Button from '@/components/ui/Button'
+import Faq from '@/components/ui/Faq'
 import Tag from '@/components/ui/Tag'
 import { blog, type ArticleBlock } from '@/data/blog'
 
@@ -120,6 +121,13 @@ export default function ArticleBody({ blocks }: { blocks: ArticleBlock[] }) {
                   {block.link.label}
                 </Button>
               </div>
+            )
+          case 'faq':
+            return (
+              <section key={i} className="mt-8">
+                <h2 className="t-h3 mb-4">{block.title}</h2>
+                <Faq items={block.items} />
+              </section>
             )
           case 'signature':
             return (

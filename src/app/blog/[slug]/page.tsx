@@ -46,6 +46,7 @@ export default async function ArticlePage({ params }: Props) {
   const url = `${site.url}${blog.path}/${article.slug}`
   const { labels } = blog
   const others = articles.filter((other) => other.slug !== article.slug).slice(0, 3)
+  const faqItems = article.blocks.flatMap((block) => (block.type === 'faq' ? block.items : []))
   const schemas = [
     {
       '@context': 'https://schema.org',
@@ -70,6 +71,19 @@ export default async function ArticlePage({ params }: Props) {
       author: { '@type': 'Person', name: labels.author, jobTitle: labels.authorRole, url: `${site.url}/a-propos` },
       publisher: { '@id': `${site.url}/#organization` },
     },
+    ...(faqItems.length > 0
+      ? [
+          {
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: faqItems.map((item) => ({
+              '@type': 'Question',
+              name: item.question,
+              acceptedAnswer: { '@type': 'Answer', text: item.answer },
+            })),
+          },
+        ]
+      : []),
   ]
 
   return (
