@@ -3,7 +3,7 @@ export const site = {
   url: 'https://www.agsandco.fr',
   email: 'evens@agsandco.fr',
   linkedin: 'https://www.linkedin.com/company/agsandco/?viewAsMember=true',
-  calendly: 'https://calendly.com/evens-agsandco/30min',
+  calendly: 'https://calendly.com/evens-agsandco/45min',
 }
 
 export const cta = {

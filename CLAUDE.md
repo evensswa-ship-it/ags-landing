@@ -23,7 +23,7 @@
 - Géographie : « Rouen · Paris » partout. Siège au 59 rue de Ponthieu (Paris 8e), activité à Rouen. Cibles locales : Normandie (Rouen, Caen, Le Havre, Évreux) et Paris / Île-de-France ; rendez-vous sur site ou à distance.
 - Réseaux dont AGS est membre (jamais « partenaire ») : Normandie Numérique, Hub France IA, Rouen Normandie Rugby.
 - SEO : « agent IA » dans les titres et descriptions de page (environ 60 caractères, avec le lieu) ; « collaborateur IA » reste dans les textes commerciaux. Le sitemap porte des dates fixes : les mettre à jour quand une page change.
-- Diagnostic initial : https://calendly.com/evens-agsandco/30min (l’événement doit durer 45 minutes).
+- Diagnostic initial : https://calendly.com/evens-agsandco/45min (lien unique, dans `src/data/site.ts`).
 - Ne rien présenter comme déployé, mesuré ou obtenu chez un client si ce n’est pas le cas.
 
 ## Wording — règles éditoriales
