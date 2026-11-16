@@ -92,12 +92,12 @@ export const offres = {
   path: '/offres',
   breadcrumb: 'Offres',
   meta: {
-    title: 'Offres IA pour PME et ETI : audit, agents IA · AGS & Co',
+    title: 'Offres IA pour PME : audit, agents IA · AGS & Co',
     description:
       'Diagnostic initial gratuit (45 min), Audit AGS à 650 € HT, mise en place d’agents IA sur devis, AGS Care à 550 € HT par mois. À Rouen, à Paris ou à distance.',
   },
   hero: {
-    title: { lead: 'Nos offres IA pour PME et ETI.', rest: 'Un prix affiché à chaque étape.' },
+    title: { lead: 'Nos offres IA pour PME.', rest: 'Un prix affiché à chaque étape.' },
     text: 'On part d’un échange gratuit. On n’avance à l’étape suivante que si le gain est réel.',
     primary: cta.primary,
     calculator: cta.calculator,

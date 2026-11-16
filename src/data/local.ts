@@ -43,22 +43,22 @@ export const normandie: LocalPageData = {
   path: '/ia-entreprise-normandie',
   breadcrumb: 'IA en Normandie',
   meta: {
-    title: 'Agents IA pour PME et ETI en Normandie · AGS & Co',
+    title: 'Agents IA pour PME en Normandie · AGS & Co',
     description:
-      'Collaborateurs IA (agents IA) pour les PME et ETI de Normandie : Rouen, Caen, Le Havre, Évreux. Diagnostic initial gratuit de 45 min, sur site ou à distance.',
+      'Collaborateurs IA (agents IA) pour les PME de Normandie : Rouen, Caen, Le Havre, Évreux. Diagnostic initial gratuit de 45 min, sur site ou à distance.',
   },
   area: [{ '@type': 'AdministrativeArea', name: 'Normandie' }],
-  serviceName: 'Intégration d’agents IA pour les PME et ETI en Normandie',
+  serviceName: 'Intégration d’agents IA pour les PME en Normandie',
   hero: {
     eyebrow: 'Rouen · Caen · Le Havre · Évreux',
-    title: { lead: 'Agents IA pour les PME et ETI normandes.', rest: 'Depuis Rouen, au plus près du terrain.' },
+    title: { lead: 'Agents IA pour les PME normandes.', rest: 'Depuis Rouen, au plus près du terrain.' },
     intro:
       'AGS & Co est basé à Rouen. Nous aidons les entreprises normandes à récupérer du temps grâce à des collaborateurs IA : des experts métiers augmentés, formés à leurs processus, branchés à leurs outils et validés par leurs équipes.',
   },
   context: {
     title: { lead: 'Un cabinet normand,', rest: 'qui vient vous voir.' },
     paragraphs: [
-      'Dans une PME ou une ETI, quelques personnes portent souvent les devis, les relances, la saisie et le reporting. C’est là qu’un collaborateur IA, formé à ce métier, fait gagner du temps.',
+      'Dans une PME, quelques personnes portent souvent les devis, les relances, la saisie et le reporting. C’est là qu’un collaborateur IA, formé à ce métier, fait gagner du temps.',
       'Nous venons dans vos locaux, à Rouen, Caen, Le Havre ou Évreux, pour comprendre comment le travail se fait vraiment. Le suivi se fait ensuite sur place ou à distance, selon ce qui vous arrange.',
       'Evens a été PMO sur des projets pour des acteurs normands, puis a passé deux ans en mission au sein d’un grand acteur de l’assurance en Normandie. AGS & Co est membre de Normandie Numérique.',
     ],
@@ -77,7 +77,7 @@ export const normandie: LocalPageData = {
     {
       question: 'Faut-il être une grande entreprise ?',
       answer:
-        'Non. Nous travaillons avec des PME comme avec des ETI. Ce qui compte, c’est un processus répétitif qui prend du temps à vos équipes, pas la taille de l’entreprise.',
+        'Non. Nous travaillons avec des PME de toutes tailles. Ce qui compte, c’est un processus répétitif qui prend du temps à vos équipes, pas la taille de l’entreprise.',
     },
   ],
 }
@@ -86,18 +86,18 @@ export const paris: LocalPageData = {
   path: '/ia-entreprise-paris',
   breadcrumb: 'IA à Paris',
   meta: {
-    title: 'Agents IA pour PME et ETI à Paris · AGS & Co',
+    title: 'Agents IA pour PME à Paris · AGS & Co',
     description:
-      'Collaborateurs IA (agents IA) pour les PME et ETI de Paris et d’Île-de-France. Siège dans le 8e arrondissement, format hybride, diagnostic initial gratuit de 45 min.',
+      'Collaborateurs IA (agents IA) pour les PME de Paris et d’Île-de-France. Siège dans le 8e arrondissement, format hybride, diagnostic initial gratuit de 45 min.',
   },
   area: [
     { '@type': 'City', name: 'Paris' },
     { '@type': 'AdministrativeArea', name: 'Île-de-France' },
   ],
-  serviceName: 'Intégration d’agents IA pour les PME et ETI à Paris et en Île-de-France',
+  serviceName: 'Intégration d’agents IA pour les PME à Paris et en Île-de-France',
   hero: {
     eyebrow: 'Paris · Île-de-France',
-    title: { lead: 'Agents IA pour les PME et ETI parisiennes.', rest: 'Sur site quand il le faut, à distance le reste du temps.' },
+    title: { lead: 'Agents IA pour les PME parisiennes.', rest: 'Sur site quand il le faut, à distance le reste du temps.' },
     intro:
       'AGS & Co a son siège à Paris, dans le 8e arrondissement. Nous mettons en place des collaborateurs IA dans les entreprises d’Île-de-France : des experts métiers augmentés, branchés à leurs outils et sous le contrôle de leurs équipes.',
   },
@@ -105,7 +105,7 @@ export const paris: LocalPageData = {
     title: { lead: 'Un format hybride,', rest: 'qui suit votre agenda.' },
     paragraphs: [
       'Les rendez-vous clés se font dans vos locaux, avec les personnes qui font le travail au quotidien. Le reste avance à distance, sans vous faire perdre de temps en déplacements.',
-      'Dans une ETI, la question est souvent moins « est-ce possible ? » que « qui valide, qui voit quoi, comment c’est tracé ? ». C’est par là que nous commençons : chaque collaborateur IA a ses droits, ses limites et son historique.',
+      'Dans une PME qui grandit, la question est souvent moins « est-ce possible ? » que « qui valide, qui voit quoi, comment c’est tracé ? ». C’est par là que nous commençons : chaque collaborateur IA a ses droits, ses limites et son historique.',
       'Evens a été PMO sur des projets de migration cloud et de télécoms pour des acteurs normands et parisiens. AGS & Co est membre du Hub France IA.',
     ],
     link: cta.governance,

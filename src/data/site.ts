@@ -78,12 +78,11 @@ export const seo = {
     'agents IA',
     'automatisation des processus',
     'IA PME',
-    'IA ETI',
     'gouvernance IA',
   ],
   home: {
-    title: 'Agents IA pour PME et ETI · Normandie & Paris · AGS & Co',
+    title: 'Agents IA pour PME · Normandie & Paris · AGS & Co',
     description:
-      'AGS & Co aide les PME et ETI de Normandie et de Paris à récupérer du temps grâce à des collaborateurs IA (agents IA). Diagnostic initial gratuit de 45 min.',
+      'AGS & Co aide les PME de Normandie et de Paris à récupérer du temps grâce à des collaborateurs IA (agents IA). Diagnostic initial gratuit de 45 min.',
   },
 }

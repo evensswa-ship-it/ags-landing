@@ -63,7 +63,7 @@ export const blog = {
   meta: {
     title: 'Blog : agents IA et processus des PME · AGS & Co',
     description:
-      'Méthodes concrètes pour chiffrer un processus, choisir un premier cas d’usage et intégrer des agents IA dans une PME ou une ETI, sous contrôle humain.',
+      'Méthodes concrètes pour chiffrer un processus, choisir un premier cas d’usage et intégrer des agents IA dans une PME, sous contrôle humain.',
   },
   title: { lead: 'Le blog.', rest: 'Des méthodes, pas des promesses.' },
   intro:

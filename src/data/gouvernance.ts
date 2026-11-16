@@ -6,7 +6,7 @@ export const gouvernance = {
   meta: {
     title: 'IA de confiance et AI Act : notre gouvernance · AGS & Co',
     description:
-      'Ce que voit chaque agent IA, ce qu’il peut faire, qui valide, où vont vos données et comment l’AI Act est pris en compte. Une IA de confiance pour PME et ETI.',
+      'Ce que voit chaque agent IA, ce qu’il peut faire, qui valide, où vont vos données et comment l’AI Act est pris en compte. Une IA de confiance pour les PME.',
   },
   title: {
     lead: 'Un collaborateur IA capable de tout faire',

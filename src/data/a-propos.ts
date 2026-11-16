@@ -4,10 +4,10 @@ export const aPropos = {
   meta: {
     title: 'À propos : l’équipe AGS & Co, à Rouen et à Paris',
     description:
-      'Evens et Naomie accompagnent les PME et ETI de Normandie et de Paris dans l’intégration de l’IA, en partant du terrain avant de parler de technologie.',
+      'Evens et Naomie accompagnent les PME de Normandie et de Paris dans l’intégration de l’IA, en partant du terrain avant de parler de technologie.',
   },
   title: { lead: 'Comprendre votre terrain', rest: 'avant de parler technologie.' },
-  intro: 'AGS & Co est basé à Rouen et à Paris, et accompagne des PME et des ETI.',
+  intro: 'AGS & Co est basé à Rouen et à Paris, et accompagne des PME.',
   people: [
     {
       name: 'Evens',

@@ -1,7 +1,7 @@
 import { cta } from './site'
 
 export const hero = {
-  eyebrow: "Collaborateurs IA · PME & ETI · Rouen & Paris",
+  eyebrow: "Collaborateurs IA · PME · Rouen & Paris",
   title: { lead: "L’IA au travail.", rest: 'Sous contrôle.' },
   subtitle:
     "AGS & Co aide les entreprises à récupérer du temps et à augmenter leur capacité opérationnelle grâce à des collaborateurs IA : des experts métiers augmentés, formés à vos processus et à vos outils. Vos équipes gardent les décisions. Chaque gain est mesuré.",
