@@ -3,6 +3,7 @@ import { agentIaPme } from './articles/agent-ia-pme'
 import { iaPromoteurParOuCommencer } from './articles/ia-promoteur-par-ou-commencer'
 import { coutProcessusManuel } from './articles/cout-processus-manuel'
 import { coutRessaisieExtranets } from './articles/cout-ressaisie-extranets-cabinet-courtage'
+import { iaDevoirDeConseilCourtier } from './articles/ia-devoir-de-conseil-courtier'
 
 /**
  * Blocs d’un article. Le texte reste dans les données, les composants ne font que le mettre en forme.
@@ -48,7 +49,7 @@ export type Article = {
 }
 
 /** Du plus récent au plus ancien. */
-export const articles: Article[] = [iaPromoteurParOuCommencer, coutRessaisieExtranets, agentIaPme, coutProcessusManuel]
+export const articles: Article[] = [iaDevoirDeConseilCourtier, iaPromoteurParOuCommencer, coutRessaisieExtranets, agentIaPme, coutProcessusManuel]
 
 /** Titre complet d’un article, en une ligne (liste du blog, fil d’Ariane, balisage). */
 export function fullTitle(article: Article) {
