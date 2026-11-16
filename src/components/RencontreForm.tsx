@@ -51,12 +51,19 @@ export default function RencontreForm({ src, calendly }: { src: string; calendly
   if (status === 'done') {
     return (
       <div role="status" className="grid gap-6">
-        <p className="t-lede text-ink">
-          {form.success}{' '}
-          <a href={fiche.pdf} download className="font-medium text-signal underline underline-offset-4">
-            {form.download}
-          </a>
-        </p>
+        <p className="t-lede text-ink">{form.success}</p>
+        <div className="grid grid-cols-3 gap-3">
+          {fiche.pdfs.map((pdf) => (
+            <a
+              key={pdf.href}
+              href={pdf.href}
+              download
+              className="inline-flex min-h-12 items-center justify-center rounded-pill border border-mist/40 px-4 font-medium text-ink transition-colors duration-200 hover:border-ink"
+            >
+              {pdf.label}
+            </a>
+          ))}
+        </div>
         <Button href={calendly} className="w-full sm:w-auto">
           {meeting.label}
         </Button>

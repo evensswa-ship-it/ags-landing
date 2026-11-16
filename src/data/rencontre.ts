@@ -11,8 +11,13 @@ export const rencontre = {
     'Je suis Evens Augustin, fondateur d’AGS & Co. J’installe des collaborateurs IA dans les cabinets de courtage en assurance et les entreprises de services. Ils prennent en charge les tâches répétitives, vos équipes gardent le contrôle.',
   fiche: {
     title: 'Votre fiche offerte : vos devis à relancer, prêts chaque lundi à 8 h.',
-    text: 'Une page, une consigne à copier. Chaque lundi, vous trouvez la liste des devis sans réponse, avec un projet de relance pour chacun. Vous relisez, vous envoyez. Rien ne part sans vous.',
-    pdf: '/fiches/devis-a-relancer-chaque-lundi.pdf',
+    text: 'Une page, une consigne à copier. Chaque lundi, votre IA lit votre CRM et vous prépare la liste des devis sans réponse, avec un projet de relance pour chacun. Vous relisez, vous envoyez. Rien ne part sans vous. Disponible pour Claude, ChatGPT et Gemini.',
+    /** Une version de la fiche par IA. Le PDF Claude garde son nom d’origine : il figure dans des e-mails déjà envoyés. */
+    pdfs: [
+      { label: 'Claude', href: '/fiches/devis-a-relancer-chaque-lundi.pdf' },
+      { label: 'ChatGPT', href: '/fiches/devis-a-relancer-chatgpt.pdf' },
+      { label: 'Gemini', href: '/fiches/devis-a-relancer-gemini.pdf' },
+    ],
   },
   form: {
     firstName: 'Prénom',
@@ -27,8 +32,8 @@ export const rencontre = {
     privacy:
       'Vos données sont utilisées uniquement par AGS & Co (Evens Augustin, EI) pour vous envoyer la fiche et deux e-mails de suivi. Elles ne sont ni vendues ni partagées, et sont conservées 3 ans au plus après notre dernier échange. Vous pouvez y accéder, les corriger ou les supprimer en écrivant à evens@agsandco.fr.',
     privacyLink: { label: 'Politique de confidentialité', href: '/legal/confidentialite' },
-    success: 'C’est envoyé. Vous recevez la fiche dans quelques minutes. Vous pouvez aussi la télécharger ici :',
-    download: 'Télécharger la fiche',
+    success:
+      'C’est envoyé. Vous recevez la fiche dans quelques minutes. Vous pouvez aussi la télécharger ici, selon l’IA que vous utilisez :',
   },
   meeting: {
     title: 'Vous préférez en parler directement ?',
