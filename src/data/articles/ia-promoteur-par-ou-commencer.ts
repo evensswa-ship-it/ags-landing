@@ -13,7 +13,7 @@ export const iaPromoteurParOuCommencer: Article = {
     rest: 'par quoi commencer, et à quoi ça ressemble en vrai',
   },
   lede:
-    'Quand on parle d’IA avec un promoteur, le premier sujet qui sort est presque toujours le même : trouver de nouveaux CGP. Chez un promoteur de la région bordelaise, nous avons pris le temps de regarder tout le reste. À la fin de l’échange, c’est lui qui a reclassé ses priorités. Et pour que ce ne reste pas abstrait, nous vous montrons plus bas un agent au travail, écran par écran.',
+    'Quand on parle d’IA avec un promoteur, le premier sujet qui sort est presque toujours le même : trouver de nouveaux CGP. Chez un promoteur constructeur régional, nous avons pris le temps de regarder tout le reste. À la fin de l’échange, c’est lui qui a reclassé ses priorités. Et pour que ce ne reste pas abstrait, nous vous montrons plus bas un agent au travail, écran par écran.',
   published: '2026-11-13',
   updated: '2026-11-20',
   blocks: [
