@@ -15,15 +15,15 @@ export const iaPromoteurParOuCommencer: Article = {
   lede:
     'Quand on parle d’IA avec un promoteur, le premier sujet qui sort est presque toujours le même : trouver de nouveaux CGP. Chez un promoteur de la région bordelaise, nous avons pris le temps de regarder tout le reste. À la fin de l’échange, c’est lui qui a reclassé ses priorités. Et pour que ce ne reste pas abstrait, nous vous montrons plus bas un agent au travail, écran par écran.',
   published: '2026-11-13',
-  updated: '2026-11-13',
+  updated: '2026-11-20',
   blocks: [
     {
       type: 'image',
-      src: '/blog/ia-promoteur-par-ou-commencer/en-tete.webp',
+      src: '/blog/ia-promoteur-par-ou-commencer/en-tete-photo.webp',
       width: 1280,
       height: 720,
-      alt: 'Quatre étapes de vente reliées par une ligne, la troisième en pointillés car bloquée, puis un réseau de conseillers dont une partie est éteinte.',
-      caption: 'Une vente qui bloque, des conseillers qui s’endorment',
+      alt: 'Un promoteur immobilier, vu de trois quarts dos, penché sur des plans étalés sur son bureau à côté d’une maquette de résidence, le soir, devant une ville éclairée et deux grues.',
+      caption: 'Avant de choisir un agent, regarder où part vraiment le temps (personne fictive)',
     },
     {
       type: 'callout',
